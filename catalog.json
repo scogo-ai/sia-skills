@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "repo": "scogo-ai/sia-skills",
+  "channel": "stable",
+  "ref": "v2026.05.1",
+  "commit": "",
+  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "skills": [
+    {
+      "name": "scogo:fortinet-config-change",
+      "description": "Use when an operator asks to change a Fortinet device or policy. Walks an ADOM-aware FortiManager change: pull current config, preview a unified diff, wait for the mutation gate, apply, verify with a get/show, and commit a revision. Never skips preview or post-verify.",
+      "tags": [
+        "network",
+        "fortinet",
+        "config-change",
+        "change-management",
+        "multi-tenant"
+      ],
+      "path": "skills/network/fortinet/config-change",
+      "files": [
+        "SKILL.md",
+        "scripts/preview-diff.sh"
+      ],
+      "sha256": "0b5db1b2adb9a026421af8db2a99e1d21858f03619d86dfdddc9252f2e09b024",
+      "compatibility": "fortios>=7.2,<7.6,fortimanager>=7.2",
+      "version": "1.3.0"
+    },
+    {
+      "name": "scogo:incident-triage",
+      "description": "Use when the operator says 'look at this alert', 'what's wrong with X', or pastes an alert link. Pulls the alert, correlates logs/traces plus recent deploys in the window, and proposes a ranked root-cause hypothesis with the next 2-3 checks. Takes no remediating action.",
+      "tags": [
+        "meta",
+        "network",
+        "security",
+        "observability",
+        "incident-triage",
+        "troubleshooting",
+        "read-only"
+      ],
+      "path": "skills/_meta/incident-triage",
+      "files": [
+        "SKILL.md"
+      ],
+      "sha256": "27e7d7a22e461017074dd66c7c4ad7a352fe363abb58edc9fcb47f4a57beeb08",
+      "version": "1.1.0"
+    },
+    {
+      "name": "scogo:netapp-reporting",
+      "description": "Use when an operator asks for a NetApp/ONTAP capacity, performance, or aggregate-utilisation report. Pulls metrics via the netapp MCP (Active IQ Unified Manager / ONTAP REST), produces a tabular summary plus the top capacity risks. Read-only — never mutates.",
+      "tags": [
+        "storage",
+        "netapp",
+        "reporting",
+        "capacity-planning",
+        "read-only"
+      ],
+      "path": "skills/storage/netapp/reporting",
+      "files": [
+        "SKILL.md",
+        "references/aiqum-metrics.md"
+      ],
+      "sha256": "812af35b78049fd1951517c2f648c9ee927fd4b49a6e8264367d40d7c9155529",
+      "compatibility": "ontap>=9.10",
+      "version": "1.0.0"
+    }
+  ],
+  "yanked": []
+}

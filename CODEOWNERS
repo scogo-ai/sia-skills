@@ -1,0 +1,35 @@
+# CODEOWNERS — domain-scoped content review + locked-down supply-chain infra.
+#
+# !!! PLACEHOLDER ORG/TEAM NAMES !!!
+# Every @scogo-ai/<team> handle below is a PLACEHOLDER and MUST be confirmed
+# against the real GitHub org + teams before this repo goes live (design §10
+# open question 1). If the org has no team split yet, collapse all of these to
+# a single @scogo-ai/sia-skills-maintainers team for v1.
+#
+# Design intent (§5.8): distribute *content* review to domain experts while
+# keeping the *supply-chain surface* (generator, hashing, channels, catalog,
+# vendor registry, yank list) locked to the platform team — the §2.4.1
+# separation between "content review" and "release control".
+
+# Default owner for anything not matched below.
+*                                   @scogo-ai/sia-skills-maintainers
+
+# --- supply-chain critical: platform team only ---
+/tools/                             @scogo-ai/sia-platform   # generator + hashing = supply-chain critical
+/.github/                           @scogo-ai/sia-platform   # CI definitions
+/channels.json                      @scogo-ai/sia-platform   # channel moves = the release gate
+/catalog.json                       @scogo-ai/sia-platform   # GENERATED — humans must not hand-edit
+/vendors.yaml                       @scogo-ai/sia-platform   # OEM slug registry + product axes
+/yanked.json                        @scogo-ai/sia-platform   # yank/rollback list
+
+# --- content: domain experts + maintainers ---
+/skills/_meta/                      @scogo-ai/sia-skills-maintainers
+/skills/network/                    @scogo-ai/net-eng       @scogo-ai/sia-skills-maintainers
+/skills/security/                   @scogo-ai/sec-eng       @scogo-ai/sia-skills-maintainers
+/skills/storage/                    @scogo-ai/storage-eng   @scogo-ai/sia-skills-maintainers
+/skills/backup/                     @scogo-ai/storage-eng   @scogo-ai/sia-skills-maintainers
+/skills/cloud/                      @scogo-ai/cloud-eng     @scogo-ai/sia-skills-maintainers
+/skills/operating-system/           @scogo-ai/sys-eng       @scogo-ai/sia-skills-maintainers
+/skills/virtualization/             @scogo-ai/sys-eng       @scogo-ai/sia-skills-maintainers
+/skills/observability/              @scogo-ai/sre-eng       @scogo-ai/sia-skills-maintainers
+/skills/hardware/                   @scogo-ai/dc-eng        @scogo-ai/sia-skills-maintainers

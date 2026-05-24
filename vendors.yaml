@@ -1,0 +1,164 @@
+# vendors.yaml — the single source of truth for OEM slugs + their product axes.
+#
+# Every 2nd-level directory under skills/<domain>/ and every `oem` tag in a
+# SKILL.md MUST be a slug registered here, and the directory's parent domain
+# MUST be one of the slug's registered `domains`. CI (tools/gen-catalog.mjs and
+# tools/validate-skill.mjs) enforces this. The `products` list enumerates the
+# axes usable in a skill's `compatibility` string (e.g. fortios>=7.2).
+#
+# Slug discipline: ONE canonical token per OEM. Never let `paloalto` also appear
+# as `palo-alto` or `pan`. Distinct hardware/server lines that collide with a
+# networking vendor get their own slug (e.g. `cisco-ucs` is separate from
+# `cisco`) — see design §5.4.
+
+# --- network / security vendors ---
+cisco:
+  display: "Cisco"
+  domains: [network, security]
+  products: [ios-xe, nx-os, asa, ftd]
+juniper:
+  display: "Juniper Networks"
+  domains: [network]
+  products: [junos]
+fortinet:
+  display: "Fortinet"
+  domains: [network, security]
+  products: [fortios, fortimanager, fortianalyzer]
+arista:
+  display: "Arista Networks"
+  domains: [network]
+  products: [eos]
+paloalto:
+  display: "Palo Alto Networks"
+  domains: [security, network]
+  products: [panos, panorama]
+crowdstrike:
+  display: "CrowdStrike"
+  domains: [security]
+  products: [falcon]
+okta:
+  display: "Okta"
+  domains: [security]
+  products: [okta]
+
+# --- cloud providers ---
+aws:
+  display: "Amazon Web Services"
+  domains: [cloud]
+  products: [aws]
+azure:
+  display: "Microsoft Azure"
+  domains: [cloud]
+  products: [azure]
+gcp:
+  display: "Google Cloud Platform"
+  domains: [cloud]
+  products: [gcp]
+oci:
+  display: "Oracle Cloud Infrastructure"
+  domains: [cloud]
+  products: [oci]
+
+# --- storage vendors ---
+netapp:
+  display: "NetApp"
+  domains: [storage]
+  products: [ontap, snapcenter, aiqum]
+dell-emc:
+  display: "Dell EMC"
+  domains: [storage]
+  products: [powerstore, unity, powermax]
+hitachi:
+  display: "Hitachi Vantara"
+  domains: [storage]
+  products: [vsp, svos]
+pure:
+  display: "Pure Storage"
+  domains: [storage]
+  products: [purity]
+
+# --- backup vendors ---
+veeam:
+  display: "Veeam"
+  domains: [backup]
+  products: [vbr] # Veeam Backup & Replication
+commvault:
+  display: "Commvault"
+  domains: [backup]
+  products: [commvault]
+rubrik:
+  display: "Rubrik"
+  domains: [backup]
+  products: [cdm]
+cohesity:
+  display: "Cohesity"
+  domains: [backup]
+  products: [dataprotect]
+
+# --- operating systems ---
+windows-server:
+  display: "Windows Server"
+  domains: [operating-system]
+  products: [windows-server]
+rhel:
+  display: "Red Hat Enterprise Linux"
+  domains: [operating-system]
+  products: [rhel]
+ubuntu:
+  display: "Ubuntu Server"
+  domains: [operating-system]
+  products: [ubuntu]
+suse:
+  display: "SUSE Linux Enterprise"
+  domains: [operating-system]
+  products: [sles]
+
+# --- virtualization ---
+vmware:
+  display: "VMware"
+  domains: [virtualization]
+  products: [vsphere, esxi, vcenter]
+nutanix:
+  display: "Nutanix"
+  domains: [virtualization]
+  products: [aos, ahv, prism]
+hyper-v:
+  display: "Microsoft Hyper-V"
+  domains: [virtualization]
+  products: [hyper-v]
+
+# --- hardware ---
+dell:
+  display: "Dell Technologies"
+  domains: [hardware]
+  products: [idrac, openmanage]
+hpe:
+  display: "Hewlett Packard Enterprise"
+  domains: [hardware]
+  products: [ilo, oneview]
+cisco-ucs:
+  display: "Cisco UCS"
+  domains: [hardware]
+  products: [ucsm, intersight]
+lenovo:
+  display: "Lenovo"
+  domains: [hardware]
+  products: [xclarity]
+
+# --- observability ---
+datadog:
+  display: "Datadog"
+  domains: [observability]
+  products: [datadog]
+grafana:
+  display: "Grafana"
+  domains: [observability]
+  products: [grafana, loki, mimir]
+splunk:
+  display: "Splunk"
+  domains: [observability]
+  products: [splunk]
+elastic:
+  display: "Elastic"
+  domains: [observability]
+  products: [elasticsearch, kibana]

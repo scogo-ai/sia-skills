@@ -1,0 +1,105 @@
+# .github/workflows/catalog.yml
+#
+# CI gate for the curated skills catalog (binding contract §2.4.1, design §6.3).
+# Runs on any PR or push that touches skills, tooling, or the registry/control
+# files. It enforces the supply-chain invariants:
+#
+#   1. Every SKILL.md has valid frontmatter (required name + description) and is
+#      path/name/tag/compatibility consistent, with no unsafe paths.
+#   2. catalog.json is REGENERATED from the tree and the checked-in copy must
+#      match byte-for-byte (drift = fail) — humans never hand-edit it.
+#   3. Unsafe paths (absolute, "..", symlinks) and oversized files are rejected.
+#   4. The deterministic-hash roundtrip test passes (gen -> verify -> tamper ->
+#      refuse).
+#
+# Real `run:` steps are used wherever the logic lives in-repo (node tooling).
+# Hosted-action placeholders are commented where a third-party action would slot
+# in (checkout, setup-node, release upload) so this file stays runnable-by-reading
+# even before the org wires up its action allow-list.
+#
+# Security note: every shell step below uses only runner-provided environment
+# variables (GITHUB_SHA, GITHUB_REF_NAME) referenced as "$GITHUB_SHA" — never
+# ${{ github.event.* }} interpolation of attacker-controllable fields. This is
+# the injection-safe pattern.
+
+name: catalog
+
+on:
+  pull_request:
+    paths:
+      - "skills/**"
+      - "tools/**"
+      - "channels.json"
+      - "vendors.yaml"
+      - "yanked.json"
+      - ".github/workflows/catalog.yml"
+  push:
+    branches: ["main"]
+    paths:
+      - "skills/**"
+      - "tools/**"
+      - "channels.json"
+      - "vendors.yaml"
+      - "yanked.json"
+
+# Least privilege: this gate only needs to read the tree.
+permissions:
+  contents: read
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      # Hosted action: check out the PR/branch.
+      - uses: actions/checkout@v4
+
+      # Hosted action: pin Node 20 (matches tools/ engines; ESM + node:test).
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # 1. Validate every SKILL.md: schema (name+description required),
+      #    path<->name<->tag<->compatibility consistency, and the unsafe-path
+      #    scan (absolute paths, "..", symlinks, oversized/disallowed files).
+      - name: Validate skills
+        run: node tools/validate-skill.mjs skills/
+
+      # 2. Regenerate catalog.json from the tree into a temp file. Normalise the
+      #    two environment-derived fields (generatedAt + commit) by reading them
+      #    back out of the committed catalog.json, so the drift check in step 3
+      #    fails ONLY on real tree-vs-catalog content drift — not on the clock or
+      #    a different HEAD SHA. (The real $GITHUB_SHA commit is stamped into the
+      #    *published* artifact by the release workflow, not by this PR gate.)
+      - name: Regenerate catalog
+        run: |
+          PINNED_TS="$(node -e 'process.stdout.write(require("./catalog.json").generatedAt)')"
+          PINNED_COMMIT="$(node -e 'process.stdout.write(require("./catalog.json").commit)')"
+          node tools/gen-catalog.mjs \
+            --channel stable \
+            --commit "$PINNED_COMMIT" \
+            --generated-at "$PINNED_TS" \
+            --out /tmp/catalog.json
+
+      # 3. Fail if the committed catalog.json differs from the freshly generated
+      #    one (binding contract §2.4.1: "fail if the checked-in catalog differs").
+      #    --no-index lets us diff two arbitrary files; --exit-code makes any
+      #    difference a non-zero exit.
+      - name: Fail on catalog drift
+        run: git --no-pager diff --no-index --exit-code catalog.json /tmp/catalog.json
+
+      # 4. Deterministic-hash roundtrip + tamper-detection fixture test
+      #    (binding contract §2.4.1 fixture: gen -> verify hash -> tamper -> refuse).
+      - name: Roundtrip + tamper test
+        run: node --test "test/**/*.test.mjs"
+
+      # --- below here: release path, not part of the PR gate ---
+      #
+      # On a tagged release (push of tag v*), a SEPARATE workflow would:
+      #   - run: node tools/gen-catalog.mjs --channel beta --ref "$GITHUB_REF_NAME"
+      #       --commit "$GITHUB_SHA" --out catalog.json
+      #   - run the roundtrip test
+      #   - attach catalog.json to the GitHub Release as an immutable artifact,
+      #     e.g. via softprops/action-gh-release@v2 (hosted action).
+      # Channel promotion (beta -> stable) is a manual workflow_dispatch that edits
+      # channels.json behind @scogo-ai/sia-platform review, with a release note +
+      # rollback pointer (design §5.7). It is deliberately NOT automated here.
