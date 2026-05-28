@@ -2,6 +2,11 @@
 name: scogo:kubernetes-audit-log-analysis
 description: "Use when an operator needs kubernetes audit log analysis. Parses Kubernetes API server audit logs (JSON lines) to detect exec-into-pod, secret access, RBAC modifications, privileged pod creation, and anonymous API access. Builds threat detection rules from audit event patterns. Use when investigating Kubernetes cluster compromise or building k8s-specific SIEM detection rules."
 tags: [containers, kubernetes, audit, log, analysis, analyzing, logs]
+when_to_use:
+  - investigate a suspected Kubernetes cluster compromise
+  - detect exec-into-pod or secret access in API server audit logs
+  - build k8s SIEM detection rules from audit event patterns
+mutates: false
 metadata:
   version: 1.0.0
 author: scogo-ai

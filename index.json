@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
   "ref": "v2026.05.1",
@@ -108,7 +108,19 @@
         "scripts/agent.py"
       ],
       "sha256": "4f0c749d34f1d65f292aba50b85c17429c9bf2bdd8d8bebb9067b8cf0724d5b5",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Detect unusual API call patterns in AWS CloudTrail logs using boto3, statistical baselining, and behavioral analysis to identify credential compromise, privilege escalation, and unauthorized resource access.",
+      "triggers": [
+        "Cloudtrail Anomaly Detection",
+        "aws cloudtrail anomaly detection",
+        "Detect unusual API call patterns in AWS CloudTrail logs using boto3, statistical baselining, and behavioral analysis to identify credential compromise, privilege escalation, and unauthorized resource access"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-cloudtrail-forensics",
@@ -136,7 +148,20 @@
         "scripts/agent.py"
       ],
       "sha256": "f85e1b394b25d2f463940b220917691d576480e86228844f91a1c2a1a202ea7c",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Perform forensic investigation of AWS environments using CloudTrail logs to reconstruct attacker activity, identify compromised credentials, and analyze API call patterns.",
+      "triggers": [
+        "Cloudtrail Forensics",
+        "aws cloudtrail forensics",
+        "Perform forensic investigation of AWS environments using CloudTrail logs to reconstruct attacker activity, identify compromised credentials, and analyze API call patterns"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services",
+        "digital forensics and incident response"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-config-rules-compliance",
@@ -164,7 +189,19 @@
         "scripts/agent.py"
       ],
       "sha256": "bbdc899eb84693b20d93005649a55c5c75a5edb291144c73262f691d8d39b8d1",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Implementing AWS Config rules for continuous compliance monitoring of AWS resources, deploying managed and custom rules aligned to CIS and PCI DSS frameworks, configuring automatic remediation with SSM Automation, and aggregating compliance data across accounts.",
+      "triggers": [
+        "Config Rules Compliance",
+        "aws config rules compliance",
+        "Implementing AWS Config rules for continuous compliance monitoring of AWS resources, deploying managed and custom rules aligned to CIS and PCI DSS frameworks, configuring automatic remediation with SSM Automation, and aggregating compliance data across accounts"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-credential-exposure-detection",
@@ -193,7 +230,19 @@
         "scripts/agent.py"
       ],
       "sha256": "76ba34c271ad50c3647c4667ab75d4688d7bff0eba1c0e3deae17ee3ede999c5",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Detecting exposed AWS credentials in source code repositories, CI/CD pipelines, and configuration files using TruffleHog, git-secrets, and AWS-native detection mechanisms to prevent credential theft and unauthorized account access.",
+      "triggers": [
+        "Credential Exposure Detection",
+        "aws credential exposure detection",
+        "Detecting exposed AWS credentials in source code repositories, CI/CD pipelines, and configuration files using TruffleHog, git-secrets, and AWS-native detection mechanisms to prevent credential theft and unauthorized account access"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-guardduty-findings-automation",
@@ -226,7 +275,20 @@
         "scripts/process.py"
       ],
       "sha256": "a5338c3c3b819206029f046435ddff895b3f33c9faf6d0f55e89a63d386d4c09",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Automate AWS GuardDuty threat detection findings processing using EventBridge and Lambda to enable real-time incident response, automatic quarantine of compromised resources, and security notification workflows.",
+      "triggers": [
+        "Guardduty Findings Automation",
+        "aws guardduty findings automation",
+        "Automate AWS GuardDuty threat detection findings processing using EventBridge and Lambda to enable real-time incident response, automatic quarantine of compromised resources, and security notification workflows"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services",
+        "security information and event management"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-guardduty-threat-detection",
@@ -255,7 +317,19 @@
         "scripts/agent.py"
       ],
       "sha256": "68d275c9ab1e42541f2288e6b2625670798d779a4718d977d466a3220b7103af",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "teaches security teams how to deploy and operationalize Amazon GuardDuty for continuous threat detection across AWS accounts and workloads. It covers enabling protection plans for S3, EKS, EC2 runtime monitoring, and Lambda, interpreting finding severity levels, and building automated response workflows using EventBridge and Lambda.",
+      "triggers": [
+        "Guardduty Threat Detection",
+        "aws guardduty threat detection",
+        "teaches security teams how to deploy and operationalize Amazon GuardDuty for continuous threat detection across AWS accounts and workloads"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-iam-permission-boundaries",
@@ -287,7 +361,20 @@
         "scripts/process.py"
       ],
       "sha256": "cb08f5bb969120a51cc3a843f996d34875534e79a46ae2a790721a983194a024",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Configure IAM permission boundaries in AWS to delegate role creation to developers while enforcing maximum privilege limits set by the security team.",
+      "triggers": [
+        "IAM Permission Boundaries",
+        "aws iam permission boundaries",
+        "Configure IAM permission boundaries in AWS to delegate role creation to developers while enforcing maximum privilege limits set by the security team"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services",
+        "identity and access management"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-iam-permission-hardening",
@@ -316,7 +403,20 @@
         "scripts/agent.py"
       ],
       "sha256": "a2013449284dbb6494068d74743bb4b827c1a5bb5466e870d431e7db3e0f4be6",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "guides practitioners through hardening AWS Identity and Access Management configurations to enforce least privilege access across cloud accounts. It covers IAM policy scoping, permission boundaries, Access Analyzer integration, and credential rotation strategies to reduce the blast radius of compromised identities.",
+      "triggers": [
+        "IAM Permission Hardening",
+        "aws iam permission hardening",
+        "guides practitioners through hardening AWS Identity and Access Management configurations to enforce least privilege access across cloud accounts"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services",
+        "identity and access management"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-iam-privilege-escalation-detection",
@@ -346,7 +446,20 @@
         "scripts/agent.py"
       ],
       "sha256": "b3ed928c32d2f11975baeb8ca2a934e2f12729d2136313d32087fd03a66018f3",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Detect AWS IAM privilege escalation paths using boto3 and Cloudsplaining policy analysis to identify overly permissive policies, dangerous permission combinations, and least-privilege violations.",
+      "triggers": [
+        "IAM Privilege Escalation Detection",
+        "aws iam privilege escalation detection",
+        "Detect AWS IAM privilege escalation paths using boto3 and Cloudsplaining policy analysis to identify overly permissive policies, dangerous permission combinations, and least-privilege violations"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services",
+        "identity and access management"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-pacu-penetration-testing",
@@ -374,7 +487,19 @@
         "scripts/agent.py"
       ],
       "sha256": "eb17d72ea530932502d000175c5e86899dbeada92c09f700f5c1664654966e43",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Performing authorized AWS penetration testing using Pacu, the open-source AWS exploitation framework, to enumerate IAM configurations, discover privilege escalation paths, test credential harvesting, and validate security controls through systematic attack simulation.",
+      "triggers": [
+        "Pacu Penetration Testing",
+        "aws pacu penetration testing",
+        "Performing authorized AWS penetration testing using Pacu, the open-source AWS exploitation framework, to enumerate IAM configurations, discover privilege escalation paths, test credential harvesting, and validate security controls through systematic attack simulation"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-privilege-escalation-assessment",
@@ -403,7 +528,20 @@
         "scripts/agent.py"
       ],
       "sha256": "d15c30798607298c6f09c9954299e0f3a81987cb41f6f2170d521ea660181bd3",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Performing authorized privilege escalation assessments in AWS environments to identify IAM misconfigurations that allow users or roles to elevate their permissions using Pacu, CloudFox, Principal Mapper, and manual IAM policy analysis techniques.",
+      "triggers": [
+        "Privilege Escalation Assessment",
+        "aws privilege escalation assessment",
+        "Performing authorized privilege escalation assessments in AWS environments to identify IAM misconfigurations that allow users or roles to elevate their permissions using Pacu, CloudFox, Principal Mapper, and manual IAM policy analysis techniques"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services",
+        "identity and access management"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-s3-bucket-permission-audit",
@@ -432,7 +570,19 @@
         "scripts/agent.py"
       ],
       "sha256": "4613d49328c0dcd9b1dd6461c92dce612fe27abf0bb7954702dfebb0dfb152cc",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Systematically audit AWS S3 bucket permissions to identify publicly accessible buckets, overly permissive ACLs, misconfigured bucket policies, and missing encryption settings using AWS CLI, S3audit, and Prowler to enforce least-privilege data access controls.",
+      "triggers": [
+        "S3 Bucket Permission Audit",
+        "aws s3 bucket permission audit",
+        "Systematically audit AWS S3 bucket permissions to identify publicly accessible buckets, overly permissive ACLs, misconfigured bucket policies, and missing encryption settings using AWS CLI, S3audit, and Prowler to enforce least-privilege data access controls"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-security-hub",
@@ -460,7 +610,19 @@
         "scripts/agent.py"
       ],
       "sha256": "69509171781cb9aee1da6e9a71403b144681a965982587efc8a14f66e96de233",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "covers deploying AWS Security Hub as a centralized cloud security posture management platform that aggregates findings from GuardDuty, Inspector, Macie, and third-party tools. It details enabling security standards like CIS AWS Foundations Benchmark, configuring automated remediation, and building executive dashboards for compliance tracking across multi-account AWS organizations.",
+      "triggers": [
+        "Security HUB",
+        "aws security hub",
+        "covers deploying AWS Security Hub as a centralized cloud security posture management platform that aggregates findings from GuardDuty, Inspector, Macie, and third-party tools"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:aws-security-hub-compliance",
@@ -488,7 +650,19 @@
         "scripts/agent.py"
       ],
       "sha256": "208ef46b9aaec9d1c0af694bdca1a8f4a6f726a9fe56d7217d4c076ea971de58",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Implementing AWS Security Hub to aggregate security findings across AWS accounts, enable compliance standards like CIS AWS Foundations and PCI DSS, configure automated remediation with EventBridge and Lambda, and create custom security insights for organizational risk management.",
+      "triggers": [
+        "Security HUB Compliance",
+        "aws security hub compliance",
+        "Implementing AWS Security Hub to aggregate security findings across AWS accounts, enable compliance standards like CIS AWS Foundations and PCI DSS, configure automated remediation with EventBridge and Lambda, and create custom security insights for organizational risk management"
+      ],
+      "keywords": [
+        "amazon",
+        "amazon-web-services"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:azure-active-directory-configuration-audit",
@@ -518,7 +692,19 @@
         "scripts/agent.py"
       ],
       "sha256": "aa70908aae66755fb9a8e624ac86998665f40840adce608263db3b2ded197e16",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Auditing Microsoft Entra ID (Azure Active Directory) configuration to identify risky authentication policies, overly permissive role assignments, stale accounts, conditional access gaps, and guest user risks using AzureAD PowerShell, Microsoft Graph API, and ScoutSuite.",
+      "triggers": [
+        "Active Directory Configuration Audit",
+        "azure active directory configuration audit",
+        "Auditing Microsoft Entra ID (Azure Active Directory) configuration to identify risky authentication policies, overly permissive role assignments, stale accounts, conditional access gaps, and guest user risks using AzureAD PowerShell, Microsoft Graph API, and ScoutSuite"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:azure-activity-log-threat-analysis",
@@ -548,7 +734,19 @@
         "scripts/agent.py"
       ],
       "sha256": "1d64c88aaec376c602d13520753fb0db43f3b49dbf9691ec083456e7d04e93f8",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Queries Azure Monitor activity logs and sign-in logs via azure-monitor-query to detect suspicious administrative operations, impossible travel, privilege escalation, and resource modifications. Builds KQL queries for threat hunting in Azure environments. Use when investigating suspicious Azure tenant activity or building cloud SIEM detections.",
+      "triggers": [
+        "Activity LOG Threat Analysis",
+        "azure activity log threat analysis",
+        "Queries Azure Monitor activity logs and sign-in logs via azure-monitor-query to detect suspicious administrative operations, impossible travel, privilege escalation, and resource modifications"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:azure-ai",
@@ -583,7 +781,19 @@
         "references/sdk/azure-search-documents-ts.md"
       ],
       "sha256": "4eb58a869c0634523f357b13ed23d3149064c2c74b33e4e1f181c4499f170978",
-      "version": "1.1.1"
+      "version": "1.1.1",
+      "summary": "Use for Azure AI: Search, Speech, OpenAI, Document Intelligence. Helps with search, vector/hybrid search, speech-to-text, text-to-speech, transcription, OCR. WHEN: AI Search, query search, vector search, hybrid search, semantic search, speech-to-text, text-to-speech, transcribe, OCR, convert text to speech.",
+      "triggers": [
+        "AI",
+        "azure ai",
+        "Use for Azure AI: Search, Speech, OpenAI, Document Intelligence"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-ai-gateway",
@@ -612,7 +822,19 @@
         "references/troubleshooting.md"
       ],
       "sha256": "e0fa01a231344d9e5d9529507cade464d366cb73ce372db6f0111317aac47bd5",
-      "version": "3.1.1"
+      "version": "3.1.1",
+      "summary": "Configure Azure API Management as an AI Gateway for AI models, MCP tools, and agents. WHEN: semantic caching, token limit, content safety, load balancing, AI model governance, MCP rate limiting, jailbreak detection, add Azure OpenAI backend, add AI Foundry model, test AI gateway, LLM policies, configure AI backend, token metrics, AI cost control, convert API to MCP, import OpenAPI to gateway.",
+      "triggers": [
+        "AI Gateway",
+        "azure ai gateway",
+        "Configure Azure API Management as an AI Gateway for AI models, MCP tools, and agents"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-aks-ai-runway-setup",
@@ -645,7 +867,19 @@
         "references/troubleshooting.md"
       ],
       "sha256": "c4970fd673c7024aa4510de328186b0af36e5337cca9889f7baab014e0c5bc21",
-      "version": "1.0.1"
+      "version": "1.0.1",
+      "summary": "Set up AI Runway on AKS — from bare cluster to running model. Covers cluster verification, controller install, GPU assessment, provider setup, and first deployment. WHEN: \\\\\\\"setup AI Runway\\\\\\\", \\\\\\\"onboard AKS cluster\\\\\\\", \\\\\\\"install AI Runway\\\\\\\", \\\\\\\"airunway setup\\\\\\\", \\\\\\\"deploy model to AKS\\\\\\\", \\\\\\\"GPU inference on AKS\\\\\\\", \\\\\\\"KAITO setup on AKS\\\\\\\", \\\\\\\"run LLM on AKS\\\\\\\", \\\\\\\"vLLM on AKS\\\\\\\", \\\\\\\"set up model serving on AKS\\\\\\\", \\\\\\\"AI Runway controller\\\\\\\".",
+      "triggers": [
+        "AKS AI Runway Setup",
+        "azure aks ai runway setup",
+        "Set up AI Runway on AKS — from bare cluster to running model"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-appinsights-instrumentation",
@@ -677,7 +911,19 @@
         "scripts/appinsights.ps1"
       ],
       "sha256": "a09d92a82f85045dd34a9a12cec507831c620ec9c8c4f258cb3219048ec51890",
-      "version": "1.1.2"
+      "version": "1.1.2",
+      "summary": "Guidance for instrumenting webapps with Azure Application Insights. Provides telemetry patterns, SDK setup, and configuration references. WHEN: how to instrument app, App Insights SDK, telemetry patterns, what is App Insights, Application Insights guidance, instrumentation examples, APM best practices.",
+      "triggers": [
+        "Appinsights Instrumentation",
+        "azure appinsights instrumentation",
+        "Guidance for instrumenting webapps with Azure Application Insights"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-cloud-migrate",
@@ -727,7 +973,19 @@
         "references/workflow-details.md"
       ],
       "sha256": "f12f6416eeb6dd9bed82ccea42d4640d372fba8c428385ac1c6ab5f36af79de6",
-      "version": "1.2.1"
+      "version": "1.2.1",
+      "summary": "Assess and migrate cross-cloud workloads to Azure with reports and code conversion. Supports Lambda→Functions, Beanstalk/Heroku/App Engine→App Service, Fargate/Kubernetes/Cloud Run/Spring Boot→Container Apps. WHEN: migrate Lambda to Functions, AWS to Azure, migrate Beanstalk, migrate Heroku, migrate App Engine, Cloud Run migration, Fargate to ACA, ECS/Kubernetes/GKE/EKS to Container Apps, Spring Boot to Container Apps, cross-cloud migration.",
+      "triggers": [
+        "Cloud Migrate",
+        "azure cloud migrate",
+        "Assess and migrate cross-cloud workloads to Azure with reports and code conversion"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-cloud-solution-architect",
@@ -755,7 +1013,19 @@
         "references/technology-choices.md"
       ],
       "sha256": "3b653bb2e50c8e8fbbe956e5fadf1e7119937c42e5b74f5fec7816af22aa5ddc",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Transform the agent into a azure Cloud Solution Architect following Azure Architecture Center best practices. Use when designing cloud architectures, reviewing system designs, selecting architecture styles, applying cloud design patterns, making technology choices, or conducting Well-Architected Framework reviews.",
+      "triggers": [
+        "Cloud Solution Architect",
+        "azure cloud solution architect",
+        "Transform the agent into a azure Cloud Solution Architect following Azure Architecture Center best practices"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-compliance",
@@ -790,7 +1060,19 @@
         "references/sdk/azure-security-keyvault-secrets-java.md"
       ],
       "sha256": "4b58d6d72c42abad2cb6711e9d15fc66bcd5dad5553c9e63cf5016107d48e822",
-      "version": "1.1.1"
+      "version": "1.1.1",
+      "summary": "Run Azure compliance and security audits with azqr plus Key Vault expiration checks. Covers best-practice assessment, resource review, policy/compliance validation, and security posture checks. WHEN: compliance scan, security audit, BEFORE running azqr (compliance cli tool), Azure best practices, Key Vault expiration check, expired certificates, expiring secrets, orphaned resources, compliance assessment.",
+      "triggers": [
+        "Compliance",
+        "azure compliance",
+        "Run Azure compliance and security audits with azqr plus Key Vault expiration checks"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-compute",
@@ -832,7 +1114,19 @@
         "workflows/vm-troubleshooter/vm-troubleshooter.md"
       ],
       "sha256": "14a063b71fe9d360aacbf53d12097f2ca15f00d14fb53088fcae7ffcad785999",
-      "version": "2.4.2"
+      "version": "2.4.2",
+      "summary": "Azure VM and VMSS router for recommendations, pricing, autoscale, orchestration, connectivity troubleshooting, capacity reservations, and Essential Machine Management. WHEN: Azure VM, VMSS, scale set, recommend, compare, server, website, burstable, lightweight, VM family, workload, GPU, learning, simulation, dev/test, backend, autoscale, load balancer, Flexible orchestration, Uniform orchestration, cost estimate, connect, refused, Linux, black screen, reset password, reach VM, port 3389, NSG, troubleshoot, capacity reservation, CRG, reserve VMs, guarantee capacity, pre-provision capacity, CRG association, CRG disassociation, essential machine management, EMM, machine enrollment.",
+      "triggers": [
+        "Compute",
+        "azure compute",
+        "Azure VM and VMSS router for recommendations, pricing, autoscale, orchestration, connectivity troubleshooting, capacity reservations, and Essential Machine Management"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-cost-management",
@@ -873,7 +1167,19 @@
         "cost-query/workflow.md"
       ],
       "sha256": "d65ca9ab75287b57446bab9cef00f74c79d0e1187e82c540c235ef6cd719b831",
-      "version": "1.2.1"
+      "version": "1.2.1",
+      "summary": "Unified Azure cost management: query historical costs, forecast future spending, and optimize to reduce waste. WHEN: \\\\\\\"Azure costs\\\\\\\", \\\\\\\"Azure spending\\\\\\\", \\\\\\\"Azure bill\\\\\\\", \\\\\\\"cost breakdown\\\\\\\", \\\\\\\"cost by service\\\\\\\", \\\\\\\"cost by resource\\\\\\\", \\\\\\\"how much am I spending\\\\\\\", \\\\\\\"show my bill\\\\\\\", \\\\\\\"monthly cost summary\\\\\\\", \\\\\\\"cost trends\\\\\\\", \\\\\\\"top cost drivers\\\\\\\", \\\\\\\"actual cost\\\\\\\", \\\\\\\"amortized cost\\\\\\\", \\\\\\\"forecast spending\\\\\\\", \\\\\\\"projected costs\\\\\\\", \\\\\\\"estimate bill\\\\\\\", \\\\\\\"future costs\\\\\\\", \\\\\\\"budget forecast\\\\\\\", \\\\\\\"end of month costs\\\\\\\", \\\\\\\"how much will I spend\\\\\\\", \\\\\\\"optimize costs\\\\\\\", \\\\\\\"reduce spending\\\\\\\", \\\\\\\"find cost savings\\\\\\\", \\\\\\\"orphaned resources\\\\\\\", \\\\\\\"rightsize VMs\\\\\\\", \\\\\\\"cost analysis\\\\\\\", \\\\\\\"reduce waste\\\\\\\", \\\\\\\"unused resources\\\\\\\", \\\\\\\"optimize Redis costs\\\\\\\", \\\\\\\"cost by tag\\\\\\\", \\\\\\\"cost by resource group\\\\\\\", \\\\\\\"AKS cost analysis add-on\\\\\\\", \\\\\\\"namespace cost\\\\\\\", \\\\\\\"cost spike\\\\\\\", \\\\\\\"anomaly\\\\\\\", \\\\\\\"budget alert\\\\\\\", \\\\\\\"AKS cost visibility\\\\\\\"..",
+      "triggers": [
+        "Cost Management",
+        "azure cost management",
+        "Unified Azure cost management: query historical costs, forecast future spending, and optimize to reduce waste"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-defender-for-cloud",
@@ -901,7 +1207,19 @@
         "scripts/agent.py"
       ],
       "sha256": "937459fd85b6a8227276d7722b224b9d1f322c4db8ca841d0947a28d3f07c4c5",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Implementing Microsoft Defender for Cloud to enable cloud security posture management, workload protection across VMs, containers, databases, and storage, configure security recommendations, and set up adaptive security controls with automated remediation.",
+      "triggers": [
+        "Defender FOR Cloud",
+        "azure defender for cloud",
+        "Implementing Microsoft Defender for Cloud to enable cloud security posture management, workload protection across VMs, containers, databases, and storage, configure security recommendations, and set up adaptive security controls with automated remediation"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:azure-deploy",
@@ -961,7 +1279,19 @@
         "references/troubleshooting.md"
       ],
       "sha256": "8b3dcd0f63afefa1ff7ef02302b8517a360feca95e4235b020a5f03d9e8c7739",
-      "version": "1.1.2"
+      "version": "1.1.2",
+      "summary": "Execute Azure deployments for ALREADY-PREPARED applications that have existing .azure/deployment-plan.md and infrastructure files. DO NOT use this skill when the user asks to CREATE a new application — use azure-prepare instead. This skill runs azd up, azd deploy, terraform apply, and az deployment commands with built-in error recovery. Requires .azure/deployment-plan.md from azure-prepare and validated status from azure-validate. WHEN: \\\\\\\"run azd up\\\\\\\", \\\\\\\"run azd deploy\\\\\\\", \\\\\\\"execute deployment\\\\\\\", \\\\\\\"push to production\\\\\\\", \\\\\\\"push to cloud\\\\\\\", \\\\\\\"go live\\\\\\\", \\\\\\\"ship it\\\\\\\", \\\\\\\"bicep deploy\\\\\\\", \\\\\\\"terraform apply\\\\\\\", \\\\\\\"publish to Azure\\\\\\\", \\\\\\\"launch on Azure\\\\\\\". DO NOT USE WHEN: \\\\\\\"create and deploy\\\\\\\", \\\\\\\"build and deploy\\\\\\\", \\\\\\\"create a new app\\\\\\\", \\\\\\\"set up infrastructure\\\\\\\", \\\\\\\"create and deploy to Azure using Terraform\\\\\\\" — use azure-prepare for these.",
+      "triggers": [
+        "Deploy",
+        "azure deploy",
+        "Execute Azure deployments for ALREADY-PREPARED applications that have existing"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-diagnostics",
@@ -1010,7 +1340,19 @@
         "troubleshooting/messaging/service-troubleshooting.md"
       ],
       "sha256": "28a6bde56136995fe07ae7d7ebcc87db43ee0c1b6323ef03efa1d850bda52008",
-      "version": "1.1.6"
+      "version": "1.1.6",
+      "summary": "Debug Azure production issues on Azure using AppLens, Azure Monitor, resource health, and safe triage. WHEN: debug production issues, troubleshoot app service, app service high CPU, app service deployment failure, troubleshoot container apps, troubleshoot functions, troubleshoot AKS, kubectl cannot connect, kube-system/CoreDNS failures, pod pending, crashloop, node not ready, upgrade failures, analyze logs, KQL, insights, image pull failures, cold start issues, health probe failures, resource health, root cause of errors, troubleshoot event hubs, troubleshoot service bus, messaging SDK error, AMQP connection failure, message lock lost, service bus dead letter.",
+      "triggers": [
+        "Diagnostics",
+        "azure diagnostics",
+        "Debug Azure production issues on Azure using AppLens, Azure Monitor, resource health, and safe triage"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-enterprise-infra-planner",
@@ -1071,7 +1413,19 @@
         "references/workflow.md"
       ],
       "sha256": "611ce38f929443fade40cd547e6cb055a974b1c46c4192da3843283ee837461c",
-      "version": "1.2.1"
+      "version": "1.2.1",
+      "summary": "Architect and provision enterprise Azure infrastructure from workload descriptions. For cloud architects and platform engineers planning networking, identity, security, compliance, and multi-resource topologies with WAF alignment. Generates Bicep or Terraform directly (no azd). WHEN: 'plan Azure infrastructure', 'architect Azure landing zone', 'design hub-spoke network', 'plan multi-region DR topology', 'set up VNets firewalls and private endpoints', 'subscription-scope Bicep deployment', 'Azure Backup for VM workloads'. PREFER azure-prepare FOR app-centric workflows.",
+      "triggers": [
+        "Enterprise Infra Planner",
+        "azure enterprise infra planner",
+        "Architect and provision enterprise Azure infrastructure from workload descriptions"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-entra-agent-id",
@@ -1099,7 +1453,19 @@
         "references/sdk-sidecar.md"
       ],
       "sha256": "3158e87296805176410574fad0d9b5a3e29ee508547cb394764fdb60d1219177",
-      "version": "1.0.1"
+      "version": "1.0.1",
+      "summary": "Provision Microsoft Entra Agent Identity Blueprints, BlueprintPrincipals, and per-instance Agent Identities via Microsoft Graph, and configure OAuth 2.0 token exchange (fmi_path, OBO, cross-tenant) including the Microsoft Entra SDK for AgentID sidecar. USE FOR: Agent Identity Blueprint, BlueprintPrincipal, agent OAuth, fmi_path token exchange, agent OBO, Workload Identity Federation for agents, polyglot agent auth, Microsoft.Identity.Web.AgentIdentities. DO NOT USE FOR: standard Entra app registration (use entra-app-registration), Azure RBAC (use azure-rbac), Microsoft Foundry agent authoring (use microsoft-foundry).",
+      "triggers": [
+        "Entra Agent ID",
+        "azure entra agent id",
+        "Provision Microsoft Entra Agent Identity Blueprints, BlueprintPrincipals, and per-instance Agent Identities via Microsoft Graph, and configure OAuth 2"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-entra-app-registration",
@@ -1137,7 +1503,19 @@
         "references/troubleshooting.md"
       ],
       "sha256": "6cd08b142a1a2a79dd41aadce894b078bc91a5b453d7f30c23dffc09c8e45a11",
-      "version": "1.1.1"
+      "version": "1.1.1",
+      "summary": "Guides Microsoft Entra ID app registration, OAuth 2.0 authentication, and MSAL integration. USE FOR: create app registration, register Azure AD app, configure OAuth, set up authentication, add API permissions, generate service principal, MSAL example, console app auth, Entra ID setup, Azure AD authentication. DO NOT USE FOR: Azure RBAC or role assignments (use azure-rbac), Key Vault secrets (use azure-keyvault-expiration-audit), general Azure resource security guidance.",
+      "triggers": [
+        "Entra APP Registration",
+        "azure entra app registration",
+        "Guides Microsoft Entra ID app registration, OAuth 2"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-foundry",
@@ -1240,7 +1618,19 @@
         "resource/private-network/references/vpn-dns-setup.md"
       ],
       "sha256": "9ec466a81c1330c5a914f63ad5c085c0e1e8e9a446e8800ae73187279b630072",
-      "version": "1.1.20"
+      "version": "1.1.20",
+      "summary": "Deploy, evaluate, fine-tune, and manage Foundry agents end-to-end: Docker build, ACR push, hosted/prompt agent create, container start, batch eval, continuous eval, prompt optimizer, Agent Optimizer scaffold, agent.yaml, dataset curation from traces, model fine-tuning (SFT/DPO/RFT). USE FOR: deploy agent, hosted agent, create agent, add tool to agent, invoke agent, evaluate agent, continuous eval, continuous monitoring, optimize prompt, improve prompt, optimize agent instructions, deploy model, Foundry project, RBAC, role assignment, permissions, quota, capacity, region, troubleshoot agent, deployment failure, AI Services, create Foundry resource, provision, knowledge index, agent monitoring, customize deployment, onboard, availability, fine-tune, SFT, DPO, RFT, training-data, grader, distillation, fine-tuned model, large file upload..",
+      "triggers": [
+        "Foundry",
+        "azure foundry",
+        "Deploy, evaluate, fine-tune, and manage Foundry agents end-to-end: Docker build, ACR push, hosted/prompt agent create, container start, batch eval, continuous eval, prompt optimizer, Agent Optimizer scaffold, agent"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-foundry-finetuning",
@@ -1294,7 +1684,19 @@
         "workflows/quickstart.md"
       ],
       "sha256": "41475f1178c428a8c4cb5a531dc509882c3d2933a4bcbb466d9cfa86e03e208d",
-      "version": "0.0.0-placeholder"
+      "version": "0.0.0-placeholder",
+      "summary": "Fine-tune models on Azure AI Foundry using SFT (supervised), DPO (preference), or RFT (reinforcement with graders). Covers dataset preparation, training job submission, deployment, and evaluation. USE FOR: fine-tune, SFT, DPO, RFT, training data, grader, distillation, fine-tuned model, training job, large file upload, calibrate grader, deploy fine-tuned model, evaluate fine-tuned model. DO NOT USE FOR: general model deployment without fine-tuning (use deploy-model), agent creation (use agents), prompt optimization without training (use prompt-optimizer).",
+      "triggers": [
+        "Foundry Finetuning",
+        "azure foundry finetuning",
+        "Fine-tune models on Azure AI Foundry using SFT (supervised), DPO (preference), or RFT (reinforcement with graders)"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-foundry-model-deploy",
@@ -1319,7 +1721,19 @@
         "scripts/generate_deployment_url.sh"
       ],
       "sha256": "3f289ff9ad17ad2896bfa3080fafad7b426b931e0f6d3376242afcd2d62ed8c9",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Unified Azure OpenAI model deployment skill with intelligent intent-based routing. Handles quick preset deployments, fully customized deployments (version/SKU/capacity/RAI policy), and capacity discovery across regions and projects. USE FOR: deploy model, deploy gpt, create deployment, model deployment, deploy openai model, set up model, provision model, find capacity, check model availability, where can I deploy, best region for model, capacity analysis. DO NOT USE FOR: listing existing deployments (use foundry_models_deployments_list MCP tool), deleting deployments, agent creation (use agent/create), project creation (use project/create).",
+      "triggers": [
+        "Foundry Model Deploy",
+        "azure foundry model deploy",
+        "Unified Azure OpenAI model deployment skill with intelligent intent-based routing"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-foundry-model-deploy-capacity",
@@ -1346,7 +1760,19 @@
         "scripts/query_capacity.sh"
       ],
       "sha256": "c635959ebe4578a321c56cbc99c704582d3fd26e2a5e38490945c3af3d7b764f",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Discovers available Azure OpenAI model capacity across regions and projects. Analyzes quota limits, compares availability, and recommends optimal deployment locations based on capacity requirements. USE FOR: find capacity, check quota, where can I deploy, capacity discovery, best region for capacity, multi-project capacity search, quota analysis, model availability, region comparison, check TPM availability. DO NOT USE FOR: actual deployment (hand off to preset or customize after discovery), quota increase requests (direct user to Azure Portal), listing existing deployments.",
+      "triggers": [
+        "Foundry Model Deploy Capacity",
+        "azure foundry model deploy capacity",
+        "Discovers available Azure OpenAI model capacity across regions and projects"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-foundry-model-deploy-customize",
@@ -1372,7 +1798,19 @@
         "references/examples.md"
       ],
       "sha256": "c6484970b586aaac30967f41f131b7c19831dc8ff23f68f9fdecf451f716ff75",
-      "version": "1.0.1"
+      "version": "1.0.1",
+      "summary": "Interactive guided deployment flow for Azure OpenAI models with full customization control. Step-by-step selection of model version, SKU (GlobalStandard/Standard/ProvisionedManaged), capacity, RAI policy (content filter), and advanced options (dynamic quota, priority processing, spillover). USE FOR: custom deployment, customize model deployment, choose version, select SKU, set capacity, configure content filter, RAI policy, deployment options, detailed deployment, advanced deployment, PTU deployment, provisioned throughput. DO NOT USE FOR: quick deployment to optimal region (use preset).",
+      "triggers": [
+        "Foundry Model Deploy Customize",
+        "azure foundry model deploy customize",
+        "Interactive guided deployment flow for Azure OpenAI models with full customization control"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-foundry-model-deploy-preset",
@@ -1398,7 +1836,19 @@
         "references/workflow.md"
       ],
       "sha256": "a694c0cb6e457b384481ae2e1a7e5b42620e30c5d59b33d4ddca6d74295d4007",
-      "version": "1.0.1"
+      "version": "1.0.1",
+      "summary": "Intelligently deploys Azure OpenAI models to optimal regions by analyzing capacity across all available regions. Automatically checks current region first and shows alternatives if needed. USE FOR: quick deployment, optimal region, best region, automatic region selection, fast setup, multi-region capacity check, high availability deployment, deploy to best location. DO NOT USE FOR: custom SKU selection (use customize), specific version selection (use customize), custom capacity configuration (use customize), PTU deployments (use customize).",
+      "triggers": [
+        "Foundry Model Deploy Preset",
+        "azure foundry model deploy preset",
+        "Intelligently deploys Azure OpenAI models to optimal regions by analyzing capacity across all available regions"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-hosted-copilot-sdk",
@@ -1425,7 +1875,19 @@
         "references/existing-project-integration.md"
       ],
       "sha256": "4c9680b90eddb37564fc59027dffc9af61cebc610f23519fa2647464ea847636",
-      "version": "1.1.3"
+      "version": "1.1.3",
+      "summary": "Build, deploy, and modify GitHub Copilot SDK apps on Azure. MANDATORY when codebase contains @github/copilot-sdk or CopilotClient in package.json. PREFER OVER azure-prepare when copilot-sdk markers detected. WHEN: copilot SDK, @github/copilot-sdk, copilot-powered app, build copilot app, prepare copilot app, add feature to copilot app, modify copilot app, BYOM, bring your own model, CopilotClient, createSession, sendAndWait, azd init copilot. DO NOT USE FOR: deploying already-prepared copilot-sdk apps (use azure-deploy), general web apps without copilot SDK (use azure-prepare), Copilot Extensions, Foundry agents (use microsoft-foundry).",
+      "triggers": [
+        "Hosted Copilot SDK",
+        "azure hosted copilot sdk",
+        "Build, deploy, and modify GitHub Copilot SDK apps on Azure"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-kubernetes",
@@ -1450,7 +1912,22 @@
         "references/cli-reference.md"
       ],
       "sha256": "e7e9a3c8859688697fd29f68fb623276807e3e4e651dfd9390ff9edeeaa60ced",
-      "version": "1.1.2"
+      "version": "1.1.2",
+      "summary": "Plan, create, and configure production-ready Azure Kubernetes Service (AKS) clusters. Covers Day-0 checklist, SKU selection (Automatic vs Standard), networking options (private API server, Azure CNI Overlay, egress configuration), security, and operations (autoscaling, upgrade strategy, cost analysis). WHEN: create AKS environment, provision AKS environment, enable AKS observability, design AKS networking, choose AKS SKU, secure AKS, optimize AKS, rightsize AKS pod, AKS spot nodes, AKS cluster-autoscaler.",
+      "triggers": [
+        "Kubernetes",
+        "azure kubernetes",
+        "Plan, create, and configure production-ready Azure Kubernetes Service (AKS) clusters"
+      ],
+      "keywords": [
+        "az",
+        "k8",
+        "k8s",
+        "kube",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-kubernetes-automatic-readiness",
@@ -1476,7 +1953,22 @@
         "references/migration-guide-summary.md"
       ],
       "sha256": "8a9c092ef001b0a371fd2b1cb9be0103f9337f06c50249ccc123ca760c4f47d8",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Assess Kubernetes workloads and cluster configuration for AKS Automatic compatibility. Identifies incompatibilities, generates fixes, and guides migration from AKS Standard to AKS Automatic. WHEN: migrate to AKS Automatic, check AKS Automatic readiness, validate manifests for Automatic, assess cluster for Automatic compatibility, fix deployment for Automatic compatibility, identify AKS Automatic migration blockers, is my cluster ready for AKS Automatic.",
+      "triggers": [
+        "Kubernetes Automatic Readiness",
+        "azure kubernetes automatic readiness",
+        "Assess Kubernetes workloads and cluster configuration for AKS Automatic compatibility"
+      ],
+      "keywords": [
+        "az",
+        "k8",
+        "k8s",
+        "kube",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-kusto",
@@ -1496,7 +1988,19 @@
         "SKILL.md"
       ],
       "sha256": "ff29514c3f7e085591018d5eba067314a859ef232e53ca01609d3ce3c6a15903",
-      "version": "1.1.1"
+      "version": "1.1.1",
+      "summary": "Query and analyze data in Azure Data Explorer (Kusto/ADX) using KQL for log analytics, telemetry, and time series analysis. WHEN: KQL queries, Kusto database queries, Azure Data Explorer, ADX clusters, log analytics, time series data, IoT telemetry, anomaly detection.",
+      "triggers": [
+        "Kusto",
+        "azure kusto",
+        "Query and analyze data in Azure Data Explorer (Kusto/ADX) using KQL for log analytics, telemetry, and time series analysis"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-lateral-movement-detection",
@@ -1527,7 +2031,19 @@
         "scripts/agent.py"
       ],
       "sha256": "358610de6acafe02dc238c7750fc3ebf8e9f8d169921efda65b33f9166f18118",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Detect lateral movement in Azure AD/Entra ID environments using Microsoft Graph API audit logs, Azure Sentinel KQL hunting queries, and sign-in anomaly correlation to identify privilege escalation, token theft, and cross-tenant pivoting.",
+      "triggers": [
+        "Lateral Movement Detection",
+        "azure lateral movement detection",
+        "Detect lateral movement in Azure AD/Entra ID environments using Microsoft Graph API audit logs, Azure Sentinel KQL hunting queries, and sign-in anomaly correlation to identify privilege escalation, token theft, and cross-tenant pivoting"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:azure-messaging",
@@ -1547,7 +2063,19 @@
         "SKILL.md"
       ],
       "sha256": "44017e1441503e7c4199257b25b0ff31b44e748eaa34f519df74524b7baf706c",
-      "version": "1.1.2"
+      "version": "1.1.2",
+      "summary": "Troubleshoot and resolve issues with Azure Messaging SDKs for Event Hubs and Service Bus. Covers connection failures, authentication errors, message processing issues, and SDK configuration problems. WHEN: event hub SDK error, service bus SDK issue, messaging connection failure, AMQP error, event processor host issue, message lock lost, message lock expired, lock renewal, lock renewal batch, send timeout, receiver disconnected, SDK troubleshooting, azure messaging SDK, event hub consumer, service bus queue issue, topic subscription error, enable logging event hub, service bus logging, eventhub python, servicebus java, eventhub javascript, servicebus dotnet, event hub checkpoint, event hub not receiving messages, service bus dead letter, batch processing lock, session lock expired, idle timeout, connection inactive, link detach, slow reconnect, session error, duplicate events, offset reset, receive batch.",
+      "triggers": [
+        "Messaging",
+        "azure messaging",
+        "Troubleshoot and resolve issues with Azure Messaging SDKs for Event Hubs and Service Bus"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-microsoft-defender-security",
@@ -1576,7 +2104,19 @@
         "scripts/agent.py"
       ],
       "sha256": "9aaf052ed7baf97ccda0281800c3dd616ec7b6c6861ed7715923b02c4c0a8b77",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "instructs security practitioners on deploying Microsoft Defender for Cloud as a cloud-native application protection platform for Azure, multi-cloud, and hybrid environments. It covers enabling Defender plans for servers, containers, storage, and databases, configuring security recommendations, managing Secure Score, and integrating with the unified Defender portal for centralized threat management.",
+      "triggers": [
+        "Microsoft Defender Security",
+        "azure microsoft defender security",
+        "instructs security practitioners on deploying Microsoft Defender for Cloud as a cloud-native application protection platform for Azure, multi-cloud, and hybrid environments"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:azure-prepare",
@@ -1759,7 +2299,19 @@
         "references/specialized-routing.md"
       ],
       "sha256": "24e279e2335f99cf3d9e99592d0fd637c4f992f4dd1753d95d3ea279557371b4",
-      "version": "1.2.13"
+      "version": "1.2.13",
+      "summary": "Prepare Azure apps for deployment (infra Bicep/Terraform, azure.yaml, Dockerfiles). Use for create/modernize or create+deploy; not cross-cloud migration (use azure-cloud-migrate). DO NOT USE FOR: copilot-sdk apps (use azure-hosted-copilot-sdk)..",
+      "triggers": [
+        "Prepare",
+        "azure prepare",
+        "Prepare Azure apps for deployment (infra Bicep/Terraform, azure"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-privileged-identity-management",
@@ -1794,7 +2346,19 @@
         "scripts/process.py"
       ],
       "sha256": "c35c06ceb2bc072b127895205ddcdc5d5cfb2af1d47f4ffe2de3d423dac20ab5",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Configure Microsoft Entra Privileged Identity Management to enforce just-in-time role activation, approval workflows, and access reviews for Azure AD privileged roles.",
+      "triggers": [
+        "Privileged Identity Management",
+        "azure privileged identity management",
+        "Configure Microsoft Entra Privileged Identity Management to enforce just-in-time role activation, approval workflows, and access reviews for Azure AD privileged roles"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:azure-quotas",
@@ -1818,7 +2382,19 @@
         "scripts/check-quota.sh"
       ],
       "sha256": "b9f317e3c68482a0dc42aae4fa2054ccc4a1037297c184fafbef00dce5f4156a",
-      "version": "1.1.2"
+      "version": "1.1.2",
+      "summary": "Check/manage Azure quotas and usage across providers. For deployment planning, capacity validation, region selection. WHEN: \\\\\\\"check quotas\\\\\\\", \\\\\\\"service limits\\\\\\\", \\\\\\\"current usage\\\\\\\", \\\\\\\"request quota increase\\\\\\\", \\\\\\\"quota exceeded\\\\\\\", \\\\\\\"validate capacity\\\\\\\", \\\\\\\"regional availability\\\\\\\", \\\\\\\"provisioning limits\\\\\\\", \\\\\\\"vCPU limit\\\\\\\", \\\\\\\"how many vCPUs available in my subscription\\\\\\\".",
+      "triggers": [
+        "Quotas",
+        "azure quotas",
+        "Check/manage Azure quotas and usage across providers"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-rbac",
@@ -1838,7 +2414,20 @@
         "SKILL.md"
       ],
       "sha256": "8b5754f3b55f5ed968718bdc76c20f0a51891627f0cf9b964fe47dfade2b1d2c",
-      "version": "1.1.1"
+      "version": "1.1.1",
+      "summary": "Helps users find the right Azure RBAC role for an identity with least privilege access, then generate CLI commands and Bicep code to assign it. Also provides guidance on permissions required to grant roles. WHEN: bicep for role assignment, what role should I assign, least privilege role, RBAC role for, role to read blobs, role for managed identity, custom role definition, assign role to identity, what role do I need to grant access, permissions to assign roles.",
+      "triggers": [
+        "Rbac",
+        "azure rbac",
+        "Helps users find the right Azure RBAC role for an identity with least privilege access, then generate CLI commands and Bicep code to assign it"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure",
+        "role based access control"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-reliability",
@@ -1870,7 +2459,19 @@
         "references/zone-redundancy-checks.md"
       ],
       "sha256": "196f42b3b4319b78875a041e0f0f7863912594dec2fe09c7bcad256c46d99aed",
-      "version": "1.0.2"
+      "version": "1.0.2",
+      "summary": "Assess and improve the reliability posture of PaaS Applications (Azure Functions and Azure App Service). Scans deployed resources for zone redundancy, ZRS storage, health probes, and multi-region failover. Presents a feature-pivoted checklist, then drives staged remediation (CLI or IaC patches) end-to-end with user confirmation. WHEN: \\\\\\\"assess reliability\\\\\\\", \\\\\\\"check reliability\\\\\\\", \\\\\\\"zone redundant\\\\\\\", \\\\\\\"multi-region failover\\\\\\\", \\\\\\\"high availability\\\\\\\", \\\\\\\"disaster recovery\\\\\\\", \\\\\\\"single points of failure\\\\\\\", \\\\\\\"reliability posture\\\\\\\", \\\\\\\"resiliency\\\\\\\".",
+      "triggers": [
+        "Reliability",
+        "azure reliability",
+        "Assess and improve the reliability posture of PaaS Applications (Azure Functions and Azure App Service)"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-resource-lookup",
@@ -1892,7 +2493,19 @@
         "references/azure-resource-graph.md"
       ],
       "sha256": "28728e4527eee7cc1f5c1472de3b7dab233e1a3fc1540e5e14f7cbf7a6e64d7d",
-      "version": "1.1.3"
+      "version": "1.1.3",
+      "summary": "List, find, and show Azure resources across subscriptions or resource groups. Handles prompts like \\\\\\\"list the websites in my subscription\\\\\\\", \\\\\\\"list my web apps\\\\\\\", \\\\\\\"show my app services\\\\\\\", \\\\\\\"list virtual machines\\\\\\\", \\\\\\\"list my VMs\\\\\\\", \\\\\\\"show storage accounts\\\\\\\", \\\\\\\"find container apps\\\\\\\", and \\\\\\\"what resources do I have\\\\\\\". USE FOR: list websites, list web apps, list app services, show websites in subscription, resource inventory, find resources by tag, tag analysis, orphaned resource discovery (not for cost analysis), unattached disks, count resources by type, cross-subscription lookup, and Azure Resource Graph queries. DO NOT USE FOR: deploying/changing resources (use azure-deploy), cost optimization (use azure-cost), or non-Azure clouds.",
+      "triggers": [
+        "Resource Lookup",
+        "azure resource lookup",
+        "List, find, and show Azure resources across subscriptions or resource groups"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-resource-visualizer",
@@ -1916,7 +2529,19 @@
         "references/azure-resource-graph.md"
       ],
       "sha256": "ff63afe1458a598bde8665d5c1742898ab16427417baa24cccedbb9d68910fbe",
-      "version": "1.1.2"
+      "version": "1.1.2",
+      "summary": "Analyze Azure resource groups and generate detailed Mermaid architecture diagrams showing the relationships between individual resources. WHEN: create architecture diagram, visualize Azure resources, show resource relationships, generate Mermaid diagram, analyze resource group, diagram my resources, architecture visualization, resource topology, map Azure infrastructure.",
+      "triggers": [
+        "Resource Visualizer",
+        "azure resource visualizer",
+        "Analyze Azure resource groups and generate detailed Mermaid architecture diagrams showing the relationships between individual resources"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-service-principal-abuse-detection",
@@ -1951,7 +2576,19 @@
         "scripts/process.py"
       ],
       "sha256": "8b0c9b7eecad5cb93c7af411082921d5b862faa46299f96dd26911bb200ae938",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Detect and investigate Azure service principal abuse including privilege escalation, credential compromise, admin consent bypass, and unauthorized enumeration in Microsoft Entra ID environments.",
+      "triggers": [
+        "Service Principal Abuse Detection",
+        "azure service principal abuse detection",
+        "Detect and investigate Azure service principal abuse including privilege escalation, credential compromise, admin consent bypass, and unauthorized enumeration in Microsoft Entra ID environments"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:azure-storage",
@@ -1984,7 +2621,19 @@
         "references/sdk/azure-storage-queue-ts.md"
       ],
       "sha256": "38027b5a3a000f13902e087d8b3105879ac1c231edc77f22a1b5806f277d65f8",
-      "version": "1.1.2"
+      "version": "1.1.2",
+      "summary": "Azure Storage Services including Blob Storage, File Shares, Queue Storage, Table Storage, and Data Lake. Answers questions about storage access tiers (hot, cool, cold, archive), when to use each tier, and tier comparison. Provides object storage, SMB file shares, async messaging, NoSQL key-value, and big data analytics. Includes lifecycle management. USE FOR: blob storage, file shares, queue storage, table storage, data lake, upload files, download blobs, storage accounts, access tiers, storage tiers, hot cool cold archive, storage tier comparison, when to use storage tiers, lifecycle management, Azure Storage concepts. DO NOT USE FOR: SQL databases, Cosmos DB (use azure-prepare), messaging with Event Hubs or Service Bus (use azure-messaging).",
+      "triggers": [
+        "Storage",
+        "azure storage",
+        "Azure Storage Services including Blob Storage, File Shares, Queue Storage, Table Storage, and Data Lake"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-storage-account-misconfiguration-detection",
@@ -2017,7 +2666,19 @@
         "scripts/agent.py"
       ],
       "sha256": "9eccbffaf550a79caa4cd0dde3a6af18cbbcef0b401e0e7dd7ccf477f5ae9f19",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Audit Azure Blob and ADLS storage accounts for public access exposure, weak or long-lived SAS tokens, missing encryption at rest, disabled HTTPS-only traffic, and outdated TLS versions using the azure-mgmt-storage Python SDK.",
+      "triggers": [
+        "Storage Account Misconfiguration Detection",
+        "azure storage account misconfiguration detection",
+        "Audit Azure Blob and ADLS storage accounts for public access exposure, weak or long-lived SAS tokens, missing encryption at rest, disabled HTTPS-only traffic, and outdated TLS versions using the azure-mgmt-storage Python SDK"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:azure-storage-misconfiguration-detection",
@@ -2046,7 +2707,19 @@
         "scripts/agent.py"
       ],
       "sha256": "7b0ebb48ba39fd5836d761a00b8ed3343392305f95aea946c6e9eb81e0e11285",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Detecting misconfigured Azure Storage accounts including publicly accessible blob containers, missing encryption settings, overly permissive SAS tokens, disabled logging, and network access violations using Azure CLI, PowerShell, and Microsoft Defender for Storage.",
+      "triggers": [
+        "Storage Misconfiguration Detection",
+        "azure storage misconfiguration detection",
+        "Detecting misconfigured Azure Storage accounts including publicly accessible blob containers, missing encryption settings, overly permissive SAS tokens, disabled logging, and network access violations using Azure CLI, PowerShell, and Microsoft Defender for Storage"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:azure-upgrade",
@@ -2096,7 +2769,19 @@
         "references/workflow-details.md"
       ],
       "sha256": "a887affffd93cf02691c110a8f789ff38b8c637c9a7815b0ba5a7816baf14dca",
-      "version": "1.1.3"
+      "version": "1.1.3",
+      "summary": "Assess and upgrade Azure workloads between plans, tiers, or SKUs, or modernize Azure SDK dependencies in source code. WHEN: upgrade Consumption to Flex Consumption, upgrade Azure Functions plan, change hosting plan, function app SKU, migrate App Service to Container Apps, modernize legacy Azure Java SDKs (com.microsoft.azure to com.azure), migrate Azure Cache for Redis (ACR/ACRE) to Azure Managed Redis (AMR).",
+      "triggers": [
+        "Upgrade",
+        "azure upgrade",
+        "Assess and upgrade Azure workloads between plans, tiers, or SKUs, or modernize Azure SDK dependencies in source code"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:azure-validate",
@@ -2132,7 +2817,19 @@
         "references/role-verification.md"
       ],
       "sha256": "1612a0eaea28d64223ea4ab5c7d3aa9d21c9663b0f379aa63d1aa7459361eab8",
-      "version": "1.1.2"
+      "version": "1.1.2",
+      "summary": "Pre-deployment validation for Azure readiness. Run deep checks on configuration, infrastructure (Bicep or Terraform), RBAC role assignments, managed identity permissions, and prerequisites before deploying. WHEN: validate my app, check deployment readiness, run preflight checks, verify configuration, check if ready to deploy, validate azure.yaml, validate Bicep, test before deploying, troubleshoot deployment errors, validate Azure Functions, validate function app, validate serverless deployment, verify RBAC roles, check role assignments, review managed identity permissions, what-if analysis, validate Container Apps deployment.",
+      "triggers": [
+        "Validate",
+        "azure validate",
+        "Pre-deployment validation for Azure readiness"
+      ],
+      "keywords": [
+        "az",
+        "microsoft-azure"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:brainstorming",
@@ -2158,7 +2855,15 @@
         "scripts/stop-server.sh"
       ],
       "sha256": "6953e03d276a6d069d23494816f49f5d693d92f136cb0c4d5cdfc31f2119b762",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.",
+      "triggers": [
+        "Brainstorming",
+        "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior"
+      ],
+      "keywords": [],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:calico-kubernetes-network-policy",
@@ -2190,7 +2895,20 @@
         "scripts/process.py"
       ],
       "sha256": "1240c1552912961ad01029fd2d3562755a90191ed1168fb330b8ec3a0dca8fb6",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Implement Kubernetes network segmentation using Calico NetworkPolicy and GlobalNetworkPolicy for zero-trust pod-to-pod communication.",
+      "triggers": [
+        "Kubernetes Network Policy",
+        "calico kubernetes network policy",
+        "Implement Kubernetes network segmentation using Calico NetworkPolicy and GlobalNetworkPolicy for zero-trust pod-to-pod communication"
+      ],
+      "keywords": [
+        "k8",
+        "k8s",
+        "kube"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:clickhouse-architecture-advisor",
@@ -2225,7 +2943,18 @@
         "schemas/recommendation_schema.yaml"
       ],
       "sha256": "97d3a6f1f535b316ee4c4141630c8e7ce46eb243a3093d071c4e11df0ad9883e",
-      "version": "0.1.0"
+      "version": "0.1.0",
+      "summary": "Must use when designing ClickHouse architectures, selecting between ingestion or modeling patterns, or translating best practices into workload-specific system designs. Complements clickhouse-best-practices with decision frameworks and explicit provenance labels.",
+      "triggers": [
+        "Architecture Advisor",
+        "clickhouse architecture advisor",
+        "Must use when designing ClickHouse architectures, selecting between ingestion or modeling patterns, or translating best practices into workload-specific system designs"
+      ],
+      "keywords": [
+        "db"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:clickhouse-best-practices",
@@ -2282,7 +3011,18 @@
         "rules/schema-types-native-types.md"
       ],
       "sha256": "689bd08cf6effb471ec6632324b71b7b108a346a291adb399b5fad1fe71d7e41",
-      "version": "0.4.0"
+      "version": "0.4.0",
+      "summary": "Must use when reviewing ClickHouse schemas, queries, or configurations. Contains 31 rules that MUST be checked before providing recommendations. Always read relevant rule files and cite specific rules in responses.",
+      "triggers": [
+        "Best Practices",
+        "clickhouse best practices",
+        "Must use when reviewing ClickHouse schemas, queries, or configurations"
+      ],
+      "keywords": [
+        "db"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:cloud-asset-inventory-cartography",
@@ -2317,7 +3057,15 @@
         "scripts/process.py"
       ],
       "sha256": "e5371db07f1c982248939356b4976e8d28fe677a2bfce87d6f813dc433b4abe9",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Perform comprehensive cloud asset inventory and relationship mapping using Cartography to build a Neo4j security graph of infrastructure assets, IAM permissions, and attack paths across AWS, GCP, and Azure.",
+      "triggers": [
+        "Asset Inventory Cartography",
+        "Perform comprehensive cloud asset inventory and relationship mapping using Cartography to build a Neo4j security graph of infrastructure assets, IAM permissions, and attack paths across AWS, GCP, and Azure"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:cloud-cis-benchmark-audit",
@@ -2346,7 +3094,17 @@
         "scripts/agent.py"
       ],
       "sha256": "cdc1c2e07a0748f6f4b56550692192d3a10608621937af54d872ceae166abc0a",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "details how to conduct cloud security audits using Center for Internet Security benchmarks for AWS, Azure, and GCP. It covers interpreting CIS Foundations Benchmark controls, running automated assessments with tools like Prowler and ScoutSuite, remediating failed controls, and maintaining continuous compliance monitoring against CIS v5 for AWS, v4 for Azure, and v4 for GCP.",
+      "triggers": [
+        "CIS Benchmark Audit",
+        "details how to conduct cloud security audits using Center for Internet Security benchmarks for AWS, Azure, and GCP"
+      ],
+      "keywords": [
+        "center for internet security"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:cloud-compromised-credential-detection",
@@ -2376,7 +3134,15 @@
         "scripts/agent.py"
       ],
       "sha256": "d285d7c845e87240768985cd4bc5e10747239cbe5cfac0daae1c02d5bfddb579",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Detecting compromised cloud credentials across AWS, Azure, and GCP by analyzing anomalous API activity, impossible travel patterns, unauthorized resource provisioning, and credential abuse indicators using GuardDuty, Defender for Identity, and SCC Event Threat Detection.",
+      "triggers": [
+        "Compromised Credential Detection",
+        "Detecting compromised cloud credentials across AWS, Azure, and GCP by analyzing anomalous API activity, impossible travel patterns, unauthorized resource provisioning, and credential abuse indicators using GuardDuty, Defender for Identity, and SCC Event Threat Detection"
+      ],
+      "keywords": [],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:cloud-forensics-investigation",
@@ -2402,7 +3168,15 @@
         "scripts/agent.py"
       ],
       "sha256": "6498650f63ca8b45a8c7442b98691fccaefb51aa2d262ae3223843eaa86babee",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Conduct forensic investigations in cloud environments by collecting and analyzing logs, snapshots, and metadata from AWS, Azure, and GCP services.",
+      "triggers": [
+        "Forensics Investigation",
+        "Conduct forensic investigations in cloud environments by collecting and analyzing logs, snapshots, and metadata from AWS, Azure, and GCP services"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:cloud-incident-response",
@@ -2430,7 +3204,15 @@
         "scripts/agent.py"
       ],
       "sha256": "ea288c398a8ef2f63c53ba1cbb9b4bb5b146a236cfbee71cbd78553c9aa6462d",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Responds to security incidents in cloud environments (AWS, Azure, GCP) by performing identity-based containment, cloud-native log analysis, resource isolation, and forensic evidence acquisition adapted for ephemeral cloud infrastructure. Activates for requests involving cloud incident response, AWS security incident, Azure compromise, GCP breach, cloud forensics, or cloud identity compromise.",
+      "triggers": [
+        "Incident Response",
+        "Responds to security incidents in cloud environments (AWS, Azure, GCP) by performing identity-based containment, cloud-native log analysis, resource isolation, and forensic evidence acquisition adapted for ephemeral cloud infrastructure"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:cloud-penetration-testing",
@@ -2458,7 +3240,15 @@
         "scripts/agent.py"
       ],
       "sha256": "02d9bf68cc93ad68b381714d8d44e66f6369a927f63400fd212a3edeead74142",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "outlines methodologies for performing authorized penetration testing against AWS, Azure, and GCP cloud environments. It covers understanding the shared responsibility model for testing scope, leveraging cloud-specific attack tools like Pacu and ScoutSuite, exploiting IAM misconfigurations, testing for SSRF to cloud metadata services, and reporting findings aligned to MITRE ATT&CK Cloud matrix.",
+      "triggers": [
+        "Penetration Testing",
+        "outlines methodologies for performing authorized penetration testing against AWS, Azure, and GCP cloud environments"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:cloud-security-posture-management",
@@ -2489,7 +3279,15 @@
         "scripts/agent.py"
       ],
       "sha256": "68d5edb8a64121f553eec8c1edece5b4824fab0b8f70048eb9b10272720576c9",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Implementing Cloud Security Posture Management (CSPM) to continuously monitor multi-cloud environments for misconfigurations, compliance violations, and security risks using Prowler, ScoutSuite, AWS Security Hub, Azure Defender, and GCP Security Command Center.",
+      "triggers": [
+        "Security Posture Management",
+        "Implementing Cloud Security Posture Management (CSPM) to continuously monitor multi-cloud environments for misconfigurations, compliance violations, and security risks using Prowler, ScoutSuite, AWS Security Hub, Azure Defender, and GCP Security Command Center"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:cloud-serverless-security-review",
@@ -2518,7 +3316,15 @@
         "scripts/agent.py"
       ],
       "sha256": "13868f416cbc553eaad348ff5f994a612c4f00d22a38d372b9d130da750a944e",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Performing security reviews of serverless functions across AWS Lambda, Azure Functions, and GCP Cloud Functions to identify overly permissive execution roles, insecure environment variables, injection vulnerabilities, and missing runtime protections.",
+      "triggers": [
+        "Serverless Security Review",
+        "Performing security reviews of serverless functions across AWS Lambda, Azure Functions, and GCP Cloud Functions to identify overly permissive execution roles, insecure environment variables, injection vulnerabilities, and missing runtime protections"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:cloud-storage-access-pattern-analysis",
@@ -2544,7 +3350,15 @@
         "scripts/agent.py"
       ],
       "sha256": "f16911cf465edd94cae50069bf9b153de2d7ba51d52c9e7da47f6a19b34b08d1",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Detect abnormal access patterns in AWS S3, GCS, and Azure Blob Storage by analyzing CloudTrail Data Events, GCS audit logs, and Azure Storage Analytics. Identifies after-hours bulk downloads, access from new IP addresses, unusual API calls (GetObject spikes), and potential data exfiltration using statistical baselines and time-series anomaly detection.",
+      "triggers": [
+        "Storage Access Pattern Analysis",
+        "Detect abnormal access patterns in AWS S3, GCS, and Azure Blob Storage by analyzing CloudTrail Data Events, GCS audit logs, and Azure Storage Analytics"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:containers-image-hardening",
@@ -2576,7 +3390,15 @@
         "scripts/process.py"
       ],
       "sha256": "0e7e65ac63294a337108a938337613f0c4a3a33559f5adbf8f972444f8c3dadf",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "covers hardening container images by minimizing attack surface, removing unnecessary packages, implementing multi-stage builds, configuring non-root users, and applying CIS Docker Benchmark recommendations to produce secure production-ready images.",
+      "triggers": [
+        "Image Hardening",
+        "covers hardening container images by minimizing attack surface, removing unnecessary packages, implementing multi-stage builds, configuring non-root users, and applying CIS Docker Benchmark recommendations to produce secure production-ready images"
+      ],
+      "keywords": [],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:containers-registry-image-security",
@@ -2605,7 +3427,15 @@
         "scripts/agent.py"
       ],
       "sha256": "1178a8d822a4ebd1c4355c14d35d5afcf4938e439293d3dfb2d403279816a697",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Securing container registry images by implementing vulnerability scanning with Trivy and Grype, enforcing image signing with Cosign and Sigstore, configuring registry access controls, and building CI/CD pipelines that prevent deploying unscanned or unsigned images.",
+      "triggers": [
+        "Registry Image Security",
+        "Securing container registry images by implementing vulnerability scanning with Trivy and Grype, enforcing image signing with Cosign and Sigstore, configuring registry access controls, and building CI/CD pipelines that prevent deploying unscanned or unsigned images"
+      ],
+      "keywords": [],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:distroless-minimal-base-image",
@@ -2640,7 +3470,22 @@
         "scripts/process.py"
       ],
       "sha256": "1ccf04c909c833c8f395447306e5eee845eebb51c6f5422eda014fbc36030ec6",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Reduce container attack surface by building application images on Google distroless base images that contain only the application runtime with no shell, package manager, or unnecessary OS utilities.",
+      "triggers": [
+        "Minimal Base Image",
+        "distroless minimal base image",
+        "Reduce container attack surface by building application images on Google distroless base images that contain only the application runtime with no shell, package manager, or unnecessary OS utilities"
+      ],
+      "keywords": [
+        "container-image",
+        "k8",
+        "k8s",
+        "kube",
+        "oci-image"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:docker-container-forensics",
@@ -2667,7 +3512,19 @@
         "scripts/agent.py"
       ],
       "sha256": "78167fb9ffcdc9e27ec25cbc7ca8f2f97ca461b0065860abfe7bb7219e64617f",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Investigate compromised Docker containers by analyzing images, layers, volumes, logs, and runtime artifacts to identify malicious activity and evidence.",
+      "triggers": [
+        "Container Forensics",
+        "docker container forensics",
+        "Investigate compromised Docker containers by analyzing images, layers, volumes, logs, and runtime artifacts to identify malicious activity and evidence"
+      ],
+      "keywords": [
+        "container-image",
+        "oci-image"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:docker-daemon-hardening",
@@ -2699,7 +3556,19 @@
         "scripts/process.py"
       ],
       "sha256": "d2844c6200661fdcc78bbe0d51ea04733f6d31b37a37b85348339f88b0b3865e",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Harden the Docker daemon by configuring daemon.json with user namespace remapping, TLS authentication, rootless mode, and CIS benchmark controls.",
+      "triggers": [
+        "Daemon Hardening",
+        "docker daemon hardening",
+        "Harden the Docker daemon by configuring daemon"
+      ],
+      "keywords": [
+        "container-image",
+        "oci-image"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:docker-production-hardening",
@@ -2728,7 +3597,19 @@
         "scripts/process.py"
       ],
       "sha256": "e9b07b8758c8542ffe0dd36a323df8105a9c1365824120bf473f75c390bd1c1d",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Hardening Docker containers for production involves applying security best practices aligned with CIS Docker Benchmark v1.8.0 to minimize attack surface, prevent privilege escalation, and enforce leas.",
+      "triggers": [
+        "Production Hardening",
+        "docker production hardening",
+        "Hardening Docker containers for production involves applying security best practices aligned with CIS Docker Benchmark v1"
+      ],
+      "keywords": [
+        "container-image",
+        "oci-image"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:docx",
@@ -2806,7 +3687,15 @@
         "scripts/templates/people.xml"
       ],
       "sha256": "8bc3825830b68376c7168db8ba40bf609f86a108842cc21e1f586aaa0f9d24b3",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from.docx files, inserting or replacing images in documents, performing find-and-replace in Word files.",
+      "triggers": [
+        "Docx",
+        "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents ("
+      ],
+      "keywords": [],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:fortinet-config-change",
@@ -2830,9 +3719,21 @@
         "SKILL.md",
         "scripts/preview-diff.sh"
       ],
-      "sha256": "f177deb2e79e9f6c10a828b36106455caf3632f3cbd725f15831a60b3f301acc",
+      "sha256": "242b551994c2c8b019af610c0daa8149e8af3c476a5ee4c3c5357a85035f530b",
       "compatibility": "fortios>=7.2,<7.6,fortimanager>=7.2",
-      "version": "1.3.0"
+      "version": "1.3.0",
+      "summary": "Use when an operator asks to change a Fortinet device or policy. Walks an ADOM-aware FortiManager change: pull current config, preview a unified diff, wait for the mutation gate, apply, verify with a get/show, and commit a revision. Never skips preview or post-verify.",
+      "triggers": [
+        "change a Fortinet firewall policy or address object",
+        "push a FortiManager config with preview and rollback",
+        "apply a FortiGate rule change through the mutation gate"
+      ],
+      "keywords": [
+        "forti",
+        "fortigate"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:gcp-alloydb-basics",
@@ -2859,7 +3760,19 @@
         "references/mcp-usage.md"
       ],
       "sha256": "2f85af7436c64e95e1f07219d2dbcfe6a5802abfc978aba392be96f96499eb0d",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Manages clusters, instances, and backups for AlloyDB for PostgreSQL, and integrates with AlloyDB model context protocol (MCP) tools for automated database operations.",
+      "triggers": [
+        "Alloydb Basics",
+        "gcp alloydb basics",
+        "Manages clusters, instances, and backups for AlloyDB for PostgreSQL, and integrates with AlloyDB model context protocol (MCP) tools for automated database operations"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-bigquery-basics",
@@ -2886,7 +3799,19 @@
         "references/mcp-usage.md"
       ],
       "sha256": "19e9ff06c03a1dfb4a50b6240385e9091d93d36c5cf0f488757515328035e7c5",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Manages datasets, tables, and jobs in BigQuery, and integrates with BigQuery ML and Gemini for advanced data analytics and AI-driven insights. Use when you need to interact with BigQuery, run SQL queries, manage BigQuery resources, or leverage BigQuery's built-in ML capabilities. Also use when performing data analysis, ingesting data into BigQuery, or developing AI applications on BigQuery.",
+      "triggers": [
+        "Bigquery Basics",
+        "gcp bigquery basics",
+        "Manages datasets, tables, and jobs in BigQuery, and integrates with BigQuery ML and Gemini for advanced data analytics and AI-driven insights"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-cloud-run-basics",
@@ -2913,7 +3838,19 @@
         "references/mcp-usage.md"
       ],
       "sha256": "e9b7ea1d4125777f15538337010424d1da7ee59bfe01202b95ebd63ecca696d9",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Manages Cloud Run services, jobs, and worker pools. Use when you need to deploy applications responding to HTTP requests (services), run event-triggered or scheduled tasks (jobs), or handle always-on pull-based background processing (worker pools).",
+      "triggers": [
+        "Cloud RUN Basics",
+        "gcp cloud run basics",
+        "Manages Cloud Run services, jobs, and worker pools"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-cloud-sql-basics",
@@ -2940,7 +3877,20 @@
         "references/mcp-usage.md"
       ],
       "sha256": "dd185ddbb7414b03440ee918f87d7c7cf01bbd91736091ba1260bcc182557866",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "This file generates or explains Cloud SQL resources. Use this file when the user asks to create a Cloud SQL instance or database for MySQL, PostgreSQL, or SQL Server. Cloud SQL manages third-party MySQL, PostgreSQL, and SQL Server instances as resources in Cloud SQL. For example, when Cloud SQL creates an open-source MySQL instance, the resulting resource is a Cloud SQL for MySQL instance that Google Cloud manages. Cloud SQL handles backups, high availability, and secure connectivity for relational database workloads.",
+      "triggers": [
+        "Cloud SQL Basics",
+        "gcp cloud sql basics",
+        "This file generates or explains Cloud SQL resources"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform",
+        "structured query language"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-firebase-basics",
@@ -2968,7 +3918,19 @@
         "references/mcp-usage.md"
       ],
       "sha256": "f2ffd0375e1faf654800f322d73c0efc2cd53199619eac165ccbbec477f4b278",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Use this skill whenever you are working on a project that uses Firebase products or services, especially for mobile or web apps.",
+      "triggers": [
+        "Firebase Basics",
+        "gcp firebase basics",
+        "Use this skill whenever you are working on a project that uses Firebase products or services, especially for mobile or web apps"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-gemini-agents-api",
@@ -2990,7 +3952,20 @@
         "SKILL.md"
       ],
       "sha256": "89d0d664aea42719c3e3d5d900a819fc6f7cc2a9e27ae6746f8c7335d0154113",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Manages custom Agent resources on Gemini Enterprise Agent Platform. Use when the user wants to programmatically create, configure, list, update, or delete stateful, server-managed Agent resources (including mounting files, skills, and tools) before executing conversations.",
+      "triggers": [
+        "Gemini Agents API",
+        "gcp gemini agents api",
+        "Manages custom Agent resources on Gemini Enterprise Agent Platform"
+      ],
+      "keywords": [
+        "application programming interface",
+        "google-cloud",
+        "google-cloud-platform"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-gemini-api",
@@ -3020,7 +3995,20 @@
         "references/text_and_multimodal.md"
       ],
       "sha256": "3eb1688937ee77cc288e1feedc8098e9adca9b670a240f0349f9ef99e88c6daa",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Guides the usage of the Gemini API on Agent Platform with the Google Gen AI SDK. Use when the user asks about using Gemini in an enterprise environment or explicitly mentions Vertex AI, Google Cloud, or Agent Platform. Covers SDK usage (Python, JS/TS, Go, Java, C#), capabilities like Live API, tools, multimedia generation, caching, and batch prediction.",
+      "triggers": [
+        "Gemini API",
+        "gcp gemini api",
+        "Guides the usage of the Gemini API on Agent Platform with the Google Gen AI SDK"
+      ],
+      "keywords": [
+        "application programming interface",
+        "google-cloud",
+        "google-cloud-platform"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-gemini-interactions-api",
@@ -3042,7 +4030,20 @@
         "SKILL.md"
       ],
       "sha256": "44b0e29c5dfbf5fa3a42908e14727737bb4a1809a552d790c42971a0dde28d89",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Guides the usage of Gemini Interactions API on Gemini Enterprise Agent Platform. Use when the user wants to use the stateful, server-managed Interactions API for multi-turn conversations, background execution, streaming, structured output, and function calling on the Agent Platform.",
+      "triggers": [
+        "Gemini Interactions API",
+        "gcp gemini interactions api",
+        "Guides the usage of Gemini Interactions API on Gemini Enterprise Agent Platform"
+      ],
+      "keywords": [
+        "application programming interface",
+        "google-cloud",
+        "google-cloud-platform"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-gke-basics",
@@ -3089,7 +4090,19 @@
         "references/mcp-usage.md"
       ],
       "sha256": "2d82fa375ad8599fa9ca1cd9c84187f56d19af603ea0eed0e8749f454e2c4526",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Plan, create, and configure production-ready Google Kubernetes Engine (GKE) clusters using the golden path Autopilot configuration. Covers Day-0 checklist, Autopilot vs Standard, networking (private clusters, VPC-native, Gateway API), security (Workload Identity, Secret Manager, RBAC hardening), observability, scaling, cost optimization, and AI/ML inference. WHEN: create GKE cluster, provision GKE environment, design GKE networking, secure GKE, optimize GKE cost, GKE autoscaling, GKE inference, GKE upgrade, GKE observability, GKE multi-tenancy, GKE batch, GKE HPC, GKE compute class.",
+      "triggers": [
+        "GKE Basics",
+        "gcp gke basics",
+        "Plan, create, and configure production-ready Google Kubernetes Engine (GKE) clusters using the golden path Autopilot configuration"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-iam-permission-audit",
@@ -3117,7 +4130,20 @@
         "scripts/agent.py"
       ],
       "sha256": "adf5cdfa32fd2e0715fc69ab4c2682ca0443798366980ae0a3e5e395aa7196f4",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Auditing Google Cloud Platform IAM permissions to identify overly permissive bindings, primitive role usage, service account key proliferation, and cross-project access risks using gcloud CLI, Policy Analyzer, and IAM Recommender.",
+      "triggers": [
+        "IAM Permission Audit",
+        "gcp iam permission audit",
+        "Auditing Google Cloud Platform IAM permissions to identify overly permissive bindings, primitive role usage, service account key proliferation, and cross-project access risks using gcloud CLI, Policy Analyzer, and IAM Recommender"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform",
+        "identity and access management"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:gcp-networking-observability",
@@ -3145,7 +4171,19 @@
         "references/vpc-flow-analysis.md"
       ],
       "sha256": "b197996e20545a85a83af49ba2934e347057f64b0d494dc5fd16d9eb548a3edd",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Investigates Google Cloud networking issues by analyzing logs, metrics, and diagnostics. Use when investigating VPC Flow Logs, NAT, firewall, or threat logs, querying latency and throughput metrics, or running Connectivity Tests for path diagnostics.",
+      "triggers": [
+        "Networking Observability",
+        "gcp networking observability",
+        "Investigates Google Cloud networking issues by analyzing logs, metrics, and diagnostics"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-recipe-auth",
@@ -3166,7 +4204,19 @@
         "SKILL.md"
       ],
       "sha256": "b9858a066251105cc3b4e9a9d89dfcdcace79dd58f725dee80978a154a64fdb7",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Provides expert guidance on authenticating and authorizing to Google Cloud services and APIs, covering human users, service identities, Application Default Credentials (ADC), and best practices for secure access.",
+      "triggers": [
+        "Recipe Auth",
+        "gcp recipe auth",
+        "Provides expert guidance on authenticating and authorizing to Google Cloud services and APIs, covering human users, service identities, Application Default Credentials (ADC), and best practices for secure access"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-recipe-onboarding",
@@ -3188,7 +4238,19 @@
         "references/google-cloud-setup.md"
       ],
       "sha256": "40f9746191879ed8d25097c8dec7ce7c61a21473fd90f19db8f3941983709930",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Guidance for a developer's first steps on Google Cloud, covering account creation, billing setup, project management, and deploying a first resource.",
+      "triggers": [
+        "Recipe Onboarding",
+        "gcp recipe onboarding",
+        "Guidance for a developer's first steps on Google Cloud, covering account creation, billing setup, project management, and deploying a first resource"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-waf-cost-optimization",
@@ -3210,7 +4272,20 @@
         "SKILL.md"
       ],
       "sha256": "6d71ed48f6f959709e89a55af554b7fd661aa78c85c208ac56d8955be6426459",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Generates cost optimization guidance for Google Cloud workloads based on the Google Cloud Well-Architected Framework (WAF). Use this skill to evaluate a workload, identify cost requirements and constraints, and provide actionable recommendations for build, deploy, and manage the workload cost-efficiently in Google Cloud.",
+      "triggers": [
+        "WAF Cost Optimization",
+        "gcp waf cost optimization",
+        "Generates cost optimization guidance for Google Cloud workloads based on the Google Cloud Well-Architected Framework (WAF)"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform",
+        "web application firewall"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-waf-operational-excellence",
@@ -3232,7 +4307,20 @@
         "SKILL.md"
       ],
       "sha256": "36cb6aa55a2b02a5c6ff766bc2597a7db2b0a0aaf617b71fdc0ac72900a44b84",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Generates operations-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Operational Excellence pillar of the Google Cloud Well-Architected Framework (WAF). Use this skill to evaluate a workload, identify operational requirements, and provide actionable recommendations for deployment, monitoring, and incident management.",
+      "triggers": [
+        "WAF Operational Excellence",
+        "gcp waf operational excellence",
+        "Generates operations-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Operational Excellence pillar of the Google Cloud Well-Architected Framework (WAF)"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform",
+        "web application firewall"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-waf-performance-optimization",
@@ -3254,7 +4342,20 @@
         "SKILL.md"
       ],
       "sha256": "bf69032b7999ed75eb5e7daa4915c41ec1380053801747406e3806f037e48d99",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Generates performance-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Performance Optimization pillar of the Google Cloud Well-Architected Framework (WAF). Use this skill to evaluate a workload, identify performance requirements, and provide actionable recommendations for resource allocation, modular design, and elasticity.",
+      "triggers": [
+        "WAF Performance Optimization",
+        "gcp waf performance optimization",
+        "Generates performance-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Performance Optimization pillar of the Google Cloud Well-Architected Framework (WAF)"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform",
+        "web application firewall"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-waf-reliability",
@@ -3275,7 +4376,20 @@
         "SKILL.md"
       ],
       "sha256": "15a7850bbce7434307d81ad113dc211b024466e1ead06c576ca371395e358e24",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Generates reliability-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Google Cloud Well-Architected Framework. Use this skill to evaluate a workload, identify reliability requirements, and provide actionable recommendations for build, deploy, and manage the workload reliably in Google Cloud.",
+      "triggers": [
+        "WAF Reliability",
+        "gcp waf reliability",
+        "Generates reliability-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Google Cloud Well-Architected Framework"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform",
+        "web application firewall"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-waf-security",
@@ -3296,7 +4410,20 @@
         "SKILL.md"
       ],
       "sha256": "275dbb0f1c1679207a1dfed95e1ee97fb43950c934e09011b613b07f62b6fd9c",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Generates security-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Google Cloud Well-Architected Framework (WAF). Use this skill to evaluate a workload, identify security requirements, and provide actionable recommendations for IAM, network security, data protection, and operational security.",
+      "triggers": [
+        "WAF Security",
+        "gcp waf security",
+        "Generates security-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Google Cloud Well-Architected Framework (WAF)"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform",
+        "web application firewall"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:gcp-waf-sustainability",
@@ -3317,7 +4444,20 @@
         "SKILL.md"
       ],
       "sha256": "23337f40ddbd287bbc712d87683f24ef580403709baa8f7cab9dcd9ebfa57ef3",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Generates sustainability-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Google Cloud Well-Architected Framework (WAF). Use this skill to evaluate a workload, identify environmental impact requirements, and provide actionable recommendations to build, deploy, and manage the workload sustainably in Google Cloud.",
+      "triggers": [
+        "WAF Sustainability",
+        "gcp waf sustainability",
+        "Generates sustainability-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Google Cloud Well-Architected Framework (WAF)"
+      ],
+      "keywords": [
+        "google-cloud",
+        "google-cloud-platform",
+        "web application firewall"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:google-workspace-admin-reports",
@@ -3338,7 +4478,20 @@
         "SKILL.md"
       ],
       "sha256": "ab08b1519c94275ebb44af056029b8df8c32d5eff5a87dae13a654414725510c",
-      "version": "0.22.5"
+      "version": "0.22.5",
+      "summary": "Google Workspace Admin SDK: Audit logs and usage reports.",
+      "triggers": [
+        "Admin Reports",
+        "google-workspace admin reports",
+        "Google Workspace Admin SDK: Audit logs and usage reports"
+      ],
+      "keywords": [
+        "g-suite",
+        "gsuite",
+        "gws"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:google-workspace-admin-security",
@@ -3367,7 +4520,22 @@
         "scripts/agent.py"
       ],
       "sha256": "937a2a33f461241109a3608f6efc90f3680e3f76e806dfff8e32494410815f1f",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Implements comprehensive Google Workspace security hardening including admin console configuration, phishing-resistant MFA enforcement, DLP policies, email authentication (SPF/DKIM/DMARC), OAuth app control, and external sharing restrictions. Activates for requests involving Google Workspace hardening, G Suite security configuration, or cloud office security administration.",
+      "triggers": [
+        "Admin Security",
+        "google-workspace admin security",
+        "Implements comprehensive Google Workspace security hardening including admin console configuration, phishing-resistant MFA enforcement, DLP policies, email authentication (SPF/DKIM/DMARC), OAuth app control, and external sharing restrictions"
+      ],
+      "keywords": [
+        "data loss prevention",
+        "g-suite",
+        "gsuite",
+        "gws",
+        "multi factor authentication"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:google-workspace-calendar",
@@ -3387,7 +4555,20 @@
         "SKILL.md"
       ],
       "sha256": "8353165026638ff2a58b3b9b3b8dfb576e8d07241456ecade122d16874d10437",
-      "version": "0.22.5"
+      "version": "0.22.5",
+      "summary": "Google Calendar: Manage calendars and events.",
+      "triggers": [
+        "Calendar",
+        "google-workspace calendar",
+        "Google Calendar: Manage calendars and events"
+      ],
+      "keywords": [
+        "g-suite",
+        "gsuite",
+        "gws"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:google-workspace-drive",
@@ -3407,7 +4588,20 @@
         "SKILL.md"
       ],
       "sha256": "5593ed56988f940f169d0dbed0ad3b14cbff788e291cbb8e7500a31b748c7720",
-      "version": "0.22.5"
+      "version": "0.22.5",
+      "summary": "Google Drive: Manage files, folders, and shared drives.",
+      "triggers": [
+        "Drive",
+        "google-workspace drive",
+        "Google Drive: Manage files, folders, and shared drives"
+      ],
+      "keywords": [
+        "g-suite",
+        "gsuite",
+        "gws"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:google-workspace-gmail",
@@ -3427,7 +4621,20 @@
         "SKILL.md"
       ],
       "sha256": "1866f2ba5413a334dcd3f7add634987f48663ac40d31c6f5bd0405ef936c1794",
-      "version": "0.22.5"
+      "version": "0.22.5",
+      "summary": "Gmail: Send, read, and manage email.",
+      "triggers": [
+        "Gmail",
+        "google-workspace gmail",
+        "Gmail: Send, read, and manage email"
+      ],
+      "keywords": [
+        "g-suite",
+        "gsuite",
+        "gws"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:google-workspace-it-admin-persona",
@@ -3449,7 +4656,20 @@
         "SKILL.md"
       ],
       "sha256": "9727502886a3a576796112f77103138f0690ddbb5efee185d52a0cd16a4c5fe4",
-      "version": "0.22.5"
+      "version": "0.22.5",
+      "summary": "Administer IT — monitor security and configure Workspace.",
+      "triggers": [
+        "IT Admin Persona",
+        "google-workspace it admin persona",
+        "Administer IT — monitor security and configure Workspace"
+      ],
+      "keywords": [
+        "g-suite",
+        "gsuite",
+        "gws"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:google-workspace-phishing-protection",
@@ -3481,7 +4701,20 @@
         "scripts/process.py"
       ],
       "sha256": "9eb02a8f05257d1783a2089e1e92f780ffb2cebdc6a128ce9f33afc9c9681333",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Configure Google Workspace advanced phishing and malware protection settings including pre-delivery scanning, attachment protection, spoofing detection, and Enhanced Safe Browsing.",
+      "triggers": [
+        "Phishing Protection",
+        "google-workspace phishing protection",
+        "Configure Google Workspace advanced phishing and malware protection settings including pre-delivery scanning, attachment protection, spoofing detection, and Enhanced Safe Browsing"
+      ],
+      "keywords": [
+        "g-suite",
+        "gsuite",
+        "gws"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:google-workspace-shared-cli",
@@ -3502,7 +4735,21 @@
         "SKILL.md"
       ],
       "sha256": "4e996803f41dc9d128c7ab08d6936c90e9d454689d5026fbe6739045adc3ca3b",
-      "version": "0.22.5"
+      "version": "0.22.5",
+      "summary": "gws CLI: Shared patterns for authentication, global flags, and output formatting.",
+      "triggers": [
+        "Shared CLI",
+        "google-workspace shared cli",
+        "gws CLI: Shared patterns for authentication, global flags, and output formatting"
+      ],
+      "keywords": [
+        "command line interface",
+        "g-suite",
+        "gsuite",
+        "gws"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:grype-image-scanning",
@@ -3534,7 +4781,16 @@
         "scripts/process.py"
       ],
       "sha256": "d4ab41d42eeed3adb62c0685ee6c0474af09210aacd96e19891af5724a80d25d",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Scan container images for known vulnerabilities using Anchore Grype with SBOM-based matching and configurable severity thresholds.",
+      "triggers": [
+        "Image Scanning",
+        "grype image scanning",
+        "Scan container images for known vulnerabilities using Anchore Grype with SBOM-based matching and configurable severity thresholds"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:hand-drawn-diagrams",
@@ -3577,7 +4833,15 @@
         "references/workflow.md"
       ],
       "sha256": "da1c42cac085bf1120016cb79435a98bb72d9d82d4eb6788725fdc42e2fdc543",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Create hand-drawn Excalidraw diagrams, flows, explainers, wireframes, and page mockups. Default to monochrome sketch output; allow restrained color only for page mockups when the user explicitly wants webpage-like fidelity.",
+      "triggers": [
+        "Hand Drawn Diagrams",
+        "Create hand-drawn Excalidraw diagrams, flows, explainers, wireframes, and page mockups"
+      ],
+      "keywords": [],
+      "mutates": true,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:kube-bench-cis-benchmark",
@@ -3609,7 +4873,21 @@
         "scripts/process.py"
       ],
       "sha256": "bafe5aa5a31bbfb48c59597c673170f0078a1df0d3ff7460532f1bb7cde17723",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Audit Kubernetes cluster security posture against CIS benchmarks using kube-bench with automated checks for control plane, worker nodes, and RBAC.",
+      "triggers": [
+        "CIS Benchmark",
+        "kube-bench cis benchmark",
+        "Audit Kubernetes cluster security posture against CIS benchmarks using kube-bench with automated checks for control plane, worker nodes, and RBAC"
+      ],
+      "keywords": [
+        "center for internet security",
+        "k8",
+        "k8s",
+        "kube"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:kubernetes-audit-log-analysis",
@@ -3634,8 +4912,21 @@
         "references/api-reference.md",
         "scripts/agent.py"
       ],
-      "sha256": "c7655800afb02fc04cc6b5e1119dabc17a58bc2adc2ed0d464d97c4986ee706f",
-      "version": "1.0.0"
+      "sha256": "5d3c96029f0446590a7a0e6a5893486241888aa3ceff931127fbde0670f5404a",
+      "version": "1.0.0",
+      "summary": "Parses Kubernetes API server audit logs (JSON lines) to detect exec-into-pod, secret access, RBAC modifications, privileged pod creation, and anonymous API access. Builds threat detection rules from audit event patterns. Use when investigating Kubernetes cluster compromise or building k8s-specific SIEM detection rules.",
+      "triggers": [
+        "investigate a suspected Kubernetes cluster compromise",
+        "detect exec-into-pod or secret access in API server audit logs",
+        "build k8s SIEM detection rules from audit event patterns"
+      ],
+      "keywords": [
+        "k8",
+        "k8s",
+        "kube"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:kubernetes-etcd-security-assessment",
@@ -3669,7 +4960,22 @@
         "scripts/process.py"
       ],
       "sha256": "6060bfd61731e98d635b9ab1b56688ea57606360d3815b19d5360e238762fbb0",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Assess the security posture of Kubernetes etcd clusters by evaluating encryption at rest, TLS configuration, access controls, backup encryption, and network isolation.",
+      "triggers": [
+        "Etcd Security Assessment",
+        "kubernetes etcd security assessment",
+        "Assess the security posture of Kubernetes etcd clusters by evaluating encryption at rest, TLS configuration, access controls, backup encryption, and network isolation"
+      ],
+      "keywords": [
+        "k8",
+        "k8s",
+        "kube",
+        "ssl",
+        "transport layer security"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:kubernetes-managed-cluster-hardening",
@@ -3699,7 +5005,20 @@
         "scripts/agent.py"
       ],
       "sha256": "f864dd2a4c523d0e36fd72b8de8bfc6c2f61dd6837d0c55a46c7bd8321ca92fc",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "covers hardening managed Kubernetes clusters on EKS, AKS, and GKE by implementing Pod Security Standards, network policies, workload identity, RBAC scoping, image admission controls, and runtime security monitoring. It addresses cloud-specific security features including IRSA for EKS, Workload Identity for GKE, and Managed Identities for AKS.",
+      "triggers": [
+        "Managed Cluster Hardening",
+        "kubernetes managed cluster hardening",
+        "covers hardening managed Kubernetes clusters on EKS, AKS, and GKE by implementing Pod Security Standards, network policies, workload identity, RBAC scoping, image admission controls, and runtime security monitoring"
+      ],
+      "keywords": [
+        "k8",
+        "k8s",
+        "kube"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:kubernetes-network-policies",
@@ -3729,7 +5048,20 @@
         "scripts/process.py"
       ],
       "sha256": "ee41d554ed66c4e7e2e11dbd66361f9b1d3749f13c0dc3cc0395d2cdcc3c1121",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Kubernetes NetworkPolicies provide pod-level network segmentation by defining ingress and egress rules that control traffic flow between pods, namespaces, and external endpoints. Combined with CNI plu.",
+      "triggers": [
+        "Network Policies",
+        "kubernetes network policies",
+        "Kubernetes NetworkPolicies provide pod-level network segmentation by defining ingress and egress rules that control traffic flow between pods, namespaces, and external endpoints"
+      ],
+      "keywords": [
+        "k8",
+        "k8s",
+        "kube"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:kubernetes-penetration-testing",
@@ -3759,7 +5091,20 @@
         "scripts/process.py"
       ],
       "sha256": "509a4dcb0fecaef28e3563e089c671bbb7cb89fdccb3800931af48444ee39a6a",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Kubernetes penetration testing systematically evaluates cluster security by simulating attacker techniques against the API server, kubelet, etcd, pods, RBAC, network policies, and secrets. Using tools.",
+      "triggers": [
+        "Penetration Testing",
+        "kubernetes penetration testing",
+        "Kubernetes penetration testing systematically evaluates cluster security by simulating attacker techniques against the API server, kubelet, etcd, pods, RBAC, network policies, and secrets"
+      ],
+      "keywords": [
+        "k8",
+        "k8s",
+        "kube"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:kubernetes-pod-security-standards",
@@ -3789,7 +5134,20 @@
         "scripts/process.py"
       ],
       "sha256": "eae13942fc3f79c6cff7c149afb3148c23f8b4140d7fbde591131f9338b45203",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Pod Security Standards (PSS) define three levels of security policies -- Privileged, Baseline, and Restricted -- enforced by the Pod Security Admission (PSA) controller built into Kubernetes 1.25+. PS.",
+      "triggers": [
+        "POD Security Standards",
+        "kubernetes pod security standards",
+        "Pod Security Standards (PSS) define three levels of security policies -- Privileged, Baseline, and Restricted -- enforced by the Pod Security Admission (PSA) controller built into Kubernetes 1"
+      ],
+      "keywords": [
+        "k8",
+        "k8s",
+        "kube"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:kubernetes-rbac-audit",
@@ -3817,7 +5175,21 @@
         "scripts/agent.py"
       ],
       "sha256": "7e7fea366e022385c8d24803d559d2871266e2a0950927381be633d586e68a04",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Auditing Kubernetes cluster RBAC configurations to identify overly permissive roles, wildcard permissions, dangerous ClusterRoleBindings, service account abuse, and privilege escalation paths using kubectl, rbac-tool, KubiScan, and Kubeaudit.",
+      "triggers": [
+        "Rbac Audit",
+        "kubernetes rbac audit",
+        "Auditing Kubernetes cluster RBAC configurations to identify overly permissive roles, wildcard permissions, dangerous ClusterRoleBindings, service account abuse, and privilege escalation paths using kubectl, rbac-tool, KubiScan, and Kubeaudit"
+      ],
+      "keywords": [
+        "k8",
+        "k8s",
+        "kube",
+        "role based access control"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:kubesec-manifest-scanning",
@@ -3851,7 +5223,20 @@
         "scripts/process.py"
       ],
       "sha256": "65a886cb3ee596ec39bdb7e0dc3383b611f541ad2c49d2107b0cbbd05a559aaa",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Perform security risk analysis on Kubernetes resource manifests using Kubesec to identify misconfigurations, privilege escalation risks, and deviations from security best practices.",
+      "triggers": [
+        "Manifest Scanning",
+        "kubesec manifest scanning",
+        "Perform security risk analysis on Kubernetes resource manifests using Kubesec to identify misconfigurations, privilege escalation risks, and deviations from security best practices"
+      ],
+      "keywords": [
+        "k8",
+        "k8s",
+        "kube"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:linux-audit-log-intrusion-analysis",
@@ -3883,7 +5268,16 @@
         "scripts/agent.py"
       ],
       "sha256": "85b03b17965fd251e6b6cb4d6cf69beae8ae2a71d16c0c7458a4031f9f0f0a62",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Uses the Linux Audit framework (auditd) with ausearch and aureport utilities to detect intrusion attempts, unauthorized access, privilege escalation, and suspicious system activity. Covers audit rule configuration, log querying, timeline reconstruction, and integration with SIEM platforms. Activates for requests involving auditd analysis, Linux audit log investigation, ausearch queries, aureport summaries, or host-based intrusion detection on Linux.",
+      "triggers": [
+        "Audit LOG Intrusion Analysis",
+        "linux audit log intrusion analysis",
+        "Uses the Linux Audit framework (auditd) with ausearch and aureport utilities to detect intrusion attempts, unauthorized access, privilege escalation, and suspicious system activity"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:linux-cis-benchmark-hardening",
@@ -3916,7 +5310,20 @@
         "scripts/process.py"
       ],
       "sha256": "b0882430ff7c27ebadcfb8bc6f6bce9686c5efa4dd9e68ba65058d5b2400a3e5",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Hardens Linux endpoints using CIS Benchmark recommendations for Ubuntu, RHEL, and CentOS to reduce attack surface, enforce security baselines, and meet compliance requirements. Use when deploying new Linux servers, remediating audit findings, or establishing security baselines for Linux infrastructure. Activates for requests involving Linux hardening, CIS benchmarks for Linux, server security baselines, or Linux configuration compliance.",
+      "triggers": [
+        "CIS Benchmark Hardening",
+        "linux cis benchmark hardening",
+        "Hardens Linux endpoints using CIS Benchmark recommendations for Ubuntu, RHEL, and CentOS to reduce attack surface, enforce security baselines, and meet compliance requirements"
+      ],
+      "keywords": [
+        "center for internet security",
+        "red-hat",
+        "redhat"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:microsoft-365-audit-log-compromise-analysis",
@@ -3948,7 +5355,20 @@
         "scripts/agent.py"
       ],
       "sha256": "b5f5aa9fad68c5da0fa16db4a29604cb34272586e89084ad05d24a0021e36cae",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Parse Office 365 Unified Audit Logs via Microsoft Graph API to detect email forwarding rule creation, inbox delegation, suspicious OAuth app grants, and other indicators of account compromise.",
+      "triggers": [
+        "Audit LOG Compromise Analysis",
+        "microsoft-365 audit log compromise analysis",
+        "Parse Office 365 Unified Audit Logs via Microsoft Graph API to detect email forwarding rule creation, inbox delegation, suspicious OAuth app grants, and other indicators of account compromise"
+      ],
+      "keywords": [
+        "m365",
+        "o365",
+        "office-365"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:mongodb-query-optimizer",
@@ -3973,7 +5393,18 @@
         "references/update-query-examples.md"
       ],
       "sha256": "8753d91dc9326161820ab49d6aaa1f0e0e368c84e7351703c998854a0a280c56",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Help with MongoDB query optimization and indexing. Use only when the user asks for optimization or performance: \\\"How do I optimize this query?\\\", \\\"How do I index this?\\\", \\\"Why is this query slow?\\\", \\\"Can you fix my slow queries?\\\", \\\"What are the slow queries on my cluster?\\\", etc. Do not invoke for general MongoDB query writing unless user asks for performance or index help. Prefer indexing as optimization strategy. Use MongoDB MCP when available.",
+      "triggers": [
+        "Query Optimizer",
+        "mongodb query optimizer",
+        "Help with MongoDB query optimization and indexing"
+      ],
+      "keywords": [
+        "db"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:mongodb-schema-design",
@@ -4012,7 +5443,18 @@
         "references/pattern-time-series-collections.md"
       ],
       "sha256": "08099ab2e86fb625eb9d2dbbe675855d8a6f981713d611edbdf3e802e2df6971",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "MongoDB schema design patterns and anti-patterns. Use when designing data models, reviewing schemas, migrating from SQL, or troubleshooting performance issues caused by schema problems. Triggers on \\\"design schema\\\", \\\"embed vs reference\\\", \\\"MongoDB data model\\\", \\\"schema review\\\", \\\"unbounded arrays\\\", \\\"one-to-many\\\", \\\"tree structure\\\", \\\"16MB limit\\\", \\\"schema validation\\\", \\\"JSON Schema\\\", \\\"time series\\\", \\\"schema migration\\\", \\\"polymorphic\\\", \\\"TTL\\\", \\\"data lifecycle\\\", \\\"archive\\\", \\\"index explosion\\\", \\\"unnecessary indexes\\\", \\\"approximation pattern\\\", \\\"document versioning\\\".",
+      "triggers": [
+        "Schema Design",
+        "mongodb schema design",
+        "MongoDB schema design patterns and anti-patterns"
+      ],
+      "keywords": [
+        "db"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:netapp-reporting",
@@ -4034,9 +5476,18 @@
         "SKILL.md",
         "references/aiqum-metrics.md"
       ],
-      "sha256": "9f68c2832b726d10f81bb454d068b50531f37ac0a378bdf6ba9e09aee3547baf",
+      "sha256": "eb5b279cff82d214f2aacf585396428214de063ca0d437b24cd139fdc02e5661",
       "compatibility": "ontap>=9.10",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Use when an operator asks for a NetApp/ONTAP capacity, performance, or aggregate-utilisation report. Pulls metrics via the netapp MCP (Active IQ Unified Manager / ONTAP REST), produces a tabular summary plus the top capacity risks. Read-only — never mutates.",
+      "triggers": [
+        "report on NetApp ONTAP capacity or aggregate utilisation",
+        "summarise volume performance and top capacity risks",
+        "pull an Active IQ Unified Manager storage report"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:network-vlan-segmentation",
@@ -4063,7 +5514,17 @@
         "scripts/agent.py"
       ],
       "sha256": "cb825bc0ad2080104cf264fb048eceb9549b0efdf70b005029565a485c574f41",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Designs and implements VLAN-based network segmentation on managed switches to isolate network zones, enforce access control between segments, and reduce the attack surface by limiting lateral movement paths in enterprise network environments.",
+      "triggers": [
+        "Vlan Segmentation",
+        "Designs and implements VLAN-based network segmentation on managed switches to isolate network zones, enforce access control between segments, and reduce the attack surface by limiting lateral movement paths in enterprise network environments"
+      ],
+      "keywords": [
+        "virtual lan"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:pdf",
@@ -4092,7 +5553,15 @@
         "scripts/fill_pdf_form_with_annotations.py"
       ],
       "sha256": "3341bf02c5144b63f6a86b7c2128d08a2e4fe96dd649d8cb4c52ce1f76ed9644",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a.pdf file or asks to produce one, use this skill.",
+      "triggers": [
+        "PDF",
+        "Use this skill whenever the user wants to do anything with PDF files"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:pfsense-firewall-rules",
@@ -4118,7 +5587,18 @@
         "scripts/agent.py"
       ],
       "sha256": "e0751e44c9d78e9ab668a3037eb44861ecfd7fce3a4808381e9454a3482534ca",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Configures pfSense firewall rules, NAT policies, VPN tunnels, and traffic shaping to enforce network segmentation, control traffic flow, and protect internal network zones in enterprise and small-to-medium business environments.",
+      "triggers": [
+        "Firewall Rules",
+        "pfsense firewall rules",
+        "Configures pfSense firewall rules, NAT policies, VPN tunnels, and traffic shaping to enforce network segmentation, control traffic flow, and protect internal network zones in enterprise and small-to-medium business environments"
+      ],
+      "keywords": [
+        "network address translation"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:pptx",
@@ -4194,7 +5674,15 @@
         "scripts/thumbnail.py"
       ],
       "sha256": "faa0b238e2763cddbad13b2c7e7e079c701149faf299c531b2f10625594f75ed",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Use this skill any time a.pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any.pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates, layouts, speaker notes, or comments.",
+      "triggers": [
+        "Pptx",
+        "Use this skill any time a"
+      ],
+      "keywords": [],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:resend-email-api",
@@ -4234,7 +5722,18 @@
         "references/webhooks.md"
       ],
       "sha256": "c2fd04d4ed3fcc37fa9e51147eb7ce89b1d5c2d27ff6667970815310e71324d1",
-      "version": "3.3.3"
+      "version": "3.3.3",
+      "summary": "Covers production gotchas including idempotency keys, webhook verification, and template variables.",
+      "triggers": [
+        "Email API",
+        "resend email api",
+        "Covers production gotchas including idempotency keys, webhook verification, and template variables"
+      ],
+      "keywords": [
+        "application programming interface"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:resend-react-email",
@@ -4260,7 +5759,16 @@
         "references/STYLING.md"
       ],
       "sha256": "df7aa3f66cd0bfea4e845ef37085f2446f97b7daafcabda6a66116b05da47c03",
-      "version": "2.1.0"
+      "version": "2.1.0",
+      "summary": "Covers welcome emails, password resets, notifications, order confirmations, newsletters, transactional emails, and embeddable editor workflows.",
+      "triggers": [
+        "React Email",
+        "resend react email",
+        "Covers welcome emails, password resets, notifications, order confirmations, newsletters, transactional emails, and embeddable editor workflows"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:security-network-traffic-incident-analysis",
@@ -4290,7 +5798,15 @@
         "scripts/agent.py"
       ],
       "sha256": "8fe7b1cae0dfcc6278e115f2a193520d48ffda6d0bed2afa9ffa670799cf19d4",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Analyzes network traffic captures and flow data to identify adversary activity during security incidents, including command-and-control communications, lateral movement, data exfiltration, and exploitation attempts. Uses Wireshark, Zeek, and NetFlow analysis techniques. Activates for requests involving network traffic analysis, packet capture investigation, PCAP analysis, network forensics, C2 traffic detection, or exfiltration detection.",
+      "triggers": [
+        "Network Traffic Incident Analysis",
+        "Analyzes network traffic captures and flow data to identify adversary activity during security incidents, including command-and-control communications, lateral movement, data exfiltration, and exploitation attempts"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:security-soc2-type2-audit-preparation",
@@ -4322,7 +5838,15 @@
         "scripts/process.py"
       ],
       "sha256": "de7b39b1675a8731345a1c7df3d7667cfccef986dba902350910dd88add985f0",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Automates SOC 2 Type II audit preparation including gap assessment against AICPA Trust Services Criteria (CC1-CC9), evidence collection from cloud providers and identity systems, control testing validation, remediation tracking, and continuous compliance monitoring. Covers all five TSC categories (Security, Availability, Processing Integrity, Confidentiality, Privacy) with automated evidence gathering from AWS, Azure, GCP, Okta, GitHub, and Jira.",
+      "triggers": [
+        "Soc2 Type2 Audit Preparation",
+        "Automates SOC 2 Type II audit preparation including gap assessment against AICPA Trust Services Criteria (CC1-CC9), evidence collection from cloud providers and identity systems, control testing validation, remediation tracking, and continuous compliance monitoring"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:skill-creator",
@@ -4358,7 +5882,15 @@
         "scripts/utils.py"
       ],
       "sha256": "51089581bb853bb253f3dec1d4368ad21cedb37f4413841589cb76cde06659c0",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "triggers": [
+        "Skill Creator",
+        "Create new skills, modify and improve existing skills, and measure skill performance"
+      ],
+      "keywords": [],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:supabase-postgresql-postgres-best-practices",
@@ -4414,7 +5946,20 @@
         "references/security-rls-performance.md"
       ],
       "sha256": "81e79fe5ac0769c90b59ced15d87ae5ee4dbd36b56d83ab802d6eb30d856daa4",
-      "version": "1.1.1"
+      "version": "1.1.1",
+      "summary": "Postgres performance optimization and best practices from Supabase. Use this skill when writing, reviewing, or optimizing Postgres queries, schema designs, or database configurations.",
+      "triggers": [
+        "Postgres Best Practices",
+        "supabase-postgresql postgres best practices",
+        "Postgres performance optimization and best practices from Supabase"
+      ],
+      "keywords": [
+        "db",
+        "postgresql",
+        "supabase"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:theme-factory",
@@ -4445,7 +5990,15 @@
         "themes/tech-innovation.md"
       ],
       "sha256": "de0a87c27ebb971bc73ab0898c7062f4f133c04f573216f221824c44c3f46b0d",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+      "triggers": [
+        "Theme Factory",
+        "Toolkit for styling artifacts with a theme"
+      ],
+      "keywords": [],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:trivy-security-scanning",
@@ -4475,7 +6028,22 @@
         "scripts/agent.py"
       ],
       "sha256": "76a472a8efedd2b3f7c253b6f6bb1a19305b70c5c3a5d2c3e740a00dfcc82aa0",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Scan container images, filesystems, and Kubernetes manifests for vulnerabilities, misconfigurations, exposed secrets, and license compliance issues using Aqua Security Trivy with SBOM generation and CI/CD integration.",
+      "triggers": [
+        "Security Scanning",
+        "trivy security scanning",
+        "Scan container images, filesystems, and Kubernetes manifests for vulnerabilities, misconfigurations, exposed secrets, and license compliance issues using Aqua Security Trivy with SBOM generation and CI/CD integration"
+      ],
+      "keywords": [
+        "container-image",
+        "k8",
+        "k8s",
+        "kube",
+        "oci-image"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:web-artifacts-builder",
@@ -4499,7 +6067,15 @@
         "scripts/shadcn-components.tar.gz"
       ],
       "sha256": "a9ee6a546466476c319d4ea7fc087061418f1555656b8db4eed0c040f5ab62d8",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "triggers": [
+        "WEB Artifacts Builder",
+        "Suite of tools for creating elaborate, multi-component claude"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:windows-server-cis-benchmark-hardening",
@@ -4532,7 +6108,21 @@
         "scripts/process.py"
       ],
       "sha256": "b048f4031ffe13200ec363663af754d603b74af59f58fc67ea53460da19bb2d5",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Hardens Windows endpoints using CIS (Center for Internet Security) Benchmark recommendations to reduce attack surface, enforce security baselines, and meet compliance requirements. Use when deploying new Windows workstations or servers, remediating audit findings, or establishing organization-wide security baselines. Activates for requests involving Windows hardening, CIS benchmarks, GPO security baselines, or endpoint configuration compliance.",
+      "triggers": [
+        "CIS Benchmark Hardening",
+        "windows-server cis benchmark hardening",
+        "Hardens Windows endpoints using CIS (Center for Internet Security) Benchmark recommendations to reduce attack surface, enforce security baselines, and meet compliance requirements"
+      ],
+      "keywords": [
+        "center for internet security",
+        "group policy object",
+        "windows",
+        "winsrv"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:windows-server-powershell-script-block-analysis",
@@ -4562,7 +6152,20 @@
         "scripts/agent.py"
       ],
       "sha256": "92629dd9283a221a03599ef1e8f7cfcb4dc00976c2edb210fbccbf2e881c31f2",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Parse Windows PowerShell Script Block Logs (Event ID 4104) from EVTX files to detect obfuscated commands, encoded payloads, and living-off-the-land techniques. Uses python-evtx to extract and reconstruct multi-block scripts, applies entropy analysis and pattern matching for Base64-encoded commands, Invoke-Expression abuse, download cradles, and AMSI bypass attempts.",
+      "triggers": [
+        "Powershell Script Block Analysis",
+        "windows-server powershell script block analysis",
+        "Parse Windows PowerShell Script Block Logs (Event ID 4104) from EVTX files to detect obfuscated commands, encoded payloads, and living-off-the-land techniques"
+      ],
+      "keywords": [
+        "psh",
+        "windows",
+        "winsrv"
+      ],
+      "mutates": false,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:writing-plans",
@@ -4583,7 +6186,15 @@
         "references/plan-document-reviewer-prompt.md"
       ],
       "sha256": "40b38476e20a3810c384799a93b947e8933fc0c2463a4e86da7f26b491c4b223",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Use when an operator needs a concrete implementation plan from a spec or requirements before touching code.",
+      "triggers": [
+        "Writing Plans",
+        "Use when an operator needs a concrete implementation plan from a spec or requirements before touching code"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
       "name": "scogo:xlsx",
@@ -4654,7 +6265,15 @@
         "scripts/recalc.py"
       ],
       "sha256": "a666209659b7b195edebb51d6aa79ed6d9e76493acdc1f8ef1cb547177a26738",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing.xlsx,.xlsm,.csv, or.tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats.",
+      "triggers": [
+        "Xlsx",
+        "Use this skill any time a spreadsheet file is the primary input or output"
+      ],
+      "keywords": [],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
       "name": "scogo:zeek-network-anomaly-detection",
@@ -4682,7 +6301,16 @@
         "scripts/agent.py"
       ],
       "sha256": "60e2a38bb613e75eb62234de2a0ad633485f1059794002a4cf9f572b88b451ca",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "summary": "Deploys and configures Zeek (formerly Bro) network security monitor to passively analyze network traffic, generate structured logs, detect anomalous behavior, and create custom detection scripts for threat hunting and incident response.",
+      "triggers": [
+        "Network Anomaly Detection",
+        "zeek network anomaly detection",
+        "Deploys and configures Zeek (formerly Bro) network security monitor to passively analyze network traffic, generate structured logs, detect anomalous behavior, and create custom detection scripts for threat hunting and incident response"
+      ],
+      "keywords": [],
+      "mutates": true,
+      "updatedAt": "2026-05-29T00:09:15+05:30"
     }
   ]
 }

@@ -22,6 +22,9 @@
 //   compatibility: "ontap>=9.10"
 //   paths: ["**/x/**"]  | block list
 //   allowed-tools: [a, b] | allowedTools: [a, b] | block list
+//   when_to_use: "..."   | when_to_use: [a, b] | block list   (catalog v2 triggers)
+//   triggers: [a, b]     | block list                         (catalog v2 triggers; alias of when_to_use)
+//   mutates: true        | mutates: false                     (catalog v2 governance flag)
 //   metadata:
 //     version: 1.0.0
 //   version: 1.0.0                           (top-level also accepted)
@@ -38,6 +41,10 @@
  * @property {string[]} [allowedTools]
  * @property {boolean} [disableModelInvocation]
  * @property {string} [license]
+ * @property {string[]} [whenToUse]   normalised to string[]; from `when_to_use` (catalog v2)
+ * @property {string[]} [triggers]    normalised to string[]; from `triggers` (catalog v2)
+ * @property {boolean} [mutates]      from `mutates` (catalog v2 governance flag)
+ * @property {boolean} [mutatesPresent]  true iff `mutates:` was a parseable boolean in the file
  */
 
 /**
@@ -137,6 +144,42 @@ function _parse(text) {
           } else {
             i++;
           }
+          continue;
+        }
+        case "when_to_use":
+        case "when-to-use": {
+          // Accept a scalar ("...") OR an inline/block list. Normalise to string[].
+          const list = parseListValue(rest, lines, i);
+          if (list !== null) {
+            result.whenToUse = list.values;
+            i += list.consumed;
+          } else {
+            const v = parseScalar(rest);
+            if (v !== null) result.whenToUse = [v];
+            i++;
+          }
+          continue;
+        }
+        case "triggers": {
+          // Same shape rules as when_to_use; both feed the catalog `triggers` field.
+          const list = parseListValue(rest, lines, i);
+          if (list !== null) {
+            result.triggers = list.values;
+            i += list.consumed;
+          } else {
+            const v = parseScalar(rest);
+            if (v !== null) result.triggers = [v];
+            i++;
+          }
+          continue;
+        }
+        case "mutates": {
+          const v = parseBool(rest);
+          if (v !== null) {
+            result.mutates = v;
+            result.mutatesPresent = true;
+          }
+          i++;
           continue;
         }
         case "disable-model-invocation": {

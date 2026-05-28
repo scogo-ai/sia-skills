@@ -8,6 +8,7 @@
 //     display: "Name"
 //     domains: [a, b]
 //     products: [x, y, z]
+//     aliases: [abbrev, alt-spelling]   # OPTIONAL (catalog v2 — feeds keyword expansion)
 //
 // (top-level mapping of slug -> { display: string, domains: string[],
 // products: string[] }). Comments (# …) and blank lines are ignored. Anything
@@ -21,6 +22,7 @@ import { readFileSync } from "node:fs";
  * @property {string} display
  * @property {string[]} domains
  * @property {string[]} products
+ * @property {string[]} aliases   abbreviations / alternate spellings (catalog v2); [] when absent
  */
 
 /**
@@ -48,7 +50,7 @@ export function loadVendors(path) {
         throw new Error(`vendors.yaml: unexpected top-level line: ${raw}`);
       }
       if (current) finalize(vendors, current);
-      current = { slug: m[1], display: "", domains: [], products: [] };
+      current = { slug: m[1], display: "", domains: [], products: [], aliases: [] };
       continue;
     }
 
@@ -66,6 +68,8 @@ export function loadVendors(path) {
       current.domains = parseInlineList(val);
     } else if (key === "products") {
       current.products = parseInlineList(val);
+    } else if (key === "aliases") {
+      current.aliases = parseInlineList(val);
     }
   }
   if (current) finalize(vendors, current);
@@ -75,10 +79,15 @@ export function loadVendors(path) {
 
 /**
  * @param {Map<string, Vendor>} vendors
- * @param {{slug:string, display:string, domains:string[], products:string[]}} c
+ * @param {{slug:string, display:string, domains:string[], products:string[], aliases:string[]}} c
  */
 function finalize(vendors, c) {
-  vendors.set(c.slug, { display: c.display, domains: c.domains, products: c.products });
+  vendors.set(c.slug, {
+    display: c.display,
+    domains: c.domains,
+    products: c.products,
+    aliases: c.aliases || [],
+  });
 }
 
 /** @param {string} raw @returns {string} */

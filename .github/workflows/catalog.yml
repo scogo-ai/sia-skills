@@ -6,8 +6,9 @@
 #
 #   1. Every SKILL.md has valid frontmatter (required name + description) and is
 #      path/name/tag/compatibility consistent, with no unsafe paths.
-#   2. catalog.json is REGENERATED from the tree and the checked-in copy must
-#      match byte-for-byte (drift = fail) — humans never hand-edit it.
+#   2. catalog.json (+ the sibling manifest.json) and index.json are REGENERATED
+#      from the tree and the checked-in copies must match byte-for-byte
+#      (drift = fail) — humans never hand-edit them.
 #   3. Unsafe paths (absolute, "..", symlinks) and oversized files are rejected.
 #   4. The deterministic-hash roundtrip test passes (gen -> verify -> tamper ->
 #      refuse).
@@ -32,6 +33,8 @@ on:
       - "channels.json"
       - "catalog.json"
       - "index.json"
+      - "manifest.json"
+      - "synonyms.json"
       - "vendors.yaml"
       - "yanked.json"
       - ".github/workflows/catalog.yml"
@@ -43,6 +46,8 @@ on:
       - "channels.json"
       - "catalog.json"
       - "index.json"
+      - "manifest.json"
+      - "synonyms.json"
       - "vendors.yaml"
       - "yanked.json"
 
@@ -82,7 +87,8 @@ jobs:
             --channel stable \
             --commit "$PINNED_COMMIT" \
             --generated-at "$PINNED_TS" \
-            --out /tmp/catalog.json
+            --out /tmp/catalog.json \
+            --manifest-out /tmp/manifest.json
 
       # 3. Fail if the committed catalog.json differs from the freshly generated
       #    one (binding contract §2.4.1: "fail if the checked-in catalog differs").
@@ -90,6 +96,12 @@ jobs:
       #    difference a non-zero exit.
       - name: Fail on catalog drift
         run: git --no-pager diff --no-index --exit-code catalog.json /tmp/catalog.json
+
+      # 3b. The compact manifest.json (name+version+sha256+updatedAt; schema v2,
+      #     design §7.3/§8.3) is generated alongside the catalog above. Fail on any
+      #     drift, mirroring the catalog gate — humans never hand-edit it either.
+      - name: Fail on manifest drift
+        run: git --no-pager diff --no-index --exit-code manifest.json /tmp/manifest.json
 
       # 4. Regenerate the human/search index and fail on drift.
       - name: Regenerate index

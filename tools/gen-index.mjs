@@ -59,6 +59,12 @@ export function generateIndex(opts = {}) {
       sha256: skill.sha256,
       ...(skill.compatibility ? { compatibility: skill.compatibility } : {}),
       ...(skill.version ? { version: skill.version } : {}),
+      // schemaVersion 2 fields, carried through from catalog.json (§8.3).
+      ...(skill.summary !== undefined ? { summary: skill.summary } : {}),
+      ...(skill.triggers !== undefined ? { triggers: skill.triggers } : {}),
+      ...(skill.keywords !== undefined ? { keywords: skill.keywords } : {}),
+      ...(skill.mutates !== undefined ? { mutates: skill.mutates } : {}),
+      ...(skill.updatedAt !== undefined ? { updatedAt: skill.updatedAt } : {}),
     };
   });
   const domains = {};
@@ -69,7 +75,7 @@ export function generateIndex(opts = {}) {
     domains[skill.domain].oems[key] = (domains[skill.domain].oems[key] || 0) + 1;
   }
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     repo: catalog.repo,
     channel: catalog.channel,
     ref: catalog.ref,

@@ -1,0 +1,849 @@
+{
+  "schemaVersion": 2,
+  "repo": "scogo-ai/sia-skills",
+  "channel": "stable",
+  "ref": "v2026.05.1",
+  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "skills": [
+    {
+      "name": "scogo:aws-cloudtrail-anomaly-detection",
+      "version": "1.0.0",
+      "sha256": "4f0c749d34f1d65f292aba50b85c17429c9bf2bdd8d8bebb9067b8cf0724d5b5",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-cloudtrail-forensics",
+      "version": "1.0.0",
+      "sha256": "f85e1b394b25d2f463940b220917691d576480e86228844f91a1c2a1a202ea7c",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-config-rules-compliance",
+      "version": "1.0.0",
+      "sha256": "bbdc899eb84693b20d93005649a55c5c75a5edb291144c73262f691d8d39b8d1",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-credential-exposure-detection",
+      "version": "1.0.0",
+      "sha256": "76ba34c271ad50c3647c4667ab75d4688d7bff0eba1c0e3deae17ee3ede999c5",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-guardduty-findings-automation",
+      "version": "1.0.0",
+      "sha256": "a5338c3c3b819206029f046435ddff895b3f33c9faf6d0f55e89a63d386d4c09",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-guardduty-threat-detection",
+      "version": "1.0.0",
+      "sha256": "68d275c9ab1e42541f2288e6b2625670798d779a4718d977d466a3220b7103af",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-iam-permission-boundaries",
+      "version": "1.0.0",
+      "sha256": "cb08f5bb969120a51cc3a843f996d34875534e79a46ae2a790721a983194a024",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-iam-permission-hardening",
+      "version": "1.0.0",
+      "sha256": "a2013449284dbb6494068d74743bb4b827c1a5bb5466e870d431e7db3e0f4be6",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-iam-privilege-escalation-detection",
+      "version": "1.0.0",
+      "sha256": "b3ed928c32d2f11975baeb8ca2a934e2f12729d2136313d32087fd03a66018f3",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-pacu-penetration-testing",
+      "version": "1.0.0",
+      "sha256": "eb17d72ea530932502d000175c5e86899dbeada92c09f700f5c1664654966e43",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-privilege-escalation-assessment",
+      "version": "1.0.0",
+      "sha256": "d15c30798607298c6f09c9954299e0f3a81987cb41f6f2170d521ea660181bd3",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-s3-bucket-permission-audit",
+      "version": "1.0.0",
+      "sha256": "4613d49328c0dcd9b1dd6461c92dce612fe27abf0bb7954702dfebb0dfb152cc",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-security-hub",
+      "version": "1.0.0",
+      "sha256": "69509171781cb9aee1da6e9a71403b144681a965982587efc8a14f66e96de233",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:aws-security-hub-compliance",
+      "version": "1.0.0",
+      "sha256": "208ef46b9aaec9d1c0af694bdca1a8f4a6f726a9fe56d7217d4c076ea971de58",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:azure-active-directory-configuration-audit",
+      "version": "1.0.0",
+      "sha256": "aa70908aae66755fb9a8e624ac86998665f40840adce608263db3b2ded197e16",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:azure-activity-log-threat-analysis",
+      "version": "1.0.0",
+      "sha256": "1d64c88aaec376c602d13520753fb0db43f3b49dbf9691ec083456e7d04e93f8",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:azure-ai",
+      "version": "1.1.1",
+      "sha256": "4eb58a869c0634523f357b13ed23d3149064c2c74b33e4e1f181c4499f170978",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-ai-gateway",
+      "version": "3.1.1",
+      "sha256": "e0fa01a231344d9e5d9529507cade464d366cb73ce372db6f0111317aac47bd5",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-aks-ai-runway-setup",
+      "version": "1.0.1",
+      "sha256": "c4970fd673c7024aa4510de328186b0af36e5337cca9889f7baab014e0c5bc21",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-appinsights-instrumentation",
+      "version": "1.1.2",
+      "sha256": "a09d92a82f85045dd34a9a12cec507831c620ec9c8c4f258cb3219048ec51890",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-cloud-migrate",
+      "version": "1.2.1",
+      "sha256": "f12f6416eeb6dd9bed82ccea42d4640d372fba8c428385ac1c6ab5f36af79de6",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-cloud-solution-architect",
+      "version": "1.0.0",
+      "sha256": "3b653bb2e50c8e8fbbe956e5fadf1e7119937c42e5b74f5fec7816af22aa5ddc",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-compliance",
+      "version": "1.1.1",
+      "sha256": "4b58d6d72c42abad2cb6711e9d15fc66bcd5dad5553c9e63cf5016107d48e822",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-compute",
+      "version": "2.4.2",
+      "sha256": "14a063b71fe9d360aacbf53d12097f2ca15f00d14fb53088fcae7ffcad785999",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-cost-management",
+      "version": "1.2.1",
+      "sha256": "d65ca9ab75287b57446bab9cef00f74c79d0e1187e82c540c235ef6cd719b831",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-defender-for-cloud",
+      "version": "1.0.0",
+      "sha256": "937459fd85b6a8227276d7722b224b9d1f322c4db8ca841d0947a28d3f07c4c5",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:azure-deploy",
+      "version": "1.1.2",
+      "sha256": "8b3dcd0f63afefa1ff7ef02302b8517a360feca95e4235b020a5f03d9e8c7739",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-diagnostics",
+      "version": "1.1.6",
+      "sha256": "28a6bde56136995fe07ae7d7ebcc87db43ee0c1b6323ef03efa1d850bda52008",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-enterprise-infra-planner",
+      "version": "1.2.1",
+      "sha256": "611ce38f929443fade40cd547e6cb055a974b1c46c4192da3843283ee837461c",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-entra-agent-id",
+      "version": "1.0.1",
+      "sha256": "3158e87296805176410574fad0d9b5a3e29ee508547cb394764fdb60d1219177",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-entra-app-registration",
+      "version": "1.1.1",
+      "sha256": "6cd08b142a1a2a79dd41aadce894b078bc91a5b453d7f30c23dffc09c8e45a11",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-foundry",
+      "version": "1.1.20",
+      "sha256": "9ec466a81c1330c5a914f63ad5c085c0e1e8e9a446e8800ae73187279b630072",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-foundry-finetuning",
+      "version": "0.0.0-placeholder",
+      "sha256": "41475f1178c428a8c4cb5a531dc509882c3d2933a4bcbb466d9cfa86e03e208d",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-foundry-model-deploy",
+      "version": "1.0.0",
+      "sha256": "3f289ff9ad17ad2896bfa3080fafad7b426b931e0f6d3376242afcd2d62ed8c9",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-foundry-model-deploy-capacity",
+      "version": "1.0.0",
+      "sha256": "c635959ebe4578a321c56cbc99c704582d3fd26e2a5e38490945c3af3d7b764f",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-foundry-model-deploy-customize",
+      "version": "1.0.1",
+      "sha256": "c6484970b586aaac30967f41f131b7c19831dc8ff23f68f9fdecf451f716ff75",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-foundry-model-deploy-preset",
+      "version": "1.0.1",
+      "sha256": "a694c0cb6e457b384481ae2e1a7e5b42620e30c5d59b33d4ddca6d74295d4007",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-hosted-copilot-sdk",
+      "version": "1.1.3",
+      "sha256": "4c9680b90eddb37564fc59027dffc9af61cebc610f23519fa2647464ea847636",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-kubernetes",
+      "version": "1.1.2",
+      "sha256": "e7e9a3c8859688697fd29f68fb623276807e3e4e651dfd9390ff9edeeaa60ced",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-kubernetes-automatic-readiness",
+      "version": "1.0.0",
+      "sha256": "8a9c092ef001b0a371fd2b1cb9be0103f9337f06c50249ccc123ca760c4f47d8",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-kusto",
+      "version": "1.1.1",
+      "sha256": "ff29514c3f7e085591018d5eba067314a859ef232e53ca01609d3ce3c6a15903",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-lateral-movement-detection",
+      "version": "1.0.0",
+      "sha256": "358610de6acafe02dc238c7750fc3ebf8e9f8d169921efda65b33f9166f18118",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:azure-messaging",
+      "version": "1.1.2",
+      "sha256": "44017e1441503e7c4199257b25b0ff31b44e748eaa34f519df74524b7baf706c",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-microsoft-defender-security",
+      "version": "1.0.0",
+      "sha256": "9aaf052ed7baf97ccda0281800c3dd616ec7b6c6861ed7715923b02c4c0a8b77",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:azure-prepare",
+      "version": "1.2.13",
+      "sha256": "24e279e2335f99cf3d9e99592d0fd637c4f992f4dd1753d95d3ea279557371b4",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-privileged-identity-management",
+      "version": "1.0.0",
+      "sha256": "c35c06ceb2bc072b127895205ddcdc5d5cfb2af1d47f4ffe2de3d423dac20ab5",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:azure-quotas",
+      "version": "1.1.2",
+      "sha256": "b9f317e3c68482a0dc42aae4fa2054ccc4a1037297c184fafbef00dce5f4156a",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-rbac",
+      "version": "1.1.1",
+      "sha256": "8b5754f3b55f5ed968718bdc76c20f0a51891627f0cf9b964fe47dfade2b1d2c",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-reliability",
+      "version": "1.0.2",
+      "sha256": "196f42b3b4319b78875a041e0f0f7863912594dec2fe09c7bcad256c46d99aed",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-resource-lookup",
+      "version": "1.1.3",
+      "sha256": "28728e4527eee7cc1f5c1472de3b7dab233e1a3fc1540e5e14f7cbf7a6e64d7d",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-resource-visualizer",
+      "version": "1.1.2",
+      "sha256": "ff63afe1458a598bde8665d5c1742898ab16427417baa24cccedbb9d68910fbe",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-service-principal-abuse-detection",
+      "version": "1.0.0",
+      "sha256": "8b0c9b7eecad5cb93c7af411082921d5b862faa46299f96dd26911bb200ae938",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:azure-storage",
+      "version": "1.1.2",
+      "sha256": "38027b5a3a000f13902e087d8b3105879ac1c231edc77f22a1b5806f277d65f8",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-storage-account-misconfiguration-detection",
+      "version": "1.0.0",
+      "sha256": "9eccbffaf550a79caa4cd0dde3a6af18cbbcef0b401e0e7dd7ccf477f5ae9f19",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:azure-storage-misconfiguration-detection",
+      "version": "1.0.0",
+      "sha256": "7b0ebb48ba39fd5836d761a00b8ed3343392305f95aea946c6e9eb81e0e11285",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:azure-upgrade",
+      "version": "1.1.3",
+      "sha256": "a887affffd93cf02691c110a8f789ff38b8c637c9a7815b0ba5a7816baf14dca",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:azure-validate",
+      "version": "1.1.2",
+      "sha256": "1612a0eaea28d64223ea4ab5c7d3aa9d21c9663b0f379aa63d1aa7459361eab8",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:brainstorming",
+      "version": "1.0.0",
+      "sha256": "6953e03d276a6d069d23494816f49f5d693d92f136cb0c4d5cdfc31f2119b762",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:calico-kubernetes-network-policy",
+      "version": "1.0.0",
+      "sha256": "1240c1552912961ad01029fd2d3562755a90191ed1168fb330b8ec3a0dca8fb6",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:clickhouse-architecture-advisor",
+      "version": "0.1.0",
+      "sha256": "97d3a6f1f535b316ee4c4141630c8e7ce46eb243a3093d071c4e11df0ad9883e",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:clickhouse-best-practices",
+      "version": "0.4.0",
+      "sha256": "689bd08cf6effb471ec6632324b71b7b108a346a291adb399b5fad1fe71d7e41",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:cloud-asset-inventory-cartography",
+      "version": "1.0.0",
+      "sha256": "e5371db07f1c982248939356b4976e8d28fe677a2bfce87d6f813dc433b4abe9",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:cloud-cis-benchmark-audit",
+      "version": "1.0.0",
+      "sha256": "cdc1c2e07a0748f6f4b56550692192d3a10608621937af54d872ceae166abc0a",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:cloud-compromised-credential-detection",
+      "version": "1.0.0",
+      "sha256": "d285d7c845e87240768985cd4bc5e10747239cbe5cfac0daae1c02d5bfddb579",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:cloud-forensics-investigation",
+      "version": "1.0.0",
+      "sha256": "6498650f63ca8b45a8c7442b98691fccaefb51aa2d262ae3223843eaa86babee",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:cloud-incident-response",
+      "version": "1.0.0",
+      "sha256": "ea288c398a8ef2f63c53ba1cbb9b4bb5b146a236cfbee71cbd78553c9aa6462d",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:cloud-penetration-testing",
+      "version": "1.0.0",
+      "sha256": "02d9bf68cc93ad68b381714d8d44e66f6369a927f63400fd212a3edeead74142",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:cloud-security-posture-management",
+      "version": "1.0.0",
+      "sha256": "68d5edb8a64121f553eec8c1edece5b4824fab0b8f70048eb9b10272720576c9",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:cloud-serverless-security-review",
+      "version": "1.0.0",
+      "sha256": "13868f416cbc553eaad348ff5f994a612c4f00d22a38d372b9d130da750a944e",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:cloud-storage-access-pattern-analysis",
+      "version": "1.0.0",
+      "sha256": "f16911cf465edd94cae50069bf9b153de2d7ba51d52c9e7da47f6a19b34b08d1",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:containers-image-hardening",
+      "version": "1.0.0",
+      "sha256": "0e7e65ac63294a337108a938337613f0c4a3a33559f5adbf8f972444f8c3dadf",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:containers-registry-image-security",
+      "version": "1.0.0",
+      "sha256": "1178a8d822a4ebd1c4355c14d35d5afcf4938e439293d3dfb2d403279816a697",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:distroless-minimal-base-image",
+      "version": "1.0.0",
+      "sha256": "1ccf04c909c833c8f395447306e5eee845eebb51c6f5422eda014fbc36030ec6",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:docker-container-forensics",
+      "version": "1.0.0",
+      "sha256": "78167fb9ffcdc9e27ec25cbc7ca8f2f97ca461b0065860abfe7bb7219e64617f",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:docker-daemon-hardening",
+      "version": "1.0.0",
+      "sha256": "d2844c6200661fdcc78bbe0d51ea04733f6d31b37a37b85348339f88b0b3865e",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:docker-production-hardening",
+      "version": "1.0.0",
+      "sha256": "e9b07b8758c8542ffe0dd36a323df8105a9c1365824120bf473f75c390bd1c1d",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:docx",
+      "version": "1.0.0",
+      "sha256": "8bc3825830b68376c7168db8ba40bf609f86a108842cc21e1f586aaa0f9d24b3",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:fortinet-config-change",
+      "version": "1.3.0",
+      "sha256": "242b551994c2c8b019af610c0daa8149e8af3c476a5ee4c3c5357a85035f530b",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:gcp-alloydb-basics",
+      "version": "1.0.0",
+      "sha256": "2f85af7436c64e95e1f07219d2dbcfe6a5802abfc978aba392be96f96499eb0d",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-bigquery-basics",
+      "version": "1.0.0",
+      "sha256": "19e9ff06c03a1dfb4a50b6240385e9091d93d36c5cf0f488757515328035e7c5",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-cloud-run-basics",
+      "version": "1.0.0",
+      "sha256": "e9b7ea1d4125777f15538337010424d1da7ee59bfe01202b95ebd63ecca696d9",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-cloud-sql-basics",
+      "version": "1.0.0",
+      "sha256": "dd185ddbb7414b03440ee918f87d7c7cf01bbd91736091ba1260bcc182557866",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-firebase-basics",
+      "version": "1.0.0",
+      "sha256": "f2ffd0375e1faf654800f322d73c0efc2cd53199619eac165ccbbec477f4b278",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-gemini-agents-api",
+      "version": "1.0.0",
+      "sha256": "89d0d664aea42719c3e3d5d900a819fc6f7cc2a9e27ae6746f8c7335d0154113",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-gemini-api",
+      "version": "1.0.0",
+      "sha256": "3eb1688937ee77cc288e1feedc8098e9adca9b670a240f0349f9ef99e88c6daa",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-gemini-interactions-api",
+      "version": "1.0.0",
+      "sha256": "44b0e29c5dfbf5fa3a42908e14727737bb4a1809a552d790c42971a0dde28d89",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-gke-basics",
+      "version": "1.0.0",
+      "sha256": "2d82fa375ad8599fa9ca1cd9c84187f56d19af603ea0eed0e8749f454e2c4526",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-iam-permission-audit",
+      "version": "1.0.0",
+      "sha256": "adf5cdfa32fd2e0715fc69ab4c2682ca0443798366980ae0a3e5e395aa7196f4",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:gcp-networking-observability",
+      "version": "1.0.0",
+      "sha256": "b197996e20545a85a83af49ba2934e347057f64b0d494dc5fd16d9eb548a3edd",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-recipe-auth",
+      "version": "1.0.0",
+      "sha256": "b9858a066251105cc3b4e9a9d89dfcdcace79dd58f725dee80978a154a64fdb7",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-recipe-onboarding",
+      "version": "1.0.0",
+      "sha256": "40f9746191879ed8d25097c8dec7ce7c61a21473fd90f19db8f3941983709930",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-waf-cost-optimization",
+      "version": "1.0.0",
+      "sha256": "6d71ed48f6f959709e89a55af554b7fd661aa78c85c208ac56d8955be6426459",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-waf-operational-excellence",
+      "version": "1.0.0",
+      "sha256": "36cb6aa55a2b02a5c6ff766bc2597a7db2b0a0aaf617b71fdc0ac72900a44b84",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-waf-performance-optimization",
+      "version": "1.0.0",
+      "sha256": "bf69032b7999ed75eb5e7daa4915c41ec1380053801747406e3806f037e48d99",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-waf-reliability",
+      "version": "1.0.0",
+      "sha256": "15a7850bbce7434307d81ad113dc211b024466e1ead06c576ca371395e358e24",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-waf-security",
+      "version": "1.0.0",
+      "sha256": "275dbb0f1c1679207a1dfed95e1ee97fb43950c934e09011b613b07f62b6fd9c",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:gcp-waf-sustainability",
+      "version": "1.0.0",
+      "sha256": "23337f40ddbd287bbc712d87683f24ef580403709baa8f7cab9dcd9ebfa57ef3",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:google-workspace-admin-reports",
+      "version": "0.22.5",
+      "sha256": "ab08b1519c94275ebb44af056029b8df8c32d5eff5a87dae13a654414725510c",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:google-workspace-admin-security",
+      "version": "1.0.0",
+      "sha256": "937a2a33f461241109a3608f6efc90f3680e3f76e806dfff8e32494410815f1f",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:google-workspace-calendar",
+      "version": "0.22.5",
+      "sha256": "8353165026638ff2a58b3b9b3b8dfb576e8d07241456ecade122d16874d10437",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:google-workspace-drive",
+      "version": "0.22.5",
+      "sha256": "5593ed56988f940f169d0dbed0ad3b14cbff788e291cbb8e7500a31b748c7720",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:google-workspace-gmail",
+      "version": "0.22.5",
+      "sha256": "1866f2ba5413a334dcd3f7add634987f48663ac40d31c6f5bd0405ef936c1794",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:google-workspace-it-admin-persona",
+      "version": "0.22.5",
+      "sha256": "9727502886a3a576796112f77103138f0690ddbb5efee185d52a0cd16a4c5fe4",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:google-workspace-phishing-protection",
+      "version": "1.0.0",
+      "sha256": "9eb02a8f05257d1783a2089e1e92f780ffb2cebdc6a128ce9f33afc9c9681333",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:google-workspace-shared-cli",
+      "version": "0.22.5",
+      "sha256": "4e996803f41dc9d128c7ab08d6936c90e9d454689d5026fbe6739045adc3ca3b",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:grype-image-scanning",
+      "version": "1.0.0",
+      "sha256": "d4ab41d42eeed3adb62c0685ee6c0474af09210aacd96e19891af5724a80d25d",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:hand-drawn-diagrams",
+      "version": "1.0.0",
+      "sha256": "da1c42cac085bf1120016cb79435a98bb72d9d82d4eb6788725fdc42e2fdc543",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:kube-bench-cis-benchmark",
+      "version": "1.0.0",
+      "sha256": "bafe5aa5a31bbfb48c59597c673170f0078a1df0d3ff7460532f1bb7cde17723",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:kubernetes-audit-log-analysis",
+      "version": "1.0.0",
+      "sha256": "5d3c96029f0446590a7a0e6a5893486241888aa3ceff931127fbde0670f5404a",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:kubernetes-etcd-security-assessment",
+      "version": "1.0.0",
+      "sha256": "6060bfd61731e98d635b9ab1b56688ea57606360d3815b19d5360e238762fbb0",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:kubernetes-managed-cluster-hardening",
+      "version": "1.0.0",
+      "sha256": "f864dd2a4c523d0e36fd72b8de8bfc6c2f61dd6837d0c55a46c7bd8321ca92fc",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:kubernetes-network-policies",
+      "version": "1.0.0",
+      "sha256": "ee41d554ed66c4e7e2e11dbd66361f9b1d3749f13c0dc3cc0395d2cdcc3c1121",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:kubernetes-penetration-testing",
+      "version": "1.0.0",
+      "sha256": "509a4dcb0fecaef28e3563e089c671bbb7cb89fdccb3800931af48444ee39a6a",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:kubernetes-pod-security-standards",
+      "version": "1.0.0",
+      "sha256": "eae13942fc3f79c6cff7c149afb3148c23f8b4140d7fbde591131f9338b45203",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:kubernetes-rbac-audit",
+      "version": "1.0.0",
+      "sha256": "7e7fea366e022385c8d24803d559d2871266e2a0950927381be633d586e68a04",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:kubesec-manifest-scanning",
+      "version": "1.0.0",
+      "sha256": "65a886cb3ee596ec39bdb7e0dc3383b611f541ad2c49d2107b0cbbd05a559aaa",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:linux-audit-log-intrusion-analysis",
+      "version": "1.0.0",
+      "sha256": "85b03b17965fd251e6b6cb4d6cf69beae8ae2a71d16c0c7458a4031f9f0f0a62",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:linux-cis-benchmark-hardening",
+      "version": "1.0.0",
+      "sha256": "b0882430ff7c27ebadcfb8bc6f6bce9686c5efa4dd9e68ba65058d5b2400a3e5",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:microsoft-365-audit-log-compromise-analysis",
+      "version": "1.0.0",
+      "sha256": "b5f5aa9fad68c5da0fa16db4a29604cb34272586e89084ad05d24a0021e36cae",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:mongodb-query-optimizer",
+      "version": "1.0.0",
+      "sha256": "8753d91dc9326161820ab49d6aaa1f0e0e368c84e7351703c998854a0a280c56",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:mongodb-schema-design",
+      "version": "1.0.0",
+      "sha256": "08099ab2e86fb625eb9d2dbbe675855d8a6f981713d611edbdf3e802e2df6971",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:netapp-reporting",
+      "version": "1.0.0",
+      "sha256": "eb5b279cff82d214f2aacf585396428214de063ca0d437b24cd139fdc02e5661",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:network-vlan-segmentation",
+      "version": "1.0.0",
+      "sha256": "cb825bc0ad2080104cf264fb048eceb9549b0efdf70b005029565a485c574f41",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:pdf",
+      "version": "1.0.0",
+      "sha256": "3341bf02c5144b63f6a86b7c2128d08a2e4fe96dd649d8cb4c52ce1f76ed9644",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:pfsense-firewall-rules",
+      "version": "1.0.0",
+      "sha256": "e0751e44c9d78e9ab668a3037eb44861ecfd7fce3a4808381e9454a3482534ca",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:pptx",
+      "version": "1.0.0",
+      "sha256": "faa0b238e2763cddbad13b2c7e7e079c701149faf299c531b2f10625594f75ed",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:resend-email-api",
+      "version": "3.3.3",
+      "sha256": "c2fd04d4ed3fcc37fa9e51147eb7ce89b1d5c2d27ff6667970815310e71324d1",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:resend-react-email",
+      "version": "2.1.0",
+      "sha256": "df7aa3f66cd0bfea4e845ef37085f2446f97b7daafcabda6a66116b05da47c03",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:security-network-traffic-incident-analysis",
+      "version": "1.0.0",
+      "sha256": "8fe7b1cae0dfcc6278e115f2a193520d48ffda6d0bed2afa9ffa670799cf19d4",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:security-soc2-type2-audit-preparation",
+      "version": "1.0.0",
+      "sha256": "de7b39b1675a8731345a1c7df3d7667cfccef986dba902350910dd88add985f0",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:skill-creator",
+      "version": "1.0.0",
+      "sha256": "51089581bb853bb253f3dec1d4368ad21cedb37f4413841589cb76cde06659c0",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:supabase-postgresql-postgres-best-practices",
+      "version": "1.1.1",
+      "sha256": "81e79fe5ac0769c90b59ced15d87ae5ee4dbd36b56d83ab802d6eb30d856daa4",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:theme-factory",
+      "version": "1.0.0",
+      "sha256": "de0a87c27ebb971bc73ab0898c7062f4f133c04f573216f221824c44c3f46b0d",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:trivy-security-scanning",
+      "version": "1.0.0",
+      "sha256": "76a472a8efedd2b3f7c253b6f6bb1a19305b70c5c3a5d2c3e740a00dfcc82aa0",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:web-artifacts-builder",
+      "version": "1.0.0",
+      "sha256": "a9ee6a546466476c319d4ea7fc087061418f1555656b8db4eed0c040f5ab62d8",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:windows-server-cis-benchmark-hardening",
+      "version": "1.0.0",
+      "sha256": "b048f4031ffe13200ec363663af754d603b74af59f58fc67ea53460da19bb2d5",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:windows-server-powershell-script-block-analysis",
+      "version": "1.0.0",
+      "sha256": "92629dd9283a221a03599ef1e8f7cfcb4dc00976c2edb210fbccbf2e881c31f2",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:writing-plans",
+      "version": "1.0.0",
+      "sha256": "40b38476e20a3810c384799a93b947e8933fc0c2463a4e86da7f26b491c4b223",
+      "updatedAt": "2026-05-29T02:49:22+05:30"
+    },
+    {
+      "name": "scogo:xlsx",
+      "version": "1.0.0",
+      "sha256": "a666209659b7b195edebb51d6aa79ed6d9e76493acdc1f8ef1cb547177a26738",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:zeek-network-anomaly-detection",
+      "version": "1.0.0",
+      "sha256": "60e2a38bb613e75eb62234de2a0ad633485f1059794002a4cf9f572b88b451ca",
+      "updatedAt": "2026-05-29T00:09:15+05:30"
+    }
+  ]
+}

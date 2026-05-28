@@ -24,6 +24,7 @@ fortinet:
   display: "Fortinet"
   domains: [network, security]
   products: [fortios, fortimanager, fortianalyzer]
+  aliases: [forti, fortigate]
 arista:
   display: "Arista Networks"
   domains: [network]
@@ -32,6 +33,7 @@ paloalto:
   display: "Palo Alto Networks"
   domains: [security, network]
   products: [panos, panorama]
+  aliases: [pan, palo-alto, palo, panw]
 crowdstrike:
   display: "CrowdStrike"
   domains: [security]
@@ -46,18 +48,22 @@ aws:
   display: "Amazon Web Services"
   domains: [cloud]
   products: [aws]
+  aliases: [amazon, amazon-web-services]
 azure:
   display: "Microsoft Azure"
   domains: [cloud]
   products: [azure]
+  aliases: [microsoft-azure, az]
 gcp:
   display: "Google Cloud Platform"
   domains: [cloud]
   products: [gcp]
+  aliases: [google-cloud, google-cloud-platform]
 oci:
   display: "Oracle Cloud Infrastructure"
   domains: [cloud]
   products: [oci]
+  aliases: [oracle-cloud, oracle-cloud-infrastructure]
 
 # --- storage vendors ---
 netapp:
@@ -68,6 +74,7 @@ dell-emc:
   display: "Dell EMC"
   domains: [storage]
   products: [powerstore, unity, powermax]
+  aliases: [emc, dellemc]
 hitachi:
   display: "Hitachi Vantara"
   domains: [storage]
@@ -100,10 +107,12 @@ windows-server:
   display: "Windows Server"
   domains: [operating-system]
   products: [windows-server]
+  aliases: [windows, winsrv]
 rhel:
   display: "Red Hat Enterprise Linux"
   domains: [operating-system]
   products: [rhel]
+  aliases: [redhat, red-hat]
 ubuntu:
   display: "Ubuntu Server"
   domains: [operating-system]
@@ -118,6 +127,7 @@ vmware:
   display: "VMware"
   domains: [virtualization]
   products: [vsphere, esxi, vcenter]
+  aliases: [esx]
 nutanix:
   display: "Nutanix"
   domains: [virtualization]
@@ -126,6 +136,7 @@ hyper-v:
   display: "Microsoft Hyper-V"
   domains: [virtualization]
   products: [hyper-v]
+  aliases: [hyperv]
 
 # --- hardware ---
 dell:
@@ -162,16 +173,19 @@ elastic:
   display: "Elastic"
   domains: [observability]
   products: [elasticsearch, kibana]
+  aliases: [elk, elasticsearch]
 
 # --- container and Kubernetes technologies ---
 kubernetes:
   display: "Kubernetes"
   domains: [containers]
   products: [kubernetes]
+  aliases: [k8s, kube]
 docker:
   display: "Docker"
   domains: [containers]
   products: [docker]
+  aliases: [oci-image, container-image]
 trivy:
   display: "Aqua Trivy"
   domains: [containers]
@@ -210,6 +224,7 @@ supabase-postgresql:
   display: "Supabase PostgreSQL"
   domains: [database]
   products: [postgres, supabase-postgresql]
+  aliases: [postgres, postgresql, supabase]
 
 # --- email platforms ---
 resend:
@@ -226,6 +241,7 @@ google-workspace:
   display: "Google Workspace"
   domains: [cloud, security]
   products: [google-workspace]
+  aliases: [gsuite, g-suite, gws]
 linux:
   display: "Linux"
   domains: [operating-system]
@@ -234,6 +250,7 @@ microsoft-365:
   display: "Microsoft 365"
   domains: [security, cloud]
   products: [microsoft-365, graph]
+  aliases: [m365, o365, office-365]
 zeek:
   display: "Zeek"
   domains: [security, observability]

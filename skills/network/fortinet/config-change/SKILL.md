@@ -2,6 +2,11 @@
 name: scogo:fortinet-config-change
 description: "Use when an operator needs fortinet config change. Use when an operator asks to change a Fortinet device or policy. Walks an ADOM-aware FortiManager change: pull current config, preview a unified diff, wait for the mutation gate, apply, verify with a get/show, and commit a revision. Never skips preview or post-verify."
 tags: [network, fortinet, config, change, config-change, change-management, multi-tenant]
+when_to_use:
+  - change a Fortinet firewall policy or address object
+  - push a FortiManager config with preview and rollback
+  - apply a FortiGate rule change through the mutation gate
+mutates: true
 compatibility: "fortios>=7.2,<7.6,fortimanager>=7.2"
 metadata:
   version: 1.3.0

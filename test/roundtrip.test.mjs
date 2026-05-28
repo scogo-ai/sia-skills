@@ -21,7 +21,12 @@ import { tmpdir } from "node:os";
 import { join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { canonicalSkillHash, listSkillFiles } from "../tools/lib/hash-skill.mjs";
-import { generate, serialize } from "../tools/gen-catalog.mjs";
+import {
+  generate,
+  serialize,
+  generateManifest,
+  serializeManifest,
+} from "../tools/gen-catalog.mjs";
 
 const REPO_ROOT = fileURLToPath(new URL("..", import.meta.url));
 
@@ -39,9 +44,80 @@ test("catalog generates with no validation errors", () => {
   const { catalog, issues } = generate(GEN_OPTS);
   const errors = issues.filter((i) => i.level === "error");
   assert.equal(errors.length, 0, `validation errors: ${JSON.stringify(errors, null, 2)}`);
-  assert.equal(catalog.schemaVersion, 1);
+  assert.equal(catalog.schemaVersion, 2);
   assert.equal(catalog.repo, "scogo-ai/sia-skills");
   assert.ok(catalog.skills.length >= 3, "expected at least the 3 example skills");
+});
+
+test("schemaVersion 2 fields exist and are well-formed on every entry", () => {
+  const { catalog } = generate(GEN_OPTS);
+  for (const entry of catalog.skills) {
+    // summary: non-empty string (falls back to the full description if needed).
+    assert.equal(typeof entry.summary, "string", `summary type for ${entry.name}`);
+    assert.ok(entry.summary.length > 0, `summary empty for ${entry.name}`);
+    // triggers: string[] with at least one entry, no empties.
+    assert.ok(Array.isArray(entry.triggers), `triggers array for ${entry.name}`);
+    assert.ok(entry.triggers.length > 0, `triggers empty for ${entry.name}`);
+    assert.ok(
+      entry.triggers.every((t) => typeof t === "string" && t.length > 0),
+      `triggers must be non-empty strings for ${entry.name}`,
+    );
+    // keywords: string[] (may be empty), lowercased, none duplicating a tag.
+    assert.ok(Array.isArray(entry.keywords), `keywords array for ${entry.name}`);
+    const tagSet = new Set(entry.tags.map((t) => t.toLowerCase()));
+    for (const k of entry.keywords) {
+      assert.equal(typeof k, "string", `keyword type for ${entry.name}`);
+      assert.equal(k, k.toLowerCase(), `keyword must be lowercase for ${entry.name}: ${k}`);
+      assert.ok(!tagSet.has(k), `keyword "${k}" duplicates a tag for ${entry.name}`);
+    }
+    // keywords deterministic order = sorted ascending.
+    const sorted = [...entry.keywords].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
+    assert.deepEqual(entry.keywords, sorted, `keywords not sorted for ${entry.name}`);
+    // mutates: boolean.
+    assert.equal(typeof entry.mutates, "boolean", `mutates type for ${entry.name}`);
+    // updatedAt: ISO-8601-ish string.
+    assert.equal(typeof entry.updatedAt, "string", `updatedAt type for ${entry.name}`);
+    assert.ok(/^\d{4}-\d{2}-\d{2}T/.test(entry.updatedAt), `updatedAt not ISO for ${entry.name}`);
+  }
+});
+
+test("summary strips the templated trigger prefix", () => {
+  const { catalog } = generate(GEN_OPTS);
+  const re = /^use when an operator needs /i;
+  let stripped = 0;
+  for (const entry of catalog.skills) {
+    if (re.test(entry.description) && !re.test(entry.summary)) stripped++;
+    // summary must never re-introduce the leading boilerplate prefix.
+    assert.ok(
+      !/^use when an operator needs [^.]*\.\s/i.test(entry.summary),
+      `summary still carries the boilerplate prefix for ${entry.name}`,
+    );
+  }
+  assert.ok(stripped > 0, "expected at least one description prefix to be stripped");
+});
+
+test("manifest matches a fresh regeneration (byte-identical) and is sorted", () => {
+  const { catalog } = generate(GEN_OPTS);
+  const a = serializeManifest(generateManifest(catalog));
+  const b = serializeManifest(generateManifest(generate(GEN_OPTS).catalog));
+  assert.equal(a, b, "manifest generation is not deterministic");
+
+  const manifest = generateManifest(catalog);
+  assert.equal(manifest.schemaVersion, 2);
+  assert.equal(manifest.repo, "scogo-ai/sia-skills");
+  assert.equal(manifest.skills.length, catalog.skills.length);
+  // sorted by name + carries exactly the diff fields.
+  const names = manifest.skills.map((s) => s.name);
+  assert.deepEqual(names, [...names].sort((x, y) => x.localeCompare(y)), "manifest not sorted by name");
+  for (const m of manifest.skills) {
+    assert.equal(typeof m.name, "string");
+    assert.equal(typeof m.sha256, "string");
+    assert.equal(typeof m.updatedAt, "string");
+    // sha256 + updatedAt must agree with the catalog entry.
+    const entry = catalog.skills.find((s) => s.name === m.name);
+    assert.equal(m.sha256, entry.sha256, `manifest sha256 mismatch for ${m.name}`);
+    assert.equal(m.updatedAt, entry.updatedAt, `manifest updatedAt mismatch for ${m.name}`);
+  }
 });
 
 test("every entry sha256 == independent canonical recomputation", () => {
@@ -167,4 +243,32 @@ test("committed catalog.json matches a regeneration (timestamp-normalised)", () 
   const fresh = generate({ ...GEN_OPTS, generatedAt: committed.generatedAt, commit: committed.commit }).catalog;
   assert.equal(serialize(fresh), committedRaw, "committed catalog.json is stale vs. the tree");
   void statSync; // keep import used if the early-return path is taken
+});
+
+// Sanity: the committed manifest.json matches a fresh regeneration off the
+// committed catalog's pinned timestamp/commit (mirrors the CI manifest drift gate).
+test("committed manifest.json matches a regeneration (timestamp-normalised)", () => {
+  let committedManifestRaw;
+  try {
+    committedManifestRaw = readFileSync(join(REPO_ROOT, "manifest.json"), "utf8");
+  } catch {
+    return; // manifest not yet written (first-run); skip rather than fail.
+  }
+  let committedCatalogRaw;
+  try {
+    committedCatalogRaw = readFileSync(join(REPO_ROOT, "catalog.json"), "utf8");
+  } catch {
+    return;
+  }
+  const committedCatalog = JSON.parse(committedCatalogRaw);
+  const fresh = generate({
+    ...GEN_OPTS,
+    generatedAt: committedCatalog.generatedAt,
+    commit: committedCatalog.commit,
+  }).catalog;
+  assert.equal(
+    serializeManifest(generateManifest(fresh)),
+    committedManifestRaw,
+    "committed manifest.json is stale vs. the tree",
+  );
 });

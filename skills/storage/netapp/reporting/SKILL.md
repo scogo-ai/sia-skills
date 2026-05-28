@@ -2,6 +2,11 @@
 name: scogo:netapp-reporting
 description: "Use when an operator needs netapp reporting. Use when an operator asks for a NetApp/ONTAP capacity, performance, or aggregate-utilisation report. Pulls metrics via the netapp MCP (Active IQ Unified Manager / ONTAP REST), produces a tabular summary plus the top capacity risks. Read-only — never mutates."
 tags: [storage, netapp, reporting, capacity-planning, read-only]
+when_to_use:
+  - report on NetApp ONTAP capacity or aggregate utilisation
+  - summarise volume performance and top capacity risks
+  - pull an Active IQ Unified Manager storage report
+mutates: false
 compatibility: "ontap>=9.10"
 metadata:
   version: 1.0.0

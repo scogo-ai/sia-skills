@@ -322,6 +322,28 @@ export function validateSkillDir(skillDir, vendors) {
     push("warn", `version "${fm.version}" is not semver (MAJOR.MINOR.PATCH)`);
   }
 
+  // --- catalog v2 OPTIONAL frontmatter (§8.3) --------------------------------
+  // when_to_use / triggers: if present, must be a string or a string list.
+  // mutates: if present, must be a boolean (true/false). Wrong type = error.
+  const fmBlock = extractRawFrontmatter(readUtf8(skillMd));
+  for (const key of ["when_to_use", "when-to-use", "triggers"]) {
+    const raw = rawFrontmatterValue(fmBlock, key);
+    if (raw === null) continue; // key absent
+    if (!isStringOrStringListShape(raw)) {
+      push("error", `frontmatter "${key}" must be a string or a list of strings`);
+    }
+  }
+  {
+    const raw = rawFrontmatterValue(fmBlock, "mutates");
+    if (raw !== null) {
+      const v = raw.inline.trim().toLowerCase();
+      const ok = v === "true" || v === "false" || v === "yes" || v === "no";
+      if (!ok) {
+        push("error", `frontmatter "mutates" must be a boolean (true/false), got "${raw.inline.trim()}"`);
+      }
+    }
+  }
+
   // --- unsafe-path scan over the bundle --------------------------------------
   scanUnsafePaths(skillDir, push);
 
@@ -433,6 +455,71 @@ function extname(p) {
 /** @param {string} p @returns {string} */
 function readUtf8(p) {
   return readFileSync(p, "utf8");
+}
+
+/**
+ * Return the raw text between the opening/closing `---` frontmatter delimiters,
+ * or "" when there is no frontmatter. Mirrors frontmatter.mjs's extractor but is
+ * kept local so validation can inspect raw shapes the tolerant parser drops.
+ * @param {string} text
+ * @returns {string}
+ */
+function extractRawFrontmatter(text) {
+  if (!text.startsWith("---")) return "";
+  const afterOpen = text.slice(3);
+  const firstNewline = afterOpen.indexOf("\n");
+  if (firstNewline === -1) return "";
+  const remaining = afterOpen.slice(firstNewline + 1);
+  const closeMatch = remaining.match(/^---\s*(?:\r?\n|$)/m);
+  if (!closeMatch || closeMatch.index === undefined) return "";
+  return remaining.slice(0, closeMatch.index);
+}
+
+/**
+ * Locate a TOP-LEVEL frontmatter key and return its raw inline value plus the
+ * indented block lines that follow it (until the next top-level key / EOF).
+ * Returns null when the key is absent.
+ * @param {string} block  raw frontmatter text
+ * @param {string} key
+ * @returns {{ inline: string, blockLines: string[] } | null}
+ */
+function rawFrontmatterValue(block, key) {
+  const lines = block.split("\n");
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (!/^\S/.test(line) || !line.includes(":")) continue;
+    const colon = line.indexOf(":");
+    if (line.slice(0, colon).trim() !== key) continue;
+    const inline = line.slice(colon + 1);
+    const blockLines = [];
+    for (let j = i + 1; j < lines.length; j++) {
+      const child = lines[j];
+      if (child.length > 0 && !/^\s/.test(child)) break; // dedent → next top-level key
+      blockLines.push(child);
+    }
+    return { inline, blockLines };
+  }
+  return null;
+}
+
+/**
+ * Decide whether a raw frontmatter value is shaped as a string or a list of
+ * strings (vs a mapping / nested object, which is the disallowed shape). Accepts:
+ *   - a non-empty inline scalar       (key: some text)
+ *   - an inline list                  (key: [a, b])
+ *   - a block list of "- item" lines  (key:\n  - a\n  - b)
+ * Rejects an empty value with indented "subkey: value" children (a mapping).
+ * @param {{ inline: string, blockLines: string[] }} raw
+ * @returns {boolean}
+ */
+function isStringOrStringListShape(raw) {
+  const inline = raw.inline.trim();
+  if (inline.startsWith("[")) return inline.includes("]"); // inline list
+  if (inline !== "" && inline !== "|" && inline !== ">") return true; // scalar (or block scalar)
+  // Empty inline → must be a block LIST (only "- item" / blank lines), not a map.
+  const meaningful = raw.blockLines.filter((l) => l.trim() !== "");
+  if (meaningful.length === 0) return false; // present but empty
+  return meaningful.every((l) => /^\s*-\s+/.test(l));
 }
 
 // ---------------------------------------------------------------------------
