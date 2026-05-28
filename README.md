@@ -35,6 +35,8 @@ sia-skills/
     ├── _meta/
     ├── cloud/
     ├── containers/
+    ├── database/
+    ├── email/
     ├── network/
     ├── operating-system/
     ├── security/
@@ -63,7 +65,7 @@ Use `compatibility` only when a skill is tied to an OEM product/version axis dec
 - Keep `name` flat, lowercase, and copy-paste safe. Sia invokes skills by exact name; names are not parsed as paths.
 - Put the directory structure into `path` and search metadata into `tags`.
 - Write the description in third person and include clear trigger words. This is what the model sees before invoking the skill.
-- Keep `SKILL.md` as the high-level workflow. Put long lookup tables in `references/`, reusable examples in `assets/`, and operator-runnable helpers in `scripts/`.
+- Keep `SKILL.md` as the high-level workflow. Put long lookup tables in `references/`, reusable examples in `assets/` or `examples/`, operator-runnable helpers in `scripts/`, rule packs in `rules/` with schemas/mappings beside them, and multi-step imported procedures in clearly linked `workflows/` or `troubleshooting/` bundles.
 - Keep references one level below `SKILL.md`; avoid chains like `references/a.md` linking to `references/deep/b.md`.
 - Scripts are bundled and hashed, but Sia does not auto-execute them. A skill may tell the operator what a helper does, then ask before using it.
 
@@ -71,9 +73,10 @@ These rules follow the Anthropic skill guidance: keep loaded instructions concis
 
 ## Maintenance Process
 
-1. Add or edit a skill under the correct domain path.
+1. Add or edit a skill under the correct domain path. Use `cloud` for hyperscaler/OEM SaaS services, `database` for database engines and hosted database platforms, `email` for email delivery and template platforms, and `_meta` only for cross-domain authoring or document workflows.
 2. Register new OEM, product, platform, or tool slugs in `vendors.yaml`.
-3. Run validation and generation:
+3. Check the skill against Anthropic's authoring guidance: keep the trigger description specific, keep `SKILL.md` concise, directly link any references/workflows, and test at least one realistic prompt before declaring it ready.
+4. Run validation and generation:
 
 ```sh
 node tools/validate-skill.mjs skills
@@ -82,6 +85,6 @@ node tools/gen-index.mjs --generated-at "$(node -e 'process.stdout.write(require
 node --test "test/**/*.test.mjs"
 ```
 
-4. Commit the skill changes with regenerated `catalog.json` and `index.json`.
-5. Let CODEOWNERS route content review by domain and platform review for `tools/`, `.github/`, `channels.json`, `catalog.json`, `index.json`, `vendors.yaml`, and `yanked.json`.
-6. Release through repo-wide `beta` and `stable` channel pointers in `channels.json`. Use `yanked.json` to block a bad skill version.
+5. Commit the skill changes with regenerated `catalog.json` and `index.json`.
+6. Let CODEOWNERS route content review by domain and platform review for `tools/`, `.github/`, `channels.json`, `catalog.json`, `index.json`, `vendors.yaml`, and `yanked.json`.
+7. Release through repo-wide `beta` and `stable` channel pointers in `channels.json`. Use `yanked.json` to block a bad skill version.

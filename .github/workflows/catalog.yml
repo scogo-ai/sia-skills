@@ -30,9 +30,10 @@ on:
       - "skills/**"
       - "tools/**"
       - "channels.json"
+      - "catalog.json"
+      - "index.json"
       - "vendors.yaml"
       - "yanked.json"
-      - "index.json"
       - ".github/workflows/catalog.yml"
   push:
     branches: ["main"]
@@ -40,6 +41,8 @@ on:
       - "skills/**"
       - "tools/**"
       - "channels.json"
+      - "catalog.json"
+      - "index.json"
       - "vendors.yaml"
       - "yanked.json"
 

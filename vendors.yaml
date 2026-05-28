@@ -197,6 +197,26 @@ distroless:
   domains: [containers]
   products: [distroless]
 
+# --- databases ---
+clickhouse:
+  display: "ClickHouse"
+  domains: [database]
+  products: [clickhouse]
+mongodb:
+  display: "MongoDB"
+  domains: [database]
+  products: [mongodb]
+supabase-postgresql:
+  display: "Supabase PostgreSQL"
+  domains: [database]
+  products: [postgres, supabase-postgresql]
+
+# --- email platforms ---
+resend:
+  display: "Resend"
+  domains: [email]
+  products: [resend, react-email]
+
 # --- additional platforms and tools ---
 pfsense:
   display: "pfSense"

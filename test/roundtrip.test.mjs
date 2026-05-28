@@ -101,7 +101,7 @@ test("generation is idempotent (byte-identical on re-run)", () => {
 test(".git segments are excluded from hashing and listing", () => {
   const tmp = mkdtempSync(join(tmpdir(), "sia-skills-gitexcl-"));
   const dst = join(tmp, "skill");
-  const srcDir = join(REPO_ROOT, "skills/_meta/incident-triage");
+  const srcDir = join(REPO_ROOT, "skills/_meta/docx");
   cpSync(srcDir, dst, { recursive: true });
   const baseline = canonicalSkillHash(dst);
 

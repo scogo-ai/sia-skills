@@ -31,6 +31,8 @@
 /skills/backup/                     @scogo-ai/storage-eng   @scogo-ai/sia-skills-maintainers
 /skills/cloud/                      @scogo-ai/cloud-eng     @scogo-ai/sia-skills-maintainers
 /skills/containers/                 @scogo-ai/cloud-eng     @scogo-ai/sia-skills-maintainers
+/skills/database/                   @scogo-ai/data-eng      @scogo-ai/sia-skills-maintainers
+/skills/email/                      @scogo-ai/app-eng       @scogo-ai/sia-skills-maintainers
 /skills/operating-system/           @scogo-ai/sys-eng       @scogo-ai/sia-skills-maintainers
 /skills/virtualization/             @scogo-ai/sys-eng       @scogo-ai/sia-skills-maintainers
 /skills/observability/              @scogo-ai/sre-eng       @scogo-ai/sia-skills-maintainers

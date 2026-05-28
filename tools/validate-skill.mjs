@@ -44,6 +44,8 @@ const REPO_ROOT = fileURLToPath(new URL("..", import.meta.url));
 export const DOMAINS = new Set([
   "cloud",
   "containers",
+  "database",
+  "email",
   "network",
   "security",
   "storage",
@@ -68,7 +70,21 @@ const ALLOWED_BUNDLE_DIRS = new Set([
   "assets",
   "agents",
   "eval-viewer",
+  "examples",
+  "workflows",
+  "troubleshooting",
+  "rules",
+  "mappings",
+  "schemas",
   "themes",
+  "cost-forecast",
+  "cost-optimization",
+  "cost-query",
+  "foundry-agent",
+  "project",
+  "quota",
+  "rbac",
+  "resource",
 ]);
 // Extensions permitted inside scripts/references/assets bundles.
 const ALLOWED_BUNDLE_EXTS = new Set([
@@ -88,6 +104,11 @@ const ALLOWED_BUNDLE_EXTS = new Set([
   ".xsd",
   ".xml",
   ".html",
+  ".js",
+  ".cjs",
+  ".mjs",
+  ".ps1",
+  ".bicep",
   ".gz",
   ".pdf",
 ]);

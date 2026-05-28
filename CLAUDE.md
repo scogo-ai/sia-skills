@@ -10,7 +10,10 @@ This repo is the canonical Sia CLI curated skill source. Keep the runtime contra
 - Keep `description` trigger-oriented and third person: start with "Use when an operator needs ...".
 - Set `author: scogo-ai`. Do not add `nist_csf` blocks or per-skill `LICENSE` files.
 - Add new OEM/tool/product slugs to `vendors.yaml` before using them in a path or compatibility string.
-- Put long material in `references/`, helpers in `scripts/`, and templates in `assets/`.
+- Put long material in `references/`, helpers in `scripts/`, templates in `assets/`, reusable demonstrations in `examples/`, rule packs in `rules/` with schemas/mappings beside them, and imported runbooks in directly linked `workflows/` or `troubleshooting/` bundles.
+- Any new skill added to this repo must follow Anthropic's skill authoring best practices:
+  https://github.com/obra/superpowers/blob/main/skills/writing-skills/anthropic-best-practices.md
+  In practice: keep `SKILL.md` concise, write third-person trigger-oriented descriptions, use progressive disclosure through directly linked reference files, avoid deep reference chains, choose the right level of instruction specificity for the task risk, and test the skill against realistic requests before declaring it ready.
 
 Before declaring the repo ready, run:
 
