@@ -162,3 +162,59 @@ elastic:
   display: "Elastic"
   domains: [observability]
   products: [elasticsearch, kibana]
+
+# --- container and Kubernetes technologies ---
+kubernetes:
+  display: "Kubernetes"
+  domains: [containers]
+  products: [kubernetes]
+docker:
+  display: "Docker"
+  domains: [containers]
+  products: [docker]
+trivy:
+  display: "Aqua Trivy"
+  domains: [containers]
+  products: [trivy]
+grype:
+  display: "Anchore Grype"
+  domains: [containers]
+  products: [grype]
+calico:
+  display: "Project Calico"
+  domains: [containers]
+  products: [calico]
+kube-bench:
+  display: "kube-bench"
+  domains: [containers]
+  products: [kube-bench]
+kubesec:
+  display: "Kubesec"
+  domains: [containers]
+  products: [kubesec]
+distroless:
+  display: "Google Distroless"
+  domains: [containers]
+  products: [distroless]
+
+# --- additional platforms and tools ---
+pfsense:
+  display: "pfSense"
+  domains: [network]
+  products: [pfsense]
+google-workspace:
+  display: "Google Workspace"
+  domains: [cloud, security]
+  products: [google-workspace]
+linux:
+  display: "Linux"
+  domains: [operating-system]
+  products: [linux]
+microsoft-365:
+  display: "Microsoft 365"
+  domains: [security, cloud]
+  products: [microsoft-365, graph]
+zeek:
+  display: "Zeek"
+  domains: [security, observability]
+  products: [zeek]

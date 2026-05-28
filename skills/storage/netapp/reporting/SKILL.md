@@ -1,17 +1,13 @@
 ---
 name: scogo:netapp-reporting
-description: "Use when an operator asks for a NetApp/ONTAP capacity, performance, or aggregate-utilisation report. Pulls metrics via the netapp MCP (Active IQ Unified Manager / ONTAP REST), produces a tabular summary plus the top capacity risks. Read-only — never mutates."
+description: "Use when an operator needs netapp reporting. Use when an operator asks for a NetApp/ONTAP capacity, performance, or aggregate-utilisation report. Pulls metrics via the netapp MCP (Active IQ Unified Manager / ONTAP REST), produces a tabular summary plus the top capacity risks. Read-only — never mutates."
 tags: [storage, netapp, reporting, capacity-planning, read-only]
 compatibility: "ontap>=9.10"
 metadata:
   version: 1.0.0
-# allowed-tools is recorded for transparency only; the mutation gate still
-# governs every call (binding contract §2.1). It never auto-grants anything.
+author: scogo-ai
 allowed-tools: [netapp_get, netapp_list]
-# Intentionally NOT paths-gated: capacity reporting is broadly useful and should
-# stay always-listed rather than waiting for the operator to touch an ONTAP file.
 ---
-
 # NetApp ONTAP Reporting
 
 Use when the operator wants a point-in-time NetApp report — capacity, performance, or aggregate/volume utilisation. This skill is **read-only**: it issues only get/list calls. If you find yourself about to mutate anything, stop — that is a different skill (`scogo:netapp-snapmirror-config`).

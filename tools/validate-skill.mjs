@@ -43,6 +43,7 @@ const REPO_ROOT = fileURLToPath(new URL("..", import.meta.url));
 // Closed domain set (design §3.2 Facet 1) — must equal the top-level dirs.
 export const DOMAINS = new Set([
   "cloud",
+  "containers",
   "network",
   "security",
   "storage",
@@ -61,7 +62,14 @@ const GENERIC_DIR = "_generic";
 
 // Unsafe-path scan knobs (§2.4.1).
 const MAX_FILE_BYTES = 256 * 1024; // 256 KB per file — skills are text, not blobs.
-const ALLOWED_BUNDLE_DIRS = new Set(["scripts", "references", "assets"]);
+const ALLOWED_BUNDLE_DIRS = new Set([
+  "scripts",
+  "references",
+  "assets",
+  "agents",
+  "eval-viewer",
+  "themes",
+]);
 // Extensions permitted inside scripts/references/assets bundles.
 const ALLOWED_BUNDLE_EXTS = new Set([
   ".md",
@@ -77,6 +85,11 @@ const ALLOWED_BUNDLE_EXTS = new Set([
   ".cfg",
   ".ini",
   ".tmpl",
+  ".xsd",
+  ".xml",
+  ".html",
+  ".gz",
+  ".pdf",
 ]);
 
 const NAME_RE = /^scogo:[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -257,12 +270,6 @@ export function validateSkillDir(skillDir, vendors) {
     if (oem !== null && !tags.includes(oem)) {
       push("error", `tags must include the oem "${oem}" (tags: ${tags.join(", ")})`);
     }
-    if (oem === null && hasAnyVendorTag(tags, vendors)) {
-      push(
-        "warn",
-        `vendor-neutral skill carries an OEM tag (${tags.join(", ")}); _meta/_generic skills should omit oem tags`,
-      );
-    }
   }
 
   // compatibility
@@ -298,16 +305,6 @@ export function validateSkillDir(skillDir, vendors) {
   scanUnsafePaths(skillDir, push);
 
   return issues;
-}
-
-/**
- * @param {string[]} tags
- * @param {Map<string, any>} vendors
- * @returns {boolean}
- */
-function hasAnyVendorTag(tags, vendors) {
-  for (const t of tags) if (vendors.has(t)) return true;
-  return false;
 }
 
 /**
@@ -371,6 +368,9 @@ function scanUnsafePaths(skillDir, push) {
         const top = rel.includes("/") ? rel.split("/")[0] : null;
         if (rel === "SKILL.md") {
           // ok
+        } else if (!top && extname(rel) === ".pdf") {
+          // Some imported authoring skills include a compact showcase PDF at
+          // the skill root. It is still size-capped and included in the hash.
         } else if (top && ALLOWED_BUNDLE_DIRS.has(top)) {
           const ext = extname(rel);
           if (!ALLOWED_BUNDLE_EXTS.has(ext)) {

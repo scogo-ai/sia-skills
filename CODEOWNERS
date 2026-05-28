@@ -19,6 +19,7 @@
 /.github/                           @scogo-ai/sia-platform   # CI definitions
 /channels.json                      @scogo-ai/sia-platform   # channel moves = the release gate
 /catalog.json                       @scogo-ai/sia-platform   # GENERATED — humans must not hand-edit
+/index.json                         @scogo-ai/sia-platform   # GENERATED — humans must not hand-edit
 /vendors.yaml                       @scogo-ai/sia-platform   # OEM slug registry + product axes
 /yanked.json                        @scogo-ai/sia-platform   # yank/rollback list
 
@@ -29,6 +30,7 @@
 /skills/storage/                    @scogo-ai/storage-eng   @scogo-ai/sia-skills-maintainers
 /skills/backup/                     @scogo-ai/storage-eng   @scogo-ai/sia-skills-maintainers
 /skills/cloud/                      @scogo-ai/cloud-eng     @scogo-ai/sia-skills-maintainers
+/skills/containers/                 @scogo-ai/cloud-eng     @scogo-ai/sia-skills-maintainers
 /skills/operating-system/           @scogo-ai/sys-eng       @scogo-ai/sia-skills-maintainers
 /skills/virtualization/             @scogo-ai/sys-eng       @scogo-ai/sia-skills-maintainers
 /skills/observability/              @scogo-ai/sre-eng       @scogo-ai/sia-skills-maintainers

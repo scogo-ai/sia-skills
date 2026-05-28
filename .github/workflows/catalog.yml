@@ -32,6 +32,7 @@ on:
       - "channels.json"
       - "vendors.yaml"
       - "yanked.json"
+      - "index.json"
       - ".github/workflows/catalog.yml"
   push:
     branches: ["main"]
@@ -87,7 +88,16 @@ jobs:
       - name: Fail on catalog drift
         run: git --no-pager diff --no-index --exit-code catalog.json /tmp/catalog.json
 
-      # 4. Deterministic-hash roundtrip + tamper-detection fixture test
+      # 4. Regenerate the human/search index and fail on drift.
+      - name: Regenerate index
+        run: |
+          PINNED_TS="$(node -e 'process.stdout.write(require("./index.json").generatedAt)')"
+          node tools/gen-index.mjs --generated-at "$PINNED_TS" --out /tmp/index.json
+
+      - name: Fail on index drift
+        run: git --no-pager diff --no-index --exit-code index.json /tmp/index.json
+
+      # 5. Deterministic-hash roundtrip + tamper-detection fixture test
       #    (binding contract §2.4.1 fixture: gen -> verify hash -> tamper -> refuse).
       - name: Roundtrip + tamper test
         run: node --test "test/**/*.test.mjs"

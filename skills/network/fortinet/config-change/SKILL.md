@@ -1,16 +1,13 @@
 ---
 name: scogo:fortinet-config-change
-description: "Use when an operator asks to change a Fortinet device or policy. Walks an ADOM-aware FortiManager change: pull current config, preview a unified diff, wait for the mutation gate, apply, verify with a get/show, and commit a revision. Never skips preview or post-verify."
-tags: [network, fortinet, config-change, change-management, multi-tenant]
+description: "Use when an operator needs fortinet config change. Use when an operator asks to change a Fortinet device or policy. Walks an ADOM-aware FortiManager change: pull current config, preview a unified diff, wait for the mutation gate, apply, verify with a get/show, and commit a revision. Never skips preview or post-verify."
+tags: [network, fortinet, config, change, config-change, change-management, multi-tenant]
 compatibility: "fortios>=7.2,<7.6,fortimanager>=7.2"
 metadata:
   version: 1.3.0
+author: scogo-ai
 allowed-tools: [fortinet_get, fortinet_set, fortinet_revision_commit]
-# This skill is broadly useful, so it is intentionally NOT paths-gated (always
-# listed). It is the curated, version-gated edition of the bundled
-# scogo:fortinet-config-change; the bundled copy is the offline fallback.
 ---
-
 # Fortinet Config Change (ADOM-aware)
 
 Use when an operator asks for a change to a Fortinet device or policy. Walk these steps deliberately — never skip the preview (step 3) or the post-change verify (step 6), even under time pressure.

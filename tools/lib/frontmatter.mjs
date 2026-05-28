@@ -217,7 +217,7 @@ function parseListValue(rest, lines, lineIdx) {
     let j = lineIdx + 1;
     while (j < lines.length) {
       const child = lines[j];
-      const m = child.match(/^\s+-\s+(.*)/);
+      const m = child.match(/^\s*-\s+(.*)/);
       if (m) {
         const v = stripQuotes(m[1].trim());
         if (v.length > 0) values.push(v);
