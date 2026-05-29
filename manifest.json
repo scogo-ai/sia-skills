@@ -3,7 +3,7 @@
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
   "ref": "v2026.05.1",
-  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "generatedAt": "2026-05-29T05:12:35.035Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -471,7 +471,7 @@
       "name": "scogo:fortinet-config-change",
       "version": "1.3.0",
       "sha256": "242b551994c2c8b019af610c0daa8149e8af3c476a5ee4c3c5357a85035f530b",
-      "updatedAt": "2026-05-29T00:09:15+05:30"
+      "updatedAt": "2026-05-29T04:15:24+05:30"
     },
     {
       "name": "scogo:gcp-alloydb-basics",
@@ -657,7 +657,7 @@
       "name": "scogo:kubernetes-audit-log-analysis",
       "version": "1.0.0",
       "sha256": "5d3c96029f0446590a7a0e6a5893486241888aa3ceff931127fbde0670f5404a",
-      "updatedAt": "2026-05-29T00:09:15+05:30"
+      "updatedAt": "2026-05-29T04:15:24+05:30"
     },
     {
       "name": "scogo:kubernetes-etcd-security-assessment",
@@ -735,7 +735,7 @@
       "name": "scogo:netapp-reporting",
       "version": "1.0.0",
       "sha256": "eb5b279cff82d214f2aacf585396428214de063ca0d437b24cd139fdc02e5661",
-      "updatedAt": "2026-05-29T00:09:15+05:30"
+      "updatedAt": "2026-05-29T04:15:24+05:30"
     },
     {
       "name": "scogo:network-vlan-segmentation",

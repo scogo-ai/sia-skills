@@ -3,8 +3,8 @@
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
   "ref": "v2026.05.1",
-  "commit": "",
-  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "commit": "bc1f814f463aab42e447c0654c513dcf743172d5",
+  "generatedAt": "2026-05-29T05:12:35.035Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -3267,7 +3267,7 @@
         "fortigate"
       ],
       "mutates": true,
-      "updatedAt": "2026-05-29T00:09:15+05:30"
+      "updatedAt": "2026-05-29T04:15:24+05:30"
     },
     {
       "name": "scogo:gcp-alloydb-basics",
@@ -4305,7 +4305,7 @@
         "kube"
       ],
       "mutates": false,
-      "updatedAt": "2026-05-29T00:09:15+05:30"
+      "updatedAt": "2026-05-29T04:15:24+05:30"
     },
     {
       "name": "scogo:kubernetes-etcd-security-assessment",
@@ -4801,7 +4801,7 @@
       ],
       "keywords": [],
       "mutates": false,
-      "updatedAt": "2026-05-29T00:09:15+05:30"
+      "updatedAt": "2026-05-29T04:15:24+05:30"
     },
     {
       "name": "scogo:network-vlan-segmentation",
