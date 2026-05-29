@@ -113,3 +113,50 @@ node --test "test/**/*.test.mjs"
 5. Commit the skill changes with regenerated `catalog.json`, `index.json`, and `manifest.json`.
 6. Let CODEOWNERS route content review by domain and platform review for `tools/`, `.github/`, `channels.json`, `catalog.json`, `index.json`, `manifest.json`, `synonyms.json`, `vendors.yaml`, and `yanked.json`.
 7. Release through repo-wide `beta` and `stable` channel pointers in `channels.json`. Use `yanked.json` to block a bad skill version.
+
+## Cutting a release
+
+The Sia CLI's `sia skill sync` fetches `https://raw.githubusercontent.com/scogo-ai/sia-skills/<ref>/catalog.json`, where `<ref>` is the channel's tag from `channels.json` (e.g. `stable` → `v2026.05.1`). So the catalog must exist **at that tag**, and the CLI's `validateCatalog` requires:
+
+- `catalog.commit` is a 40-char hex SHA — the **source-tree commit the catalog describes** (it records provenance; it is not required to equal the tag's own commit), and
+- `catalog.ref` equals the resolved channel tag (e.g. `v2026.05.1`), with `channel` set and `schemaVersion: 2`.
+
+A maintainer cuts a release from a clean `main` like this. Set `TAG` to the channel tag you are publishing (it must match the `stable`/`beta` pointer in `channels.json`):
+
+```sh
+# 0. clean tree on main, with origin/main at the commit you want to ship
+git switch main && git pull && git status   # must be clean
+
+TAG=v2026.05.1
+SHA="$(git rev-parse HEAD)"                                  # source-tree commit the catalog records
+GEN_AT="$(node -e 'process.stdout.write(new Date().toISOString())')"
+
+# 1. regenerate all three artifacts with the real commit + the release tag ref,
+#    sharing one --generated-at so provenance is consistent.
+node tools/gen-catalog.mjs --channel stable --ref "$TAG" --commit "$SHA" \
+  --generated-at "$GEN_AT" --out catalog.json --manifest-out manifest.json
+node tools/gen-index.mjs --generated-at "$GEN_AT" --out index.json
+
+# 2. validate + test (the timestamp-normalised drift tests confirm the committed
+#    catalog/manifest match a fresh regeneration).
+node tools/validate-skill.mjs skills
+node --test "test/**/*.test.mjs"
+
+# 3. commit, tag at the release commit, push main + the tag (nothing else).
+git add -A && git commit -m "release: stable $TAG catalog (schema v2)"
+git tag "$TAG"
+git push origin main "$TAG"
+```
+
+> Note: `gen-catalog.mjs` defaults `--ref` to the channel pointer in `channels.json`, so the test suite (which regenerates with `ref` unset) re-derives the same `ref`. The committed catalog's `ref` must therefore equal the channel tag — which is exactly what you pass here.
+
+Pushing the `v*` tag triggers `.github/workflows/release.yml`, which:
+
+1. checks out the tagged commit and regenerates catalog/index/manifest with `--commit "$GITHUB_SHA" --ref "$GITHUB_REF_NAME"` (proving the tree regenerates cleanly at the tag),
+2. runs `node tools/validate-skill.mjs skills` and `node --test`,
+3. **gates** the release: asserts the *committed* `catalog.json` at the tag is CLI-valid — `commit` matches `/^[0-9a-f]{40}$/i`, `ref` === the tag name, `channel` is set, `schemaVersion` is `2` — and fails the run otherwise. It does **not** regenerate-and-commit back (that would make the catalog try to record its own release commit — a chicken-and-egg), and
+4. publishes `catalog.json` + `index.json` + `manifest.json` as immutable assets on the GitHub Release for the tag (via `gh release create --generate-notes`).
+
+The PR/`main` drift gate in `.github/workflows/catalog.yml` is separate and unchanged: it regenerates from the tree on every PR/push and fails on any catalog/manifest/index drift.
+
+To promote a channel (e.g. point `stable` at a new tag), edit `channels.json` behind platform review, then cut the release at that tag as above.

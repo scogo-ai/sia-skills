@@ -24,3 +24,22 @@ node tools/gen-catalog.mjs --channel stable --commit "" --generated-at "$(node -
 node tools/gen-index.mjs --generated-at "$(node -e 'process.stdout.write(require("./index.json").generatedAt)')" --out index.json
 node --test "test/**/*.test.mjs"
 ```
+
+## Cutting a release
+
+The CLI's `sia skill sync` fetches `catalog.json` from the **channel tag** (`channels.json`: `stable` → e.g. `v2026.05.1`), and its `validateCatalog` requires `commit` to be a 40-hex SHA (the source-tree commit the catalog records — not necessarily the tag's own commit) and `ref` to equal the channel tag. So a release must publish a catalog *at that tag* with a real `commit` and the right `ref`. From a clean `main` (set `TAG` to the channel tag in `channels.json`):
+
+```sh
+TAG=v2026.05.1
+SHA="$(git rev-parse HEAD)"
+GEN_AT="$(node -e 'process.stdout.write(new Date().toISOString())')"
+node tools/gen-catalog.mjs --channel stable --ref "$TAG" --commit "$SHA" --generated-at "$GEN_AT" --out catalog.json --manifest-out manifest.json
+node tools/gen-index.mjs --generated-at "$GEN_AT" --out index.json
+node tools/validate-skill.mjs skills
+node --test "test/**/*.test.mjs"
+git add -A && git commit -m "release: stable $TAG catalog (schema v2)"
+git tag "$TAG"
+git push origin main "$TAG"
+```
+
+Do NOT generate the release catalog with `--commit ""` (that empty-commit form is only for the local drift loop above — the CLI rejects it). The tag push runs `.github/workflows/release.yml`, which regenerates + validates, **gates** that the committed catalog at the tag is CLI-valid (`commit` 40-hex, `ref` === tag, `channel` set, `schemaVersion` 2), and publishes `catalog.json`/`index.json`/`manifest.json` as GitHub Release assets. It never commits back. The PR/main drift gate in `catalog.yml` stays as-is. Full detail: README "Cutting a release".

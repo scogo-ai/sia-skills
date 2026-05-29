@@ -1,0 +1,125 @@
+# .github/workflows/release.yml
+#
+# Auto-release workflow for the curated skills catalog. Triggers on a release
+# tag push (v*) — e.g. `git push origin main v2026.05.1`. It does NOT commit
+# anything back to the repo: the catalog already records its own source-tree
+# commit at tag-cut time (see README "Cutting a release"), so committing here
+# would create a catalog-records-its-own-commit chicken-and-egg. Instead this
+# workflow is a release GATE + publisher:
+#
+#   1. Check out the exact tagged commit, pin Node 20.
+#   2. Regenerate catalog.json (+ sibling manifest.json) and index.json from the
+#      tree, stamping the tag's commit ($GITHUB_SHA) and ref ($GITHUB_REF_NAME),
+#      to prove the tree regenerates cleanly at the tag.
+#   3. Validate every SKILL.md and run the deterministic-hash roundtrip tests.
+#   4. ASSERT the COMMITTED catalog.json at the tag is valid for the Sia CLI's
+#      validateCatalog: commit matches /^[0-9a-f]{40}$/i, ref === the tag name,
+#      channel is non-empty, schemaVersion === 2. Fail the release otherwise.
+#   5. Publish catalog.json + index.json + manifest.json as immutable assets on
+#      the GitHub Release for the tag.
+#
+# The PR/main drift gate lives in catalog.yml and is left untouched.
+#
+# Security note: every shell step uses only runner-provided environment
+# variables (GITHUB_SHA, GITHUB_REF_NAME) referenced as "$GITHUB_SHA" /
+# "$GITHUB_REF_NAME" — never ${{ github.event.* }} interpolation of
+# attacker-controllable fields. This is the injection-safe pattern.
+
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+# The release job needs to create a GitHub Release and upload assets.
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the exact tagged commit (not a moving branch ref).
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+
+      # Pin Node 20 (matches tools/ engines; ESM + node:test).
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # 1. Validate every SKILL.md before anything else.
+      - name: Validate skills
+        run: node tools/validate-skill.mjs skills
+
+      # 2. Regenerate catalog.json (+ manifest.json) and index.json from the tree,
+      #    stamping the tag's commit + ref. This proves the tree regenerates
+      #    cleanly at the tag; the committed copies are what we actually publish.
+      - name: Regenerate catalog + manifest + index at tag
+        run: |
+          GEN_AT="$(node -e 'process.stdout.write(require("./catalog.json").generatedAt)')"
+          node tools/gen-catalog.mjs \
+            --channel stable \
+            --ref "$GITHUB_REF_NAME" \
+            --commit "$GITHUB_SHA" \
+            --generated-at "$GEN_AT" \
+            --out /tmp/catalog.json \
+            --manifest-out /tmp/manifest.json
+          node tools/gen-index.mjs --generated-at "$GEN_AT" --out /tmp/index.json
+
+      # 3. Deterministic-hash roundtrip + tamper-detection tests.
+      - name: Roundtrip + tamper test
+        run: node --test "test/**/*.test.mjs"
+
+      # 4. Release GATE: the COMMITTED catalog.json at this tag must be valid for
+      #    the Sia CLI's validateCatalog. We do NOT regenerate-and-commit here —
+      #    we assert what the maintainer already committed and tagged is correct:
+      #      * commit is a 40-char hex SHA (the source-tree SHA the catalog
+      #        describes — the CLI requires this shape),
+      #      * ref === the tag name (the CLI requires ref to equal the resolved
+      #        channel tag),
+      #      * channel is non-empty,
+      #      * schemaVersion === 2.
+      #    Any mismatch fails the release before any asset is published.
+      - name: Assert committed catalog is CLI-valid for this tag
+        run: |
+          node -e '
+            const fs = require("node:fs");
+            const tag = process.env.GITHUB_REF_NAME;
+            const c = JSON.parse(fs.readFileSync("./catalog.json", "utf8"));
+            const errs = [];
+            if (!/^[0-9a-f]{40}$/i.test(c.commit || "")) {
+              errs.push(`commit must be a 40-hex SHA, got ${JSON.stringify(c.commit)}`);
+            }
+            if (c.ref !== tag) {
+              errs.push(`ref must equal the tag (${tag}), got ${JSON.stringify(c.ref)}`);
+            }
+            if (!c.channel || typeof c.channel !== "string") {
+              errs.push(`channel must be a non-empty string, got ${JSON.stringify(c.channel)}`);
+            }
+            if (c.schemaVersion !== 2) {
+              errs.push(`schemaVersion must be 2, got ${JSON.stringify(c.schemaVersion)}`);
+            }
+            if (errs.length) {
+              console.error("release gate FAILED — committed catalog.json is not CLI-valid for this tag:");
+              for (const e of errs) console.error("  - " + e);
+              process.exit(1);
+            }
+            console.log(`release gate OK: commit=${c.commit} ref=${c.ref} channel=${c.channel} schemaVersion=${c.schemaVersion} skills=${c.skills.length}`);
+          '
+
+      # 5. Publish the committed catalog/index/manifest as immutable release
+      #    assets. gh is preinstalled on GitHub-hosted runners; GH_TOKEN is the
+      #    job's contents:write token. --generate-notes autogenerates release
+      #    notes from commits since the previous tag.
+      - name: Publish release assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes \
+            catalog.json index.json manifest.json
