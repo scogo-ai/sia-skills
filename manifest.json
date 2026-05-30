@@ -2,8 +2,8 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.1",
-  "generatedAt": "2026-05-29T05:12:35.035Z",
+  "ref": "v2026.05.2",
+  "generatedAt": "2026-05-30T19:38:51.313Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -468,6 +468,12 @@
       "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
+      "name": "scogo:executing-plans",
+      "version": "1.0.0",
+      "sha256": "f9b85a95437b6f5edc2a9341e3f8b13e84650e9597a1a17a737186059d9594c0",
+      "updatedAt": "2026-05-31T01:08:38+05:30"
+    },
+    {
       "name": "scogo:fortinet-config-change",
       "version": "1.3.0",
       "sha256": "242b551994c2c8b019af610c0daa8149e8af3c476a5ee4c3c5357a85035f530b",
@@ -798,6 +804,18 @@
       "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
+      "name": "scogo:systematic-debugging",
+      "version": "1.0.0",
+      "sha256": "d2f70034a1895ef9e406c33e9f0a5374e22f014e3a51f36580e226b9d5dd531b",
+      "updatedAt": "2026-05-31T01:08:38+05:30"
+    },
+    {
+      "name": "scogo:systems-thinking",
+      "version": "1.0.0",
+      "sha256": "cf7ade509096aff8e9520c0adc9e5e834e699c514514d0cfbe952da7f205902f",
+      "updatedAt": "2026-05-31T01:08:38+05:30"
+    },
+    {
       "name": "scogo:theme-factory",
       "version": "1.0.0",
       "sha256": "de0a87c27ebb971bc73ab0898c7062f4f133c04f573216f221824c44c3f46b0d",
@@ -838,6 +856,12 @@
       "version": "1.0.0",
       "sha256": "a666209659b7b195edebb51d6aa79ed6d9e76493acdc1f8ef1cb547177a26738",
       "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:youtube-transcript",
+      "version": "1.0.0",
+      "sha256": "809a43f5852a064781e2234e648e5874fe9d35f04ea442bb5ec87ed837925c4e",
+      "updatedAt": "2026-05-31T01:08:38+05:30"
     },
     {
       "name": "scogo:zeek-network-anomaly-detection",

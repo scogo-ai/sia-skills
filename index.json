@@ -2,10 +2,10 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.1",
-  "commit": "bc1f814f463aab42e447c0654c513dcf743172d5",
-  "generatedAt": "2026-05-29T05:12:35.035Z",
-  "totalSkills": 140,
+  "ref": "v2026.05.2",
+  "commit": "8d52b112538453aafa8e800fe370e663628e34c4",
+  "generatedAt": "2026-05-30T19:38:51.313Z",
+  "totalSkills": 144,
   "domains": {
     "cloud": {
       "count": 93,
@@ -18,9 +18,9 @@
       }
     },
     "meta": {
-      "count": 10,
+      "count": 14,
       "oems": {
-        "_generic": 10
+        "_generic": 14
       }
     },
     "containers": {
@@ -3698,6 +3698,33 @@
       "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
+      "name": "scogo:executing-plans",
+      "topic": "Executing Plans",
+      "domain": "meta",
+      "oem": null,
+      "action": "executing-plans",
+      "kind": "meta",
+      "path": "skills/_meta/executing-plans",
+      "description": "Use when an operator needs to execute an implementation plan. Use when you have a written implementation plan to execute in a separate session with review checkpoints.",
+      "tags": [
+        "meta",
+        "executing-plans"
+      ],
+      "files": [
+        "SKILL.md"
+      ],
+      "sha256": "f9b85a95437b6f5edc2a9341e3f8b13e84650e9597a1a17a737186059d9594c0",
+      "version": "1.0.0",
+      "summary": "Use when you have a written implementation plan to execute in a separate session with review checkpoints.",
+      "triggers": [
+        "Executing Plans",
+        "Use when you have a written implementation plan to execute in a separate session with review checkpoints"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-31T01:08:38+05:30"
+    },
+    {
       "name": "scogo:fortinet-config-change",
       "topic": "Config Change",
       "domain": "network",
@@ -5962,6 +5989,73 @@
       "updatedAt": "2026-05-29T02:49:22+05:30"
     },
     {
+      "name": "scogo:systematic-debugging",
+      "topic": "Systematic Debugging",
+      "domain": "meta",
+      "oem": null,
+      "action": "systematic-debugging",
+      "kind": "meta",
+      "path": "skills/_meta/systematic-debugging",
+      "description": "Use when an operator needs to debug a failure systematically. Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes.",
+      "tags": [
+        "meta",
+        "systematic-debugging"
+      ],
+      "files": [
+        "CREATION-LOG.md",
+        "SKILL.md",
+        "condition-based-waiting-example.ts",
+        "condition-based-waiting.md",
+        "defense-in-depth.md",
+        "find-polluter.sh",
+        "root-cause-tracing.md",
+        "test-academic.md",
+        "test-pressure-1.md",
+        "test-pressure-2.md",
+        "test-pressure-3.md"
+      ],
+      "sha256": "d2f70034a1895ef9e406c33e9f0a5374e22f014e3a51f36580e226b9d5dd531b",
+      "version": "1.0.0",
+      "summary": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes.",
+      "triggers": [
+        "Systematic Debugging",
+        "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-31T01:08:38+05:30"
+    },
+    {
+      "name": "scogo:systems-thinking",
+      "topic": "Systems Thinking",
+      "domain": "meta",
+      "oem": null,
+      "action": "systems-thinking",
+      "kind": "meta",
+      "path": "skills/_meta/systems-thinking",
+      "description": "Use when an operator needs systems-thinking analysis. Analyze problems using a Systems Thinking approach. Use when users mention \"systems thinking,\" \"systemic,\" \"feedback loops,\" \"unintended consequences,\" \"root cause,\" \"interconnected,\" or request analysis of complex, multi-factor problems. Guides conversation through questions and observations rather than prescriptive solutions.",
+      "tags": [
+        "meta",
+        "systems-thinking"
+      ],
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "references/causal-loop-diagrams.md",
+        "references/questions-of-a-systems-thinker.md"
+      ],
+      "sha256": "cf7ade509096aff8e9520c0adc9e5e834e699c514514d0cfbe952da7f205902f",
+      "version": "1.0.0",
+      "summary": "Analyze problems using a Systems Thinking approach. Use when users mention \"systems thinking,\" \"systemic,\" \"feedback loops,\" \"unintended consequences,\" \"root cause,\" \"interconnected,\" or request analysis of complex, multi-factor problems. Guides conversation through questions and observations rather than prescriptive solutions.",
+      "triggers": [
+        "Systems Thinking",
+        "Analyze problems using a Systems Thinking approach"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-31T01:08:38+05:30"
+    },
+    {
       "name": "scogo:theme-factory",
       "topic": "Theme Factory",
       "domain": "meta",
@@ -6274,6 +6368,33 @@
       "keywords": [],
       "mutates": true,
       "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:youtube-transcript",
+      "topic": "Youtube Transcript",
+      "domain": "meta",
+      "oem": null,
+      "action": "youtube-transcript",
+      "kind": "meta",
+      "path": "skills/_meta/youtube-transcript",
+      "description": "Use when an operator needs a YouTube transcript. Download YouTube video transcripts when user provides a YouTube URL or asks to download/get/fetch a transcript from YouTube. Also use when user wants to transcribe or get captions/subtitles from a YouTube video.",
+      "tags": [
+        "meta",
+        "youtube-transcript"
+      ],
+      "files": [
+        "SKILL.md"
+      ],
+      "sha256": "809a43f5852a064781e2234e648e5874fe9d35f04ea442bb5ec87ed837925c4e",
+      "version": "1.0.0",
+      "summary": "Download YouTube video transcripts when user provides a YouTube URL or asks to download/get/fetch a transcript from YouTube. Also use when user wants to transcribe or get captions/subtitles from a YouTube video.",
+      "triggers": [
+        "Youtube Transcript",
+        "Download YouTube video transcripts when user provides a YouTube URL or asks to download/get/fetch a transcript from YouTube"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-05-31T01:08:38+05:30"
     },
     {
       "name": "scogo:zeek-network-anomaly-detection",
