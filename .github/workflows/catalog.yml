@@ -114,8 +114,10 @@ jobs:
 
       # 5. Deterministic-hash roundtrip + tamper-detection fixture test
       #    (binding contract §2.4.1 fixture: gen -> verify hash -> tamper -> refuse).
+      #    Pass explicit file paths via find — `node --test "test/**/*.test.mjs"`
+      #    only expands the `**` glob on Node >= 21, and this runner pins Node 20.
       - name: Roundtrip + tamper test
-        run: node --test "test/**/*.test.mjs"
+        run: node --test $(find test -name '*.test.mjs')
 
       # --- below here: release path, not part of the PR gate ---
       #

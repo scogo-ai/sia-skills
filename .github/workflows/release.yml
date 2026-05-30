@@ -71,8 +71,10 @@ jobs:
           node tools/gen-index.mjs --generated-at "$GEN_AT" --out /tmp/index.json
 
       # 3. Deterministic-hash roundtrip + tamper-detection tests.
+      #    Pass explicit file paths via find — `node --test "test/**/*.test.mjs"`
+      #    only expands the `**` glob on Node >= 21, and this runner pins Node 20.
       - name: Roundtrip + tamper test
-        run: node --test "test/**/*.test.mjs"
+        run: node --test $(find test -name '*.test.mjs')
 
       # 4. Release GATE: the COMMITTED catalog.json at this tag must be valid for
       #    the Sia CLI's validateCatalog. We do NOT regenerate-and-commit here —
