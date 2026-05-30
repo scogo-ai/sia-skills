@@ -1,6 +1,10 @@
 ---
-name: systematic-debugging
-description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
+name: scogo:systematic-debugging
+description: "Use when an operator needs to debug a failure systematically. Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes."
+tags: [meta, systematic-debugging]
+metadata:
+  version: 1.0.0
+author: scogo-ai
 ---
 
 # Systematic Debugging

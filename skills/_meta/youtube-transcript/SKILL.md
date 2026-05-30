@@ -1,7 +1,11 @@
 ---
-name: youtube-transcript
-description: Download YouTube video transcripts when user provides a YouTube URL or asks to download/get/fetch a transcript from YouTube. Also use when user wants to transcribe or get captions/subtitles from a YouTube video.
+name: scogo:youtube-transcript
+description: "Use when an operator needs a YouTube transcript. Download YouTube video transcripts when user provides a YouTube URL or asks to download/get/fetch a transcript from YouTube. Also use when user wants to transcribe or get captions/subtitles from a YouTube video."
+tags: [meta, youtube-transcript]
 allowed-tools: Bash,Read,Write
+metadata:
+  version: 1.0.0
+author: scogo-ai
 ---
 
 # YouTube Transcript Downloader

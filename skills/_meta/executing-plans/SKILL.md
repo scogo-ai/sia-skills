@@ -1,6 +1,10 @@
 ---
-name: executing-plans
-description: Use when you have a written implementation plan to execute in a separate session with review checkpoints
+name: scogo:executing-plans
+description: "Use when an operator needs to execute an implementation plan. Use when you have a written implementation plan to execute in a separate session with review checkpoints."
+tags: [meta, executing-plans]
+metadata:
+  version: 1.0.0
+author: scogo-ai
 ---
 
 # Executing Plans
