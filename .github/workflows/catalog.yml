@@ -50,6 +50,7 @@ on:
       - "synonyms.json"
       - "vendors.yaml"
       - "yanked.json"
+      - ".github/workflows/catalog.yml"
 
 # Least privilege: this gate only needs to read the tree.
 permissions:
@@ -59,8 +60,14 @@ jobs:
   validate-and-build:
     runs-on: ubuntu-latest
     steps:
-      # Hosted action: check out the PR/branch.
+      # Hosted action: check out the PR/branch. fetch-depth: 0 pulls full
+      # history so gen-catalog can derive each skill's updatedAt from
+      # `git log -1 --format=%cI -- <dir>`. A shallow clone resolves every
+      # skill's last-commit to the tip, producing a uniform timestamp that
+      # drifts from the committed catalog and fails the gate below.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # Hosted action: pin Node 20 (matches tools/ engines; ESM + node:test).
       - uses: actions/setup-node@v4
