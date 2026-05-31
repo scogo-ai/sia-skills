@@ -107,6 +107,7 @@ const ALLOWED_BUNDLE_EXTS = new Set([
   ".js",
   ".cjs",
   ".mjs",
+  ".ts",
   ".ps1",
   ".bicep",
   ".gz",
