@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.2",
-  "commit": "8d52b112538453aafa8e800fe370e663628e34c4",
-  "generatedAt": "2026-05-30T19:38:51.313Z",
+  "ref": "v2026.05.3",
+  "commit": "48b238c66110f5fb5a4b564c0302a907f53a0fe2",
+  "generatedAt": "2026-05-31T11:12:21.888Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -5256,19 +5256,14 @@
       ],
       "path": "skills/_meta/systematic-debugging",
       "files": [
-        "CREATION-LOG.md",
         "SKILL.md",
-        "condition-based-waiting-example.ts",
-        "condition-based-waiting.md",
-        "defense-in-depth.md",
-        "find-polluter.sh",
-        "root-cause-tracing.md",
-        "test-academic.md",
-        "test-pressure-1.md",
-        "test-pressure-2.md",
-        "test-pressure-3.md"
+        "references/condition-based-waiting-example.ts",
+        "references/condition-based-waiting.md",
+        "references/defense-in-depth.md",
+        "references/root-cause-tracing.md",
+        "scripts/find-polluter.sh"
       ],
-      "sha256": "d2f70034a1895ef9e406c33e9f0a5374e22f014e3a51f36580e226b9d5dd531b",
+      "sha256": "e919a7978f28b6f2b782799a14853e2c92ee1e9ed540f2ad7b6275311dd70077",
       "version": "1.0.0",
       "summary": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes.",
       "triggers": [
@@ -5277,7 +5272,7 @@
       ],
       "keywords": [],
       "mutates": false,
-      "updatedAt": "2026-05-31T01:08:38+05:30"
+      "updatedAt": "2026-05-31T16:42:13+05:30"
     },
     {
       "name": "scogo:systems-thinking",
