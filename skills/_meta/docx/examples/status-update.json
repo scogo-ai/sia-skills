@@ -1,0 +1,38 @@
+{
+  "title": "Weekly Infrastructure Status",
+  "subtitle": "Week of June 1, 2026",
+  "meta": ["Prepared by: SRE Team", "Distribution: Engineering Leads"],
+  "header": { "brand": "Scogo AI", "title": "Weekly Infrastructure Status" },
+  "footer": { "text": "Scogo AI Platform | Internal Use Only" },
+  "cover": false,
+  "toc": false,
+  "sections": [
+    {
+      "heading": "Service Health",
+      "level": 1,
+      "content": [
+        { "type": "paragraph", "text": "All critical services maintained 99.99% availability this week." },
+        { "type": "table",
+          "headers": ["Service", "Uptime", "P99 Latency", "Notes"],
+          "rows": [
+            ["API Gateway", "99.99%", "45ms", "No incidents"],
+            ["Auth Service", "99.98%", "28ms", "Brief failover at 03:14"],
+            ["Database", "100%", "12ms", "Planned maintenance completed"]
+          ],
+          "align": ["left", "right", "right", "left"]
+        }
+      ]
+    },
+    {
+      "heading": "Upcoming Changes",
+      "level": 1,
+      "content": [
+        { "type": "bullet", "items": [
+          "Node OS patch rollout: June 3, 2026 (maintenance window 02:00-04:00 UTC)",
+          "Certificate renewal: *.scogo.ai expires June 15",
+          "Cost optimization review scheduled for June 5"
+        ]}
+      ]
+    }
+  ]
+}

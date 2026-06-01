@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.3",
-  "commit": "48b238c66110f5fb5a4b564c0302a907f53a0fe2",
-  "generatedAt": "2026-05-31T11:12:21.888Z",
+  "ref": "v2026.05.4",
+  "commit": "4660c045dab0bbb78b6b5da9056628c8767adb5a",
+  "generatedAt": "2026-06-01T17:11:28.923Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -3157,7 +3157,7 @@
     },
     {
       "name": "scogo:docx",
-      "description": "Use when an operator needs meta docx. Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from.docx files, inserting or replacing images in documents, performing find-and-replace in Word files.",
+      "description": "Use when an operator needs to create, edit, or analyze Microsoft Word (.docx) documents — for example producing a branded, enterprise-grade report, memo, proposal, or status update from a JSON content spec, or reading, redlining, and find-and-replacing in existing Word files. Triggers include any mention of 'Word doc', 'word document', '.docx', a request for a professional document with a cover page, table of contents, headings, styled tables, page numbers, or letterhead, and requests to extract or reorganize content from .docx files or insert and replace images.",
       "tags": [
         "meta",
         "docx"
@@ -3165,9 +3165,15 @@
       "path": "skills/_meta/docx",
       "files": [
         "SKILL.md",
+        "examples/status-update.json",
+        "examples/technical-report.json",
+        "references/spec.schema.json",
         "scripts/__init__.py",
         "scripts/accept_changes.py",
         "scripts/comment.py",
+        "scripts/components.js",
+        "scripts/design-system.js",
+        "scripts/generate.js",
         "scripts/office/helpers/__init__.py",
         "scripts/office/helpers/merge_runs.py",
         "scripts/office/helpers/simplify_redlines.py",
@@ -3219,18 +3225,21 @@
         "scripts/office/validators/docx.py",
         "scripts/office/validators/pptx.py",
         "scripts/office/validators/redlining.py",
+        "scripts/quality_check.py",
         "scripts/templates/comments.xml",
         "scripts/templates/commentsExtended.xml",
         "scripts/templates/commentsExtensible.xml",
         "scripts/templates/commentsIds.xml",
-        "scripts/templates/people.xml"
+        "scripts/templates/people.xml",
+        "scripts/vendor-docx.js",
+        "scripts/vendor/docx.cjs.gz"
       ],
-      "sha256": "8bc3825830b68376c7168db8ba40bf609f86a108842cc21e1f586aaa0f9d24b3",
-      "version": "1.0.0",
-      "summary": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from.docx files, inserting or replacing images in documents, performing find-and-replace in Word files.",
+      "sha256": "ca9c5512a1761deed1a24d0b6328953c64b09c13ac17046389fb5a12ce572e70",
+      "version": "2.1.0",
+      "summary": "docx) documents — for example producing a branded, enterprise-grade report, memo, proposal, or status update from a JSON content spec, or reading, redlining, and find-and-replacing in existing Word files. Triggers include any mention of 'Word doc', 'word document', '.docx', a request for a professional document with a cover page, table of contents, headings, styled tables, page numbers, or letterhead, and requests to extract or reorganize content from .docx files or insert and replace images.",
       "triggers": [
         "Docx",
-        "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents ("
+        "docx) documents — for example producing a branded, enterprise-grade report, memo, proposal, or status update from a JSON content spec, or reading, redlining, and find-and-replacing in existing Word files"
       ],
       "keywords": [],
       "mutates": true,

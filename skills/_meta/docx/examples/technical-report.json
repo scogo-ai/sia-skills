@@ -1,0 +1,72 @@
+{
+  "title": "Network Bandwidth Test Report",
+  "subtitle": "Q2 2026 Infrastructure Review",
+  "meta": [
+    "Date: 2026-05-31",
+    "Prepared by: Network Operations",
+    "Classification: Internal Use Only"
+  ],
+  "header": {
+    "brand": "Scogo AI",
+    "title": "Network Bandwidth Test Report",
+    "confidential": "CONFIDENTIAL"
+  },
+  "footer": {
+    "text": "Scogo AI Platform | Internal Use Only"
+  },
+  "cover": true,
+  "toc": true,
+  "sections": [
+    {
+      "heading": "Executive Summary",
+      "level": 1,
+      "content": [
+        { "type": "paragraph", "text": "This report summarizes the results of the Q2 2026 network bandwidth testing across all production data centers. Overall throughput has improved 18% quarter-over-quarter, with two sites flagged for remediation." },
+        { "type": "callout", "kind": "success", "text": "Average throughput increased 18% QoQ to 8.4 Gbps per uplink." }
+      ]
+    },
+    {
+      "heading": "Test Methodology",
+      "level": 1,
+      "content": [
+        { "type": "paragraph", "text": "Tests were conducted using iperf3 over a 60-second interval with 8 parallel streams." },
+        { "type": "bullet", "items": [
+          "Duration: 60 seconds per test",
+          "Parallel streams: 8",
+          "Packet size: 1400 bytes",
+          "Reporting interval: 1 second"
+        ]}
+      ]
+    },
+    {
+      "heading": "Results by Site",
+      "level": 1,
+      "content": [
+        { "type": "paragraph", "text": "The following table summarizes bandwidth results for each production site." },
+        { "type": "table",
+          "headers": ["Site", "Uplink", "Latency (ms)", "Throughput (Gbps)", "Status"],
+          "rows": [
+            ["US-East-1", "10G", "12", "9.2", "Pass"],
+            ["US-West-1", "10G", "18", "8.7", "Pass"],
+            ["EU-Central-1", "10G", "24", "7.1", "Pass"],
+            ["AP-South-1", "10G", "35", "5.3", "Fail"],
+            ["AP-Northeast-1", "10G", "28", "6.8", "Warn"]
+          ],
+          "align": ["left", "left", "right", "right", "center"]
+        },
+        { "type": "callout", "kind": "warning", "text": "AP-South-1 is 47% below target and requires immediate review." }
+      ]
+    },
+    {
+      "heading": "Recommendations",
+      "level": 1,
+      "content": [
+        { "type": "numbered", "items": [
+          "Upgrade AP-South-1 uplink to 25G before end of Q3.",
+          "Schedule maintenance window for AP-Northeast-1 to replace aging fiber.",
+          "Enable automatic alerting when throughput drops below 7.5 Gbps for 5 minutes."
+        ]}
+      ]
+    }
+  ]
+}

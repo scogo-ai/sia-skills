@@ -1,0 +1,10 @@
+# Python bytecode caches (regenerated when the office/* helpers are imported;
+# they must never be committed — the skill validator rejects .pyc and they
+# would perturb the curated-skill integrity hash).
+__pycache__/
+*.pyc
+
+# Node dependencies are never vendored as a tree in this repo. The docx skill
+# ships a single gzipped, self-contained docx build at
+# skills/_meta/docx/scripts/vendor/docx.cjs.gz instead.
+node_modules/

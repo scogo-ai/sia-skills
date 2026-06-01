@@ -1,0 +1,143 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scogo DOCX Content Spec",
+  "description": "Declarative content spec consumed by scripts/generate.js to produce a branded DOCX.",
+  "type": "object",
+  "properties": {
+    "title":      { "type": "string", "description": "Document title (appears on cover page and header)." },
+    "subtitle":   { "type": "string", "description": "Subtitle on cover page." },
+    "meta":       { "type": "array",  "items": { "type": "string" }, "description": "Metadata lines shown on cover page." },
+    "creator":    { "type": "string", "default": "Scogo AI" },
+    "subject":    { "type": "string" },
+    "description":{ "type": "string" },
+    "cover":      { "type": "boolean", "default": true, "description": "Render cover page?" },
+    "toc":        { "type": "boolean", "default": true, "description": "Render table of contents?" },
+    "tocTitle":   { "type": "string", "default": "Table of Contents" },
+    "header": {
+      "type": "object",
+      "properties": {
+        "brand":        { "type": "string", "default": "Scogo AI" },
+        "title":        { "type": "string" },
+        "confidential": { "type": "string", "description": "Label for top-right of header, e.g. CONFIDENTIAL." }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string", "default": "Scogo AI Platform | Internal Use Only" }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "Ordered sections. Each section gets a heading and a list of content items.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "heading": { "type": "string" },
+          "level":   { "type": "integer", "minimum": 1, "maximum": 6, "default": 1 },
+          "content": { "$ref": "#/definitions/contentList" }
+        },
+        "required": ["content"]
+      }
+    },
+    "content": { "$ref": "#/definitions/contentList" }
+  },
+  "oneOf": [
+    { "required": ["sections"] },
+    { "required": ["content"] }
+  ],
+  "definitions": {
+    "contentList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "paragraph", "bullet", "numbered",
+              "table", "callout", "heading",
+              "pageBreak", "spacer"
+            ]
+          }
+        },
+        "required": ["type"],
+        "allOf": [
+          {
+            "if": { "properties": { "type": { "const": "paragraph" } } },
+            "then": {
+              "properties": {
+                "text":  { "type": "string" },
+                "style": {
+                  "type": "object",
+                  "properties": {
+                    "bold":  { "type": "boolean" },
+                    "color": { "type": "string" },
+                    "size":  { "type": "integer" }
+                  }
+                }
+              },
+              "required": ["text"]
+            }
+          },
+          {
+            "if": { "properties": { "type": { "const": "bullet" } } },
+            "then": {
+              "properties": { "items": { "type": "array", "items": { "type": "string" } } },
+              "required": ["items"]
+            }
+          },
+          {
+            "if": { "properties": { "type": { "const": "numbered" } } },
+            "then": {
+              "properties": { "items": { "type": "array", "items": { "type": "string" } } },
+              "required": ["items"]
+            }
+          },
+          {
+            "if": { "properties": { "type": { "const": "table" } } },
+            "then": {
+              "properties": {
+                "headers": { "type": "array", "items": { "type": "string" } },
+                "rows":    { "type": "array", "items": { "type": "array", "items": { "type": "string" } } },
+                "striped": { "type": "boolean", "default": true },
+                "align":   { "type": "array", "items": { "type": "string", "enum": ["left", "right", "center"] } }
+              },
+              "required": ["headers", "rows"]
+            }
+          },
+          {
+            "if": { "properties": { "type": { "const": "callout" } } },
+            "then": {
+              "properties": {
+                "text": { "type": "string" },
+                "kind": { "type": "string", "enum": ["note", "warning", "success", "danger", "info"], "default": "note" }
+              },
+              "required": ["text"]
+            }
+          },
+          {
+            "if": { "properties": { "type": { "const": "heading" } } },
+            "then": {
+              "properties": {
+                "text":  { "type": "string" },
+                "level": { "type": "integer", "minimum": 1, "maximum": 6, "default": 1 }
+              },
+              "required": ["text"]
+            }
+          },
+          {
+            "if": { "properties": { "type": { "const": "pageBreak" } } },
+            "then": { "properties": {} }
+          },
+          {
+            "if": { "properties": { "type": { "const": "spacer" } } },
+            "then": {
+              "properties": { "height": { "type": "integer", "description": "Spacing after in DXA units." } }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
