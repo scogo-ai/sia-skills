@@ -3,8 +3,8 @@
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
   "ref": "v2026.05.4",
-  "commit": "4660c045dab0bbb78b6b5da9056628c8767adb5a",
-  "generatedAt": "2026-06-01T17:11:28.923Z",
+  "commit": "3ef5758fb2fc2be35f6c6ee514c726860d741c54",
+  "generatedAt": "2026-06-01T17:17:55.256Z",
   "totalSkills": 144,
   "domains": {
     "cloud": {
@@ -3704,7 +3704,7 @@
       ],
       "keywords": [],
       "mutates": true,
-      "updatedAt": "2026-05-29T00:09:15+05:30"
+      "updatedAt": "2026-06-01T22:43:40+05:30"
     },
     {
       "name": "scogo:executing-plans",
