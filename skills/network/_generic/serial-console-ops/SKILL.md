@@ -35,9 +35,13 @@ prompt you read back. You bring the device knowledge; these tools only move byte
    drain and resend.
 
 ## Credentials
-When the device asks `login:` / `Password:` or for an enable secret, **ask the operator
-to type it** — never invent or guess a secret, never echo it back, never store it. Their
-input goes to the device, not into this conversation.
+When the device asks `login:` / `Password:` or for an enable secret, **stop**. Never
+invent or guess a secret, never echo one back, and never store it. V1 serial tools do
+not provide a private credential-entry channel: a secret supplied through the Sia
+conversation or `serial__write` can be visible to the model, transcript, and audit
+surfaces. Tell the operator that plainly and proceed only if they accept that exposure,
+use an already-authenticated session, provide a temporary credential, or choose to handle
+login outside Sia.
 
 ## Disable paging first
 So long output doesn't stall on `--More--`:
