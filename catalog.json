@@ -3,7 +3,7 @@
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
   "ref": "v2026.05.4",
-  "commit": "3ef5758fb2fc2be35f6c6ee514c726860d741c54",
+  "commit": "",
   "generatedAt": "2026-06-01T17:17:55.256Z",
   "skills": [
     {
@@ -5152,6 +5152,41 @@
       "keywords": [],
       "mutates": false,
       "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:serial-console-ops",
+      "description": "Use when an operator needs to drive a network device's serial/console port safely — log in, disable paging, run show/diagnostic commands, and make configuration changes with explicit confirmation. Covers Cisco IOS/NX-OS, Junos, FortiOS, PAN-OS, Aruba, MikroTik. Classifies read vs write, never invents credentials, and guards against lockout.",
+      "tags": [
+        "network",
+        "serial",
+        "console",
+        "tty",
+        "uart",
+        "rs-232",
+        "oob",
+        "out-of-band",
+        "vendor-neutral",
+        "enable-mode",
+        "config-mode",
+        "write-memory",
+        "commit"
+      ],
+      "path": "skills/network/_generic/serial-console-ops",
+      "files": [
+        "SKILL.md"
+      ],
+      "sha256": "1038ce3c829a283025150323dd4a7f288f6455cc4458316f270f08da56f6f419",
+      "version": "1.0.0",
+      "summary": "Covers Cisco IOS/NX-OS, Junos, FortiOS, PAN-OS, Aruba, MikroTik. Classifies read vs write, never invents credentials, and guards against lockout.",
+      "triggers": [
+        "configure a switch over the serial console",
+        "access a device console port",
+        "drive a router or firewall serial CLI",
+        "run show/diagnostic commands over a serial connection"
+      ],
+      "keywords": [],
+      "mutates": true,
+      "updatedAt": "2026-06-01T17:17:55.256Z"
     },
     {
       "name": "scogo:skill-creator",

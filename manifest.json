@@ -792,6 +792,12 @@
       "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
+      "name": "scogo:serial-console-ops",
+      "version": "1.0.0",
+      "sha256": "1038ce3c829a283025150323dd4a7f288f6455cc4458316f270f08da56f6f419",
+      "updatedAt": "2026-06-01T17:17:55.256Z"
+    },
+    {
       "name": "scogo:skill-creator",
       "version": "1.0.0",
       "sha256": "51089581bb853bb253f3dec1d4368ad21cedb37f4413841589cb76cde06659c0",
