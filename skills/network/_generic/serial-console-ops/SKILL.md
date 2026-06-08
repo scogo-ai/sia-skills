@@ -26,6 +26,13 @@ prompt you read back. You bring the device knowledge; these tools only move byte
 4. Prefer **`send`** for every command (it writes, reads to the prompt, and strips the
    echo in one call). Pass the prompt you expect as `until`. Drop to `write`/`read`
    only for a `login:`/`Password:` exchange or to feed a space to `--More--`.
+5. **Drain a stale prompt before the first command.** Waking with `\r` often leaves an
+   extra prompt already sitting in the buffer. If your next `send` matches a bare prompt
+   like `[>#]\s*$`, it can match that *stale* prompt instantly and return empty output —
+   the classic "read came back too early." After waking, do one `read` with
+   `quiet_ms: 250` to flush the buffer, then send your first real command. Rule of thumb:
+   if a reply comes back empty when you expected output, you matched a stale prompt —
+   drain and resend.
 
 ## Credentials
 When the device asks `login:` / `Password:` or for an enable secret, **ask the operator

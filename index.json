@@ -5911,7 +5911,7 @@
       "files": [
         "SKILL.md"
       ],
-      "sha256": "1038ce3c829a283025150323dd4a7f288f6455cc4458316f270f08da56f6f419",
+      "sha256": "f1bd722ece50ad59820e4a89457ba53b43b808da5445f858ac5ebb02da1810d1",
       "version": "1.0.0",
       "summary": "Covers Cisco IOS/NX-OS, Junos, FortiOS, PAN-OS, Aruba, MikroTik. Classifies read vs write, never invents credentials, and guards against lockout.",
       "triggers": [
@@ -5922,7 +5922,7 @@
       ],
       "keywords": [],
       "mutates": true,
-      "updatedAt": "2026-06-01T17:17:55.256Z"
+      "updatedAt": "2026-06-08T18:58:49+05:30"
     },
     {
       "name": "scogo:skill-creator",
