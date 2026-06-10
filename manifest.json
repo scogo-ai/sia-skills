@@ -2,8 +2,8 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.4",
-  "generatedAt": "2026-06-01T17:17:55.256Z",
+  "ref": "v2026.05.5",
+  "generatedAt": "2026-06-10T18:38:37.850Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -801,7 +801,7 @@
       "name": "scogo:serial-detect-and-connect",
       "version": "1.0.0",
       "sha256": "60f41592160a8e659f32346f0b977b4d4ecaa93ab262fd7633d1ea36d617d82b",
-      "updatedAt": "2026-06-01T17:17:55.256Z"
+      "updatedAt": "2026-06-11T00:04:01+05:30"
     },
     {
       "name": "scogo:skill-creator",
