@@ -1,6 +1,6 @@
 ---
 name: scogo:serial-detect-and-connect
-description: "Use when an operator says they plugged a console cable in, wants to talk to a switch, router, firewall, or AP over serial, or hands over a /dev/cu.* or COMx port and asks what to do. Walks through port discovery on macOS/Linux/Windows, opening at 9600 8N1, waking the console safely, draining stale prompts, and the two MCP-specific failure modes that bit us in production (CR-byte escaping in send, stale-prompt early-match in read/send). Complements scogo:serial-console-ops (the broader runbook) by being the strict, fail-safe initial-connect procedure."
+description: "Use when an operator needs to make first contact with a switch, router, firewall, or AP over a freshly plugged-in serial console cable. Walks through port discovery on macOS/Linux/Windows (the /dev/cu.* or COMx port), opening at 9600 8N1, waking the console safely, draining stale prompts, and the two MCP-specific failure modes seen in production (CR-byte escaping in send, stale-prompt early-match in read/send). Complements scogo:serial-console-ops (the broader runbook) by being the strict, fail-safe initial-connect procedure."
 tags: [network, serial, console, device-onboarding, fail-safe, network-ops]
 when_to_use:
   - operator just plugged a USB-serial cable into the workstation
@@ -8,8 +8,6 @@ when_to_use:
   - operator hands over a /dev/cu.* or COMx port and asks how to reach the device
   - the serial MCP connection is failing, returning garbage, or stalling on prompts
 mutates: false
-mcp-server: serial
-tested-on: macOS 14.x, FTDI FT232R (VID 0403 / PID 6001), Cisco Catalyst WS-C2960-24TC-L (IOS 15.0(2)SE11)
 metadata:
   version: 1.0.0
 author: scogo-ai
@@ -23,6 +21,10 @@ is a byte stream with no "done" signal — you decide a command finished by
 the prompt you read back. This skill is the **initial-connect** path. Once
 you're in and verified, hand off to `scogo:serial-console-ops` for the
 classification / mutating / catastrophic command rules.
+
+> Field-tested against a Cisco Catalyst WS-C2960-24TC-L (IOS 15.0(2)SE11) over
+> an FTDI FT232R (VID 0403 / PID 6001) on macOS 14.x. The failure modes called
+> out below are the ones that actually bit us on that rig.
 
 **Mindset:** be paranoid. After every tool call, look at the *result*, not
 just the absence of an error. Many failures on serial look like "got

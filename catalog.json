@@ -5189,6 +5189,34 @@
       "updatedAt": "2026-06-08T21:31:47+05:30"
     },
     {
+      "name": "scogo:serial-detect-and-connect",
+      "description": "Use when an operator needs to make first contact with a switch, router, firewall, or AP over a freshly plugged-in serial console cable. Walks through port discovery on macOS/Linux/Windows (the /dev/cu.* or COMx port), opening at 9600 8N1, waking the console safely, draining stale prompts, and the two MCP-specific failure modes seen in production (CR-byte escaping in send, stale-prompt early-match in read/send). Complements scogo:serial-console-ops (the broader runbook) by being the strict, fail-safe initial-connect procedure.",
+      "tags": [
+        "network",
+        "serial",
+        "console",
+        "device-onboarding",
+        "fail-safe",
+        "network-ops"
+      ],
+      "path": "skills/network/_generic/serial-detect-and-connect",
+      "files": [
+        "SKILL.md"
+      ],
+      "sha256": "60f41592160a8e659f32346f0b977b4d4ecaa93ab262fd7633d1ea36d617d82b",
+      "version": "1.0.0",
+      "summary": "Walks through port discovery on macOS/Linux/Windows (the /dev/cu.* or COMx port), opening at 9600 8N1, waking the console safely, draining stale prompts, and the two MCP-specific failure modes seen in production (CR-byte escaping in send, stale-prompt early-match in read/send). Complements scogo:serial-console-ops (the broader runbook) by being the strict, fail-safe initial-connect procedure.",
+      "triggers": [
+        "operator just plugged a USB-serial cable into the workstation",
+        "operator asks to talk to a switch, router, firewall, or AP over serial",
+        "operator hands over a /dev/cu.* or COMx port and asks how to reach the device",
+        "the serial MCP connection is failing, returning garbage, or stalling on prompts"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-06-01T17:17:55.256Z"
+    },
+    {
       "name": "scogo:skill-creator",
       "description": "Use when an operator needs meta skill creator. Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
       "tags": [
