@@ -474,12 +474,6 @@
       "updatedAt": "2026-05-31T01:08:38+05:30"
     },
     {
-      "name": "scogo:fortinet-config-change",
-      "version": "1.3.0",
-      "sha256": "242b551994c2c8b019af610c0daa8149e8af3c476a5ee4c3c5357a85035f530b",
-      "updatedAt": "2026-05-29T04:15:24+05:30"
-    },
-    {
       "name": "scogo:gcp-alloydb-basics",
       "version": "1.0.0",
       "sha256": "2f85af7436c64e95e1f07219d2dbcfe6a5802abfc978aba392be96f96499eb0d",

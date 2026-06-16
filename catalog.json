@@ -3268,39 +3268,6 @@
       "updatedAt": "2026-05-31T01:08:38+05:30"
     },
     {
-      "name": "scogo:fortinet-config-change",
-      "description": "Use when an operator needs fortinet config change. Use when an operator asks to change a Fortinet device or policy. Walks an ADOM-aware FortiManager change: pull current config, preview a unified diff, wait for the mutation gate, apply, verify with a get/show, and commit a revision. Never skips preview or post-verify.",
-      "tags": [
-        "network",
-        "fortinet",
-        "config",
-        "change",
-        "config-change",
-        "change-management",
-        "multi-tenant"
-      ],
-      "path": "skills/network/fortinet/config-change",
-      "files": [
-        "SKILL.md",
-        "scripts/preview-diff.sh"
-      ],
-      "sha256": "242b551994c2c8b019af610c0daa8149e8af3c476a5ee4c3c5357a85035f530b",
-      "compatibility": "fortios>=7.2,<7.6,fortimanager>=7.2",
-      "version": "1.3.0",
-      "summary": "Use when an operator asks to change a Fortinet device or policy. Walks an ADOM-aware FortiManager change: pull current config, preview a unified diff, wait for the mutation gate, apply, verify with a get/show, and commit a revision. Never skips preview or post-verify.",
-      "triggers": [
-        "change a Fortinet firewall policy or address object",
-        "push a FortiManager config with preview and rollback",
-        "apply a FortiGate rule change through the mutation gate"
-      ],
-      "keywords": [
-        "forti",
-        "fortigate"
-      ],
-      "mutates": true,
-      "updatedAt": "2026-05-29T04:15:24+05:30"
-    },
-    {
       "name": "scogo:gcp-alloydb-basics",
       "description": "Use when an operator needs gcp alloydb basics. Manages clusters, instances, and backups for AlloyDB for PostgreSQL, and integrates with AlloyDB model context protocol (MCP) tools for automated database operations.",
       "tags": [
