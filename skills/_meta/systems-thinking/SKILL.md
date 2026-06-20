@@ -1,6 +1,7 @@
 ---
 name: scogo:systems-thinking
 description: 'Use when an operator needs systems-thinking analysis. Analyze problems using a Systems Thinking approach. Use when users mention "systems thinking," "systemic," "feedback loops," "unintended consequences," "root cause," "interconnected," or request analysis of complex, multi-factor problems. Guides conversation through questions and observations rather than prescriptive solutions.'
+class: process
 tags: [meta, systems-thinking]
 license: CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/
 metadata:

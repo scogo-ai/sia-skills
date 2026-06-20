@@ -1,6 +1,7 @@
 ---
 name: scogo:brainstorming
 description: "Use when an operator needs meta brainstorming. You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+class: process
 tags: [meta, brainstorming]
 metadata:
   version: 1.0.0

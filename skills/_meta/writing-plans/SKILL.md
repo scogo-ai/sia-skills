@@ -1,6 +1,7 @@
 ---
 name: scogo:writing-plans
 description: "Use when an operator needs a concrete implementation plan from a spec or requirements before touching code."
+class: process
 tags: [meta, writing, plans]
 metadata:
   version: 1.0.0

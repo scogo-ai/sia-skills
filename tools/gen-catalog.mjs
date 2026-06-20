@@ -239,6 +239,7 @@ export function generate(opts) {
     // Optional fields, in the design's documented order: compatibility before version.
     if (fm.compatibility !== undefined) entry.compatibility = fm.compatibility;
     if (fm.version !== undefined) entry.version = fm.version;
+    if (fm.class === "process" || fm.class === "domain") entry.class = fm.class;
 
     // --- schemaVersion 2 derived fields (§8.3), appended after the v1 shape. ---
     // Authored triggers come from `when_to_use` first, then `triggers`.

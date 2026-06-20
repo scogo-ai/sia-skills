@@ -109,6 +109,12 @@ function _parse(text) {
           i++;
           continue;
         }
+        case "class": {
+          const v = parseScalar(rest);
+          if (v === "process" || v === "domain") result.class = v;
+          i++;
+          continue;
+        }
         case "version": {
           const v = parseScalar(rest);
           if (v !== null) result.version = v;

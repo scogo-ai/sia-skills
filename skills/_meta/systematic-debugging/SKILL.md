@@ -1,6 +1,7 @@
 ---
 name: scogo:systematic-debugging
 description: "Use when an operator needs to debug a failure systematically. Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes."
+class: process
 tags: [meta, systematic-debugging]
 metadata:
   version: 1.0.0
