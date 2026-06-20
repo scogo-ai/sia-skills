@@ -2,10 +2,10 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.5",
-  "commit": "9cc8721c9c53de6136504c7b3de2743247867a3f",
-  "generatedAt": "2026-06-10T18:38:37.850Z",
-  "totalSkills": 145,
+  "ref": "v2026.05.7",
+  "commit": "75d251e17ecdc5969bb2d20001d48144a677579f",
+  "generatedAt": "2026-06-20T21:30:49.120Z",
+  "totalSkills": 146,
   "domains": {
     "cloud": {
       "count": 93,
@@ -67,10 +67,11 @@
       }
     },
     "network": {
-      "count": 4,
+      "count": 5,
       "oems": {
         "_generic": 3,
-        "pfsense": 1
+        "pfsense": 1,
+        "tp-link": 1
       }
     },
     "email": {
@@ -2853,7 +2854,7 @@
         "scripts/start-server.sh",
         "scripts/stop-server.sh"
       ],
-      "sha256": "6953e03d276a6d069d23494816f49f5d693d92f136cb0c4d5cdfc31f2119b762",
+      "sha256": "5b17a4dcc6db311c6baf551cbd3e0a44ad0e0cc2a92e046f8567d0ef1780bc00",
       "version": "1.0.0",
       "summary": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.",
       "triggers": [
@@ -2862,7 +2863,7 @@
       ],
       "keywords": [],
       "mutates": true,
-      "updatedAt": "2026-05-29T02:49:22+05:30"
+      "updatedAt": "2026-06-21T03:00:30+05:30"
     },
     {
       "name": "scogo:calico-kubernetes-network-policy",
@@ -3721,7 +3722,7 @@
       "files": [
         "SKILL.md"
       ],
-      "sha256": "f9b85a95437b6f5edc2a9341e3f8b13e84650e9597a1a17a737186059d9594c0",
+      "sha256": "fb1cb22b6d7112711e83c86c301558d5ecde5923ec46c51bcdc3e9e8d97a3fa3",
       "version": "1.0.0",
       "summary": "Use when you have a written implementation plan to execute in a separate session with review checkpoints.",
       "triggers": [
@@ -3730,7 +3731,7 @@
       ],
       "keywords": [],
       "mutates": false,
-      "updatedAt": "2026-05-31T01:08:38+05:30"
+      "updatedAt": "2026-06-21T03:00:30+05:30"
     },
     {
       "name": "scogo:gcp-alloydb-basics",
@@ -6052,7 +6053,7 @@
         "references/root-cause-tracing.md",
         "scripts/find-polluter.sh"
       ],
-      "sha256": "e919a7978f28b6f2b782799a14853e2c92ee1e9ed540f2ad7b6275311dd70077",
+      "sha256": "5921236f80003b39253af5c3169dafb562bfa37e4285ab8b07e416e391033de5",
       "version": "1.0.0",
       "summary": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes.",
       "triggers": [
@@ -6061,7 +6062,7 @@
       ],
       "keywords": [],
       "mutates": false,
-      "updatedAt": "2026-05-31T16:42:13+05:30"
+      "updatedAt": "2026-06-21T03:00:30+05:30"
     },
     {
       "name": "scogo:systems-thinking",
@@ -6082,7 +6083,7 @@
         "references/causal-loop-diagrams.md",
         "references/questions-of-a-systems-thinker.md"
       ],
-      "sha256": "cf7ade509096aff8e9520c0adc9e5e834e699c514514d0cfbe952da7f205902f",
+      "sha256": "b2a3668faba239faf31284281430888653bb00547d5c70449da0037962d2eea5",
       "version": "1.0.0",
       "summary": "Analyze problems using a Systems Thinking approach. Use when users mention \"systems thinking,\" \"systemic,\" \"feedback loops,\" \"unintended consequences,\" \"root cause,\" \"interconnected,\" or request analysis of complex, multi-factor problems. Guides conversation through questions and observations rather than prescriptive solutions.",
       "triggers": [
@@ -6091,7 +6092,7 @@
       ],
       "keywords": [],
       "mutates": false,
-      "updatedAt": "2026-05-31T01:08:38+05:30"
+      "updatedAt": "2026-06-21T03:00:30+05:30"
     },
     {
       "name": "scogo:theme-factory",
@@ -6131,6 +6132,54 @@
       "keywords": [],
       "mutates": true,
       "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:tp-link-er605-vpn-setup",
+      "topic": "Er605 VPN Setup",
+      "domain": "network",
+      "oem": "tp-link",
+      "action": "er605-vpn-setup",
+      "kind": "vendor",
+      "path": "skills/network/tp-link/er605-vpn-setup",
+      "description": "Use when an operator needs to configure a TP-Link ER605 (TL-R605) router end-to-end over its web UI, including first-boot password setup, login, WAN, LAN, DHCP, and a site-to-site IPsec VPN tunnel, with values pulled from a per-device CSV and a redacted client-ready completion report at the end. Built for resumable, idempotent bulk field deployment of many ER605, TL-R605, or Omada SafeStream routers, driven through a headed browser via Chrome DevTools MCP. Triggers on requests to provision, onboard, configure, or bulk-deploy these routers, set up an IPsec VPN on a TP-Link router through the browser, run a router CSV, or produce a configuration completion report, even when the model number or 'IPsec' is not named.",
+      "tags": [
+        "network",
+        "tp-link",
+        "er605",
+        "tl-r605",
+        "vpn",
+        "ipsec",
+        "site-to-site",
+        "router",
+        "omada",
+        "safestream",
+        "csv",
+        "browser",
+        "field-deployment"
+      ],
+      "files": [
+        "SKILL.md",
+        "assets/report-template.md",
+        "references/csv-schema.md",
+        "references/ipsec-parameters.md",
+        "references/ui-navigation.md",
+        "scripts/validate_devices.py"
+      ],
+      "sha256": "75cdd4e8bb9fc340dd01e698abe21d5376a39b265ffb2fca8a8589758eafc5d9",
+      "version": "1.0.0",
+      "summary": "Built for resumable, idempotent bulk field deployment of many ER605, TL-R605, or Omada SafeStream routers, driven through a headed browser via Chrome DevTools MCP. Triggers on requests to provision, onboard, configure, or bulk-deploy these routers, set up an IPsec VPN on a TP-Link router through the browser, run a router CSV, or produce a configuration completion report, even when the model number or 'IPsec' is not named.",
+      "triggers": [
+        "configure the ER605 / TL-R605 router",
+        "set up the IPsec VPN on a TP-Link router",
+        "onboard or bulk-deploy routers from a CSV",
+        "generate a client-facing router configuration report"
+      ],
+      "keywords": [
+        "tplink",
+        "virtual private network"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-06-21T03:00:30+05:30"
     },
     {
       "name": "scogo:trivy-security-scanning",
@@ -6317,7 +6366,7 @@
         "SKILL.md",
         "references/plan-document-reviewer-prompt.md"
       ],
-      "sha256": "40b38476e20a3810c384799a93b947e8933fc0c2463a4e86da7f26b491c4b223",
+      "sha256": "34690c4d6d3bde1684bf0925cd03393cde0bc68b2483c71e3ef58e4eae422871",
       "version": "1.0.0",
       "summary": "Use when an operator needs a concrete implementation plan from a spec or requirements before touching code.",
       "triggers": [
@@ -6326,7 +6375,7 @@
       ],
       "keywords": [],
       "mutates": false,
-      "updatedAt": "2026-05-29T02:49:22+05:30"
+      "updatedAt": "2026-06-21T03:00:30+05:30"
     },
     {
       "name": "scogo:xlsx",

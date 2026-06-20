@@ -2,8 +2,8 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.5",
-  "generatedAt": "2026-06-10T18:38:37.850Z",
+  "ref": "v2026.05.7",
+  "generatedAt": "2026-06-20T21:30:49.120Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -350,8 +350,8 @@
     {
       "name": "scogo:brainstorming",
       "version": "1.0.0",
-      "sha256": "6953e03d276a6d069d23494816f49f5d693d92f136cb0c4d5cdfc31f2119b762",
-      "updatedAt": "2026-05-29T02:49:22+05:30"
+      "sha256": "5b17a4dcc6db311c6baf551cbd3e0a44ad0e0cc2a92e046f8567d0ef1780bc00",
+      "updatedAt": "2026-06-21T03:00:30+05:30"
     },
     {
       "name": "scogo:calico-kubernetes-network-policy",
@@ -470,8 +470,8 @@
     {
       "name": "scogo:executing-plans",
       "version": "1.0.0",
-      "sha256": "f9b85a95437b6f5edc2a9341e3f8b13e84650e9597a1a17a737186059d9594c0",
-      "updatedAt": "2026-05-31T01:08:38+05:30"
+      "sha256": "fb1cb22b6d7112711e83c86c301558d5ecde5923ec46c51bcdc3e9e8d97a3fa3",
+      "updatedAt": "2026-06-21T03:00:30+05:30"
     },
     {
       "name": "scogo:gcp-alloydb-basics",
@@ -812,20 +812,26 @@
     {
       "name": "scogo:systematic-debugging",
       "version": "1.0.0",
-      "sha256": "e919a7978f28b6f2b782799a14853e2c92ee1e9ed540f2ad7b6275311dd70077",
-      "updatedAt": "2026-05-31T16:42:13+05:30"
+      "sha256": "5921236f80003b39253af5c3169dafb562bfa37e4285ab8b07e416e391033de5",
+      "updatedAt": "2026-06-21T03:00:30+05:30"
     },
     {
       "name": "scogo:systems-thinking",
       "version": "1.0.0",
-      "sha256": "cf7ade509096aff8e9520c0adc9e5e834e699c514514d0cfbe952da7f205902f",
-      "updatedAt": "2026-05-31T01:08:38+05:30"
+      "sha256": "b2a3668faba239faf31284281430888653bb00547d5c70449da0037962d2eea5",
+      "updatedAt": "2026-06-21T03:00:30+05:30"
     },
     {
       "name": "scogo:theme-factory",
       "version": "1.0.0",
       "sha256": "de0a87c27ebb971bc73ab0898c7062f4f133c04f573216f221824c44c3f46b0d",
       "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:tp-link-er605-vpn-setup",
+      "version": "1.0.0",
+      "sha256": "75cdd4e8bb9fc340dd01e698abe21d5376a39b265ffb2fca8a8589758eafc5d9",
+      "updatedAt": "2026-06-21T03:00:30+05:30"
     },
     {
       "name": "scogo:trivy-security-scanning",
@@ -854,8 +860,8 @@
     {
       "name": "scogo:writing-plans",
       "version": "1.0.0",
-      "sha256": "40b38476e20a3810c384799a93b947e8933fc0c2463a4e86da7f26b491c4b223",
-      "updatedAt": "2026-05-29T02:49:22+05:30"
+      "sha256": "34690c4d6d3bde1684bf0925cd03393cde0bc68b2483c71e3ef58e4eae422871",
+      "updatedAt": "2026-06-21T03:00:30+05:30"
     },
     {
       "name": "scogo:xlsx",
