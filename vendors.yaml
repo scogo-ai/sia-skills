@@ -29,6 +29,11 @@ arista:
   display: "Arista Networks"
   domains: [network]
   products: [eos]
+tp-link:
+  display: "TP-Link"
+  domains: [network]
+  products: [er605, omada, safestream]
+  aliases: [tplink, tl-r605]
 paloalto:
   display: "Palo Alto Networks"
   domains: [security, network]
