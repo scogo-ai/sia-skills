@@ -2,8 +2,8 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.8",
-  "generatedAt": "2026-06-25T12:09:36.443Z",
+  "ref": "v2026.05.9",
+  "generatedAt": "2026-06-25T13:22:23.053Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -829,9 +829,9 @@
     },
     {
       "name": "scogo:tp-link-agrex-vpn-setup",
-      "version": "1.0.0",
-      "sha256": "d0f0c13aa32e75911a33cf351e3a1c245443f0dca5848a34f243b699f3051798",
-      "updatedAt": "2026-06-25T17:39:25+05:30"
+      "version": "1.0.1",
+      "sha256": "f14e52e344503af0911a075c58740edcb9a5b41776dc1c682682d10bd05c2da9",
+      "updatedAt": "2026-06-25T18:52:10+05:30"
     },
     {
       "name": "scogo:tp-link-er605-vpn-setup",
