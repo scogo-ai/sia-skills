@@ -9,7 +9,7 @@ when_to_use:
   - onboard an Agrex ER605 router end to end
 mutates: true
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 author: scogo-ai
 ---
 
@@ -40,7 +40,13 @@ Wait up to 30s for a WAN IP (retry ×3). No IP → STOP `WAN_NO_IP`.
 
 ## 3. Verify internet
 
-UI: System Tools → Diagnostics. Ping `8.8.8.8` and `google.com`; both must succeed (one retry).
+UI: System Tools → Diagnostics. Diagnostic Tool = Ping. **You must set the Interface before
+clicking Start** — the Interface dropdown defaults to `---`, and Start does nothing while it stays
+unselected (this is why the run hangs on the Diagnostics screen). Open the Interface dropdown
+(options are `WAN1` and `LAN`) and select **`WAN1`**. Do the same for any other diagnostic utility
+(Ping, Traceroute): pick `WAN1` as the Interface first, then fill the destination and click Start.
+
+Ping `8.8.8.8` and `google.com` over `WAN1`; both must succeed (one retry).
 Fail → STOP `WAN_NO_INTERNET`.
 
 ## 4. Replay IPSec + LAN (same browser)
