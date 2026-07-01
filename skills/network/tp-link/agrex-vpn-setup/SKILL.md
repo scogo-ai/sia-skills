@@ -9,29 +9,45 @@ when_to_use:
   - onboard an Agrex ER605 router end to end
 mutates: true
 metadata:
-  version: 1.0.1
+  version: 1.1.0
 author: scogo-ai
 ---
 
 # TP-Link ER605 — VPN Deployment Instructions (for Agrex customer)
 
-You (the sia agent) configure one ER605 in one browser, no human intervention. Drive steps 1–3 and
-5–7 with your own `browser_*` tools; replay the IPSec/LAN config with `browser_run_recipe`. Never
-run `sia browser replay` (it opens a second browser). Stay on the default browser profile.
+You (the sia agent) configure one ER605 in one browser, no human intervention. Drive login, WAN,
+internet verification, and the tunnel check with your own `browser_*` tools; replay the IPSec/LAN
+config with `browser_run_recipe`. Never run `sia browser replay` (it opens a second browser). Stay
+on the default browser profile.
 
-## Inputs (from the prompt)
+## Inputs
 
-- `site_id`, `admin_username`, `router_url` (current), `router_url_new` (after LAN change)
-- `recipe_json` — path to the recipe `.json`
-- `vars_csv` — path to this site's one-row CSV
-- `PSK` and `ADMIN_PASSWORD` are in the environment; use only as `{{PSK}}` / `{{ADMIN_PASSWORD}}`,
-  never print them.
+The prompt gives you only two paths:
+
+- `recipe_json` — the IPSec/LAN recipe `.json`
+- `vars_csv` — this site's one-row CSV
+
+Everything else comes from the **first data row** of `vars_csv`. Read that row before step 1 and
+map the columns you need:
+
+| Need                                | CSV column              |
+| ----------------------------------- | ----------------------- |
+| site id                             | `site_id`               |
+| login user                          | `admin_username`        |
+| current router URL                  | `router_url`            |
+| new router URL (after the LAN change) | `router_new_ip_address` |
+| admin password (secret)             | `admin_password`        |
+| pre-shared key (secret)             | `pre_shared_key`        |
+
+`admin_password` and `pre_shared_key` are secrets: type them into the UI / feed them to the recipe,
+but never print them to chat, logs, or screenshots. If the CSV has more than one data row, use the
+first and say so. Wherever a later step names `router_url_new`, it means `router_new_ip_address`.
 
 ## 1. Log in
 
 `browser_navigate` to `router_url`. If the first screen asks to create an admin account
-(factory-fresh), create it with `admin_username` + `{{ADMIN_PASSWORD}}`; otherwise log in with the
-same. If login is rejected → STOP `LOGIN_FAILED`. After login, land on the dashboard and wait ~2s.
+(factory-fresh), create it with `admin_username` + `admin_password`; otherwise log in with the same.
+If login is rejected → STOP `LOGIN_FAILED`. After login, land on the dashboard and wait ~2s.
 
 ## 2. WAN
 
@@ -40,40 +56,56 @@ Wait up to 30s for a WAN IP (retry ×3). No IP → STOP `WAN_NO_IP`.
 
 ## 3. Verify internet
 
-UI: System Tools → Diagnostics. Diagnostic Tool = Ping. **You must set the Interface before
-clicking Start** — the Interface dropdown defaults to `---`, and Start does nothing while it stays
-unselected (this is why the run hangs on the Diagnostics screen). Open the Interface dropdown
-(options are `WAN1` and `LAN`) and select **`WAN1`**. Do the same for any other diagnostic utility
-(Ping, Traceroute): pick `WAN1` as the Interface first, then fill the destination and click Start.
+UI: System Tools → Diagnostics. Diagnostic Tool = Ping.
 
-Ping `8.8.8.8` and `google.com` over `WAN1`; both must succeed (one retry).
+**Set the Interface to `WAN1` before you click Start.** The dropdown defaults to `---`, and Start
+does nothing while it stays unselected — that is why the run hangs on the Diagnostics screen. This
+dropdown is the step that most often fails to take, so drive it deliberately instead of a single
+click:
+
+1. Take a fresh snapshot / `browser_get_state` and grab the ref of the **Interface** control (not
+   the "Diagnostic Tool" one above it).
+2. Select `WAN1` — try these in order, stopping as soon as the field reads `WAN1`:
+   - If it's a native `<select>`: use the select-option tool with the label `WAN1`.
+   - Otherwise (TP-Link renders a custom dropdown): click the control to open it, take a **new**
+     snapshot so the freshly-rendered option list is in the DOM, then click the `WAN1` option by
+     its ref from that new snapshot. Do not reuse a ref captured before the list opened.
+   - Fallback: focus the control and use the keyboard — press `Down` (or type `W`) until `WAN1`
+     is highlighted, then `Enter`.
+3. **Verify before Start:** re-snapshot and confirm the Interface field shows `WAN1`, not `---`.
+   Only then type the destination and click Start. If it still reads `---` after the attempts
+   above, STOP `WAN_NO_INTERNET` (a hung Start is the same failure) rather than clicking into a
+   hang.
+
+Ping `8.8.8.8` over `WAN1` (one retry). Success is enough — skip any hostname ping.
 Fail → STOP `WAN_NO_INTERNET`.
 
 ## 4. Replay IPSec + LAN (same browser)
 
-1. Read `vars_csv` (header + first data row) into a `vars` object. Drop empty columns; do not
-   include any PSK/password column.
+1. Read `vars_csv` (header + first data row) into a `vars` object; drop empty columns. Keep
+   `pre_shared_key` — the recipe fills the IPSec PSK from it. Leave the login-only columns
+   (`admin_username`, `admin_password`) out; login already happened in step 1.
 2. Call `browser_run_recipe` with `recipe = recipe_json` (the .json path is accepted directly) and
-   `vars`, then approve the one confirmation.
-3. Here in the last step, Connectivity will drop here. Changing the LAN IP moves the router off 192.168.0.1 and usually triggers a reboot. After saving:
-- Release/renew the host's DHCP lease (it must move into the new {{router_url_new}} subnet). Ensure to disable/enable the right network interface of the host machine. Double check before doing any chagne. Continue to check if the host has got a new IP address, 
-- Re-point the browser to https://{{router_url_new}} and re-login before continuing.
+   `vars`, then approve the one confirmation. If the replay errors → STOP `REPLAY_FAILED`.
+3. The recipe's LAN-IP change is the last thing it does, and it drops your connection — the router
+   moves off `router_url` onto the `router_url_new` subnet and usually reboots. Recover:
+   - Release/renew the host's DHCP lease so it lands in the `router_url_new` subnet. Disable then
+     re-enable the correct host network interface; double-check you picked the right one before
+     changing anything. Poll until the host has a new IP in that subnet.
+   - Re-point the browser to `https://router_url_new` and re-login with `admin_username` +
+     `admin_password`.
 
-If the host doesn't get a new lease within 120s, any earlier failure → STOP → LAN_RECONNECT_FAILED.
-`REPLAY_FAILED`. The router is now at `router_url_new` and your laptop has lost its link.
-
-Confirm a new lease in `router_url_new`'s subnet within 90s, else STOP `LAN_RECONNECT_FAILED`.
-Then `browser_navigate` to `router_url_new` and re-login with `admin_username` + `{{ADMIN_PASSWORD}}`.
+   If the host has no new lease in the `router_url_new` subnet within 120s → STOP
+   `LAN_RECONNECT_FAILED`.
 
 ## 5. Verify the tunnel
 
 Navigate: VPN → IPSec → Status.
 
 - Expect Phase 1 = Connected and Phase 2 = Connected.
-- Poll up to 60s (tunnels take time / may need traffic to trigger). If still down, do one ping (next step) to nudge it, then re-check.
-- If still down → STOP → VPN_DOWN 
+- If either is down → STOP `VPN_DOWN`.
 
-## 8 Deployment checklist
+## 6. Deployment checklist
 
 Output Deployment Checklist to the user in a user friendly format.
 
@@ -87,7 +119,5 @@ Output Deployment Checklist to the user in a user friendly format.
 ## Stop codes
 
 `LOGIN_FAILED`, `WAN_NO_IP`, `WAN_NO_INTERNET`, `REPLAY_FAILED`, `LAN_RECONNECT_FAILED`,
-`VPN_DOWN`, `VPN_NO_TRAFFIC`. On any STOP: report the code and what you saw, change nothing further,
-never factory-reset, never reuse another site's values.
-</content>
-</invoke>
+`VPN_DOWN`. On any STOP: report the code and what you saw, change nothing further, never
+factory-reset, never reuse another site's values.
