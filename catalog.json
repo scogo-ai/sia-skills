@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.9",
-  "commit": "3eea68d0d3b4b7cd8db250f6e5887e97d73a235d",
-  "generatedAt": "2026-06-25T13:22:23.053Z",
+  "ref": "v2026.05.10",
+  "commit": "b2b3aa04b430e98ed4544e669416b24ec1f4afc3",
+  "generatedAt": "2026-07-01T04:26:16.136Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -5397,8 +5397,8 @@
       "files": [
         "SKILL.md"
       ],
-      "sha256": "f14e52e344503af0911a075c58740edcb9a5b41776dc1c682682d10bd05c2da9",
-      "version": "1.0.1",
+      "sha256": "dd1f1012f688ac0d6027fa2bc5ed42255a1ba7780077888a8acdeb47ef670c82",
+      "version": "1.1.0",
       "summary": "One router, one browser, no human intervention: the agent drives login/WAN/verify and the tunnel check with its own browser_* tools and replays the IPSec/LAN config with browser_run_recipe, then prints a deployment checklist. Triggers on requests to provision, onboard, or set up the Agrex TP-Link router VPN, run the ER605 IPsec recipe for a site, or verify the Agrex VPN tunnel after rollout, even when the model number or IPsec is not named.",
       "triggers": [
         "set up the Agrex TP-Link ER605 VPN for a site",
@@ -5411,7 +5411,7 @@
         "virtual private network"
       ],
       "mutates": true,
-      "updatedAt": "2026-06-25T18:52:10+05:30"
+      "updatedAt": "2026-07-01T09:56:10+05:30"
     },
     {
       "name": "scogo:tp-link-er605-vpn-setup",
