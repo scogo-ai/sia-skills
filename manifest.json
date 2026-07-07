@@ -2,8 +2,8 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.10",
-  "generatedAt": "2026-07-01T04:26:16.136Z",
+  "ref": "v2026.05.11",
+  "generatedAt": "2026-07-07T14:00:50.042Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -760,6 +760,12 @@
       "version": "1.0.0",
       "sha256": "faa0b238e2763cddbad13b2c7e7e079c701149faf299c531b2f10625594f75ed",
       "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:proxmox-cluster-management",
+      "version": "1.1.0",
+      "sha256": "06ba93be0279478a28de5b83682988f2971439fdf2efe721b942440f4c5be677",
+      "updatedAt": "2026-07-07T19:30:43+05:30"
     },
     {
       "name": "scogo:resend-email-api",

@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.10",
-  "commit": "b2b3aa04b430e98ed4544e669416b24ec1f4afc3",
-  "generatedAt": "2026-07-01T04:26:16.136Z",
+  "ref": "v2026.05.11",
+  "commit": "fbc380d149e19079f140766c85651fd19d21e5f6",
+  "generatedAt": "2026-07-07T14:00:50.042Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -4977,6 +4977,41 @@
       "keywords": [],
       "mutates": true,
       "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:proxmox-cluster-management",
+      "description": "Use when an operator needs to manage a Proxmox VE cluster through the `pc` CLI (pve-cli) instead of the web UI or SSH — listing, creating, cloning, resizing, or migrating VMs and containers, taking snapshots, running backups, checking node and storage health, editing firewall or SDN rules, managing HA and Ceph, or reaching any Proxmox REST API endpoint directly. Covers multi-server profile setup so the agent targets the correct cluster, JSON output for scripting, and safety rules for destructive operations.",
+      "tags": [
+        "virtualization",
+        "proxmox",
+        "pve",
+        "vm",
+        "lxc",
+        "admin",
+        "devops",
+        "infrastructure",
+        "cli"
+      ],
+      "path": "skills/virtualization/proxmox/cluster-management",
+      "files": [
+        "SKILL.md"
+      ],
+      "sha256": "06ba93be0279478a28de5b83682988f2971439fdf2efe721b942440f4c5be677",
+      "version": "1.1.0",
+      "summary": "Covers multi-server profile setup so the agent targets the correct cluster, JSON output for scripting, and safety rules for destructive operations.",
+      "triggers": [
+        "manage VMs or LXC containers on a Proxmox VE cluster",
+        "take snapshots, run backups, or check node/storage status on Proxmox",
+        "configure Proxmox firewall, SDN, HA, or Ceph via the pc CLI",
+        "set up pc/pve-cli profiles for one or more Proxmox servers"
+      ],
+      "keywords": [
+        "command line interface",
+        "pve-cli",
+        "virtual machine"
+      ],
+      "mutates": true,
+      "updatedAt": "2026-07-07T19:30:43+05:30"
     },
     {
       "name": "scogo:resend-email-api",
