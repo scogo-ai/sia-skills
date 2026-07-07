@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.11",
-  "commit": "fbc380d149e19079f140766c85651fd19d21e5f6",
-  "generatedAt": "2026-07-07T14:00:50.042Z",
+  "ref": "v2026.05.12",
+  "commit": "1eb3b6e377e528af2a051aa4794bdece76b5ec76",
+  "generatedAt": "2026-07-07T19:15:19.160Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -4994,10 +4994,12 @@
       ],
       "path": "skills/virtualization/proxmox/cluster-management",
       "files": [
-        "SKILL.md"
+        "SKILL.md",
+        "references/COMMAND-REFERENCE.md",
+        "references/INSTALLATION.md"
       ],
-      "sha256": "06ba93be0279478a28de5b83682988f2971439fdf2efe721b942440f4c5be677",
-      "version": "1.1.0",
+      "sha256": "93010ecbf3b0a820ec7b4ca3fe21fcd4818ce2f61f5a0fa7a3f2cd3962d9fce1",
+      "version": "1.2.0",
       "summary": "Covers multi-server profile setup so the agent targets the correct cluster, JSON output for scripting, and safety rules for destructive operations.",
       "triggers": [
         "manage VMs or LXC containers on a Proxmox VE cluster",
@@ -5011,7 +5013,7 @@
         "virtual machine"
       ],
       "mutates": true,
-      "updatedAt": "2026-07-07T19:30:43+05:30"
+      "updatedAt": "2026-07-08T00:45:14+05:30"
     },
     {
       "name": "scogo:resend-email-api",
