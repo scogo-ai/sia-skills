@@ -128,6 +128,11 @@ suse:
   products: [sles]
 
 # --- virtualization ---
+proxmox:
+  display: "Proxmox VE"
+  domains: [virtualization]
+  products: [pve, pdm]
+  aliases: [pve, pve-cli]
 vmware:
   display: "VMware"
   domains: [virtualization]
