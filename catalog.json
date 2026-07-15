@@ -5428,7 +5428,7 @@
       "files": [
         "SKILL.md"
       ],
-      "sha256": "ab3e676c6f36dafa57b63da2e9ddfcebdb04e2cec51118ed9632a15465b9c5e0",
+      "sha256": "29c60425e2140edad9340c1a487f1fb3be8a0deea86575ac831bd891b76f93e9",
       "version": "1.0.0",
       "summary": "Looks up asset-config entries by ticket number via the Scogo platform API (GET /v1/asset-configs/search) and reports each entry's configuration key/values, asset link, and timestamps. Read-only — never mutates.",
       "triggers": [
@@ -5439,7 +5439,7 @@
       ],
       "keywords": [],
       "mutates": false,
-      "updatedAt": "2026-07-07T19:15:19.160Z"
+      "updatedAt": "2026-07-15T14:18:10+05:30"
     },
     {
       "name": "scogo:tp-link-agrex-vpn-setup",
