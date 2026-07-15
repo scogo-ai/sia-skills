@@ -3,8 +3,8 @@
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
   "ref": "v2026.05.13",
-  "commit": "2e7465792db49ec1c570f5494adca00acf7ddc1d",
-  "generatedAt": "2026-07-15T12:17:08.076Z",
+  "commit": "149b04102d082584defc9f6af2be9705587d20a3",
+  "generatedAt": "2026-07-15T11:58:10.618Z",
   "totalSkills": 149,
   "domains": {
     "cloud": {
