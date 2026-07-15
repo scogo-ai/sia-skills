@@ -2,8 +2,8 @@
   "schemaVersion": 2,
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
-  "ref": "v2026.05.12",
-  "generatedAt": "2026-07-07T19:15:19.160Z",
+  "ref": "v2026.05.13",
+  "generatedAt": "2026-07-15T12:17:08.076Z",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
