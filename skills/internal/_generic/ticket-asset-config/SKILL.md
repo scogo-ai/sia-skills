@@ -41,7 +41,7 @@ If either is missing → STOP and tell the operator which variable to export.
 
 ```sh
 curl -sS --fail-with-body \
-  "https://api.scogo.in/v1/asset-configs/search?ticket_number=<TICKET_NUMBER>" \
+  "https://api.production.scogo.in/v1/asset-configs/search?ticket_number=<TICKET_NUMBER>" \
   --header "Authorization: Bearer $SCOGO_API_TOKEN" \
   --header "x-org-id: $SCOGO_ORG_ID"
 ```
