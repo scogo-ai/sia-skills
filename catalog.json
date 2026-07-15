@@ -3,7 +3,7 @@
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
   "ref": "v2026.05.12",
-  "commit": "1eb3b6e377e528af2a051aa4794bdece76b5ec76",
+  "commit": "",
   "generatedAt": "2026-07-07T19:15:19.160Z",
   "skills": [
     {
@@ -5412,6 +5412,34 @@
       "keywords": [],
       "mutates": true,
       "updatedAt": "2026-05-29T00:09:15+05:30"
+    },
+    {
+      "name": "scogo:ticket-asset-config",
+      "description": "Use when an operator needs the asset configuration details recorded against a Scogo ticket, such as the IP address or other config values captured for the ticket's asset. Looks up asset-config entries by ticket number via the Scogo platform API (GET /v1/asset-configs/search) and reports each entry's configuration key/values, asset link, and timestamps. Read-only — never mutates.",
+      "tags": [
+        "internal",
+        "scogo-platform",
+        "ticket",
+        "asset-config",
+        "lookup",
+        "read-only"
+      ],
+      "path": "skills/internal/_generic/ticket-asset-config",
+      "files": [
+        "SKILL.md"
+      ],
+      "sha256": "ab3e676c6f36dafa57b63da2e9ddfcebdb04e2cec51118ed9632a15465b9c5e0",
+      "version": "1.0.0",
+      "summary": "Looks up asset-config entries by ticket number via the Scogo platform API (GET /v1/asset-configs/search) and reports each entry's configuration key/values, asset link, and timestamps. Read-only — never mutates.",
+      "triggers": [
+        "get the asset configuration recorded for ticket 22614",
+        "what IP address was captured against this ticket",
+        "show the asset-config entries for a Scogo ticket number",
+        "look up a ticket's asset configuration details"
+      ],
+      "keywords": [],
+      "mutates": false,
+      "updatedAt": "2026-07-07T19:15:19.160Z"
     },
     {
       "name": "scogo:tp-link-agrex-vpn-setup",

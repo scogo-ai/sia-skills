@@ -50,6 +50,7 @@ export const DOMAINS = new Set([
   "security",
   "storage",
   "backup",
+  "internal",
   "operating-system",
   "hardware",
   "virtualization",

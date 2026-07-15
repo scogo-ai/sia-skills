@@ -834,6 +834,12 @@
       "updatedAt": "2026-05-29T00:09:15+05:30"
     },
     {
+      "name": "scogo:ticket-asset-config",
+      "version": "1.0.0",
+      "sha256": "ab3e676c6f36dafa57b63da2e9ddfcebdb04e2cec51118ed9632a15465b9c5e0",
+      "updatedAt": "2026-07-07T19:15:19.160Z"
+    },
+    {
       "name": "scogo:tp-link-agrex-vpn-setup",
       "version": "1.1.0",
       "sha256": "dd1f1012f688ac0d6027fa2bc5ed42255a1ba7780077888a8acdeb47ef670c82",
