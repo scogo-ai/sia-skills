@@ -9,7 +9,7 @@ when_to_use:
   - look up a ticket's asset configuration details
 mutates: false
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 author: scogo-ai
 allowed-tools: Bash
 ---
@@ -21,30 +21,21 @@ Fetch the asset-configuration entries recorded against a Scogo ticket and report
 ## Inputs
 
 - **Ticket number** — from the operator's request (e.g. `22614`). Digits only. If the operator did not give one, ask for it before calling anything.
-- `SCOGO_API_TOKEN` (env, **secret**) — bearer token for `api.scogo.in`.
-- `SCOGO_ORG_ID` (env) — value for the `x-org-id` header (e.g. `SCOGO`).
+- Authentication — use `SCOGO_API_TOKEN` and `SCOGO_ORG_ID` when both are set; otherwise read `accessToken` and `activeOrgId` from `~/.sia/scogo-auth.json`.
 
-`SCOGO_API_TOKEN` is a secret: read it from the environment only. Never print it, never echo the full curl command with the token expanded, and never ask the operator to paste a token into chat.
+The access token is a secret. Never print it, include it in output, echo a command after expansion, or ask the operator to paste it into chat.
 
 ## 1. Preflight
 
-Check both env vars are set:
-
-```sh
-test -n "$SCOGO_API_TOKEN" || echo "MISSING SCOGO_API_TOKEN"
-test -n "$SCOGO_ORG_ID"   || echo "MISSING SCOGO_ORG_ID"
-```
-
-If either is missing → STOP and tell the operator which variable to export.
+Confirm the ticket number contains digits only. Authentication is resolved by the bundled script without printing credentials. Environment variables take precedence only when both are set; otherwise it reads the SIA authentication file.
 
 ## 2. Call the search API
 
 ```sh
-curl -sS --fail-with-body \
-  "https://api.production.scogo.in/v1/asset-configs/search?ticket_number=<TICKET_NUMBER>" \
-  --header "Authorization: Bearer $SCOGO_API_TOKEN" \
-  --header "x-org-id: $SCOGO_ORG_ID"
+sh <SKILL_DIR>/scripts/fetch.sh <TICKET_NUMBER>
 ```
+
+Replace `<SKILL_DIR>` with this skill's directory and `<TICKET_NUMBER>` with the digits from the request. Run it exactly once. If authentication cannot be loaded, report the script's safe error and stop; never display the auth file contents.
 
 A successful response is `{"data": [ ...entries ]}`, one entry per asset-config record:
 
@@ -77,7 +68,7 @@ Then state the ticket id (`ticket_id`) the entries belong to and stop. Do **not*
 | Symptom | Meaning | Action |
 |---------|---------|--------|
 | `data: []` | No asset config recorded for that ticket | Report "no asset configuration recorded for ticket N" — not an error |
-| `401` | Token invalid or expired | Ask operator to refresh `SCOGO_API_TOKEN` |
-| `403` | Token not authorised for `x-org-id` | Ask operator to confirm `SCOGO_ORG_ID` |
+| `401` | Token invalid or expired | Ask the operator to sign in to SIA again |
+| `403` | Token not authorised for the active organisation | Ask the operator to select or confirm the active organisation in SIA |
 | Other non-2xx | API error | Show the HTTP status and response body verbatim |
 | Connection failure | `api.scogo.in` unreachable | Report it; retry once, then stop |
