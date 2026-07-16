@@ -3,7 +3,7 @@
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
   "ref": "v2026.05.13",
-  "generatedAt": "2026-07-15T11:58:10.618Z",
+  "generatedAt": "",
   "skills": [
     {
       "name": "scogo:aws-cloudtrail-anomaly-detection",
@@ -835,9 +835,9 @@
     },
     {
       "name": "scogo:ticket-asset-config",
-      "version": "1.0.0",
-      "sha256": "29c60425e2140edad9340c1a487f1fb3be8a0deea86575ac831bd891b76f93e9",
-      "updatedAt": "2026-07-15T14:18:10+05:30"
+      "version": "1.0.1",
+      "sha256": "612012a85a40eab053f492b8f03c602459659ede63e679f097940b332d335ef7",
+      "updatedAt": "2026-07-16T11:31:48+05:30"
     },
     {
       "name": "scogo:tp-link-agrex-vpn-setup",

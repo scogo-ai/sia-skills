@@ -3,8 +3,8 @@
   "repo": "scogo-ai/sia-skills",
   "channel": "stable",
   "ref": "v2026.05.13",
-  "commit": "149b04102d082584defc9f6af2be9705587d20a3",
-  "generatedAt": "2026-07-15T11:58:10.618Z",
+  "commit": "",
+  "generatedAt": "2026-07-16T06:07:31.075Z",
   "totalSkills": 149,
   "domains": {
     "cloud": {
@@ -6205,10 +6205,11 @@
         "read-only"
       ],
       "files": [
-        "SKILL.md"
+        "SKILL.md",
+        "scripts/fetch.sh"
       ],
-      "sha256": "29c60425e2140edad9340c1a487f1fb3be8a0deea86575ac831bd891b76f93e9",
-      "version": "1.0.0",
+      "sha256": "612012a85a40eab053f492b8f03c602459659ede63e679f097940b332d335ef7",
+      "version": "1.0.1",
       "summary": "Looks up asset-config entries by ticket number via the Scogo platform API (GET /v1/asset-configs/search) and reports each entry's configuration key/values, asset link, and timestamps. Read-only — never mutates.",
       "triggers": [
         "get the asset configuration recorded for ticket 22614",
@@ -6218,7 +6219,7 @@
       ],
       "keywords": [],
       "mutates": false,
-      "updatedAt": "2026-07-15T14:18:10+05:30"
+      "updatedAt": "2026-07-16T11:31:48+05:30"
     },
     {
       "name": "scogo:tp-link-agrex-vpn-setup",
